@@ -5,8 +5,8 @@ Lorem ipsum lorem ipsum loren ipsum.
 ## Team
 
 * [Sam Harris](https://github.com/samjam48) - QA Lead
-* [Christine Altmann](https://github.com/xIrusux) - UX/UI Lead
-* [Gergana Minova](https://github.com/gminova) - DevOps Lead
+* [Christine Altmann](https://github.com/xIrusux) - DevOps Lead
+* [Gergana Minova](https://github.com/gminova) - UX/UI Lead
 * [Georgia Shaw](https://github.com/georgiamshaw) - Scrum Master
 
 Find our more about the [team members](https://github.com/fac-17/Generation-Change/wiki/Team) and their [roles](https://github.com/fac-17/Generation-Change/wiki/Team-Roles) in this project.
