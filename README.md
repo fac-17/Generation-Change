@@ -13,6 +13,24 @@ Find our more about the [team members](https://github.com/fac-17/Generation-Chan
 
 ## Getting Started
 
+To download our project:
+
+    git clone git@github.com:fac-17/.git
+    
+    cd 
+    
+    npm i
+    
+    touch .env
+    
+Then add your Yelp API key to your ```.env``` file like this:
+
+    YELP_API_KEY=[YOUR API KEY HERE]
+
+To run the project locally:
+
+    npm start
+
 ## Tech Stuff
 
 Read about what we're using and why in our [tech stack](https://github.com/fac-17/Generation-Change/wiki/Tech-Stack) and [dependencies](https://github.com/fac-17/Generation-Change/wiki/Dependencies) sections in the wiki.
