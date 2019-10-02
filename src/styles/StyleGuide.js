@@ -56,17 +56,17 @@ const StyleGuide = () => {
       <div className="dark-bg-gradient">
         <img src="./favicon.ico" className="logo"></img>
         <h1 className="title1">Grid title</h1>
-        <form className="searchbar">
+        <div className="searchbar">
           <input
             className="searchbar__input"
             placeholder="Enter your postcode..."
             aria-label="enter your postcode"
             type="text"
           />
-          <button type="submit" className="button button--search">
+          <button className="button button--search">
             <i className="fa fa-search"></i>
           </button>
-        </form>
+        </div>
         <p className="word">Featured stories</p>
         <hr className="line" />
         <hr className="line line--dark" />

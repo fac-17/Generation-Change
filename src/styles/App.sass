@@ -61,8 +61,7 @@
         background-color: $search-btn-color
         font-family: $font-awesome
         width: $searchbar-height
-        margin-left: -50px  
-        padding: 0 0 0 0
+        margin-left: -$searchbar-height  
 
     &--accept
         background-color: $accept-btn-color
@@ -75,15 +74,15 @@
 
 // SEARCHBAR
 .searchbar
-    margin: 0 auto
-    width: 50%
+    text-align: center
     &__input
         width: $searchbar-width
         height: $searchbar-height
         font-family: $btn-font
         border-radius: $btn-border-radius
         border: none
-        padding: 0 0 0 0
+        padding-left: $small-padding
+        right: 0%
 
 // OTHERS
 .line
