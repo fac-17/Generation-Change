@@ -4,7 +4,7 @@ import "./App.sass";
 
 const StyleGuide = () => {
   return (
-    <div>
+    <div className="wrapper">
       <h1 className="title1">H1 heading Raleway</h1>
       <p className="title1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -48,16 +48,25 @@ const StyleGuide = () => {
       <div className="dark-bg-gradient--rectangle">
         dark-bg-gradient--rectangle
       </div>
-      <button className="button button--search">Search</button>
+
+      <button type="submit" className="button button--search">
+        <i className="fa fa-search"></i>
+      </button>
       <button className="button button--accept">Accept</button>
       <div className="dark-bg-gradient">
         <img src="./favicon.ico" className="logo"></img>
         <h1 className="title1">Grid title</h1>
-        <div className="searchbar">
-          <input className="searchbar__input" placeholder="Enter your postcode..."/>
-          <button className="button button--search">
-          <i class="fa fa-search"></i></button>
-        </div>
+        <form className="searchbar">
+          <input
+            className="searchbar__input"
+            placeholder="Enter your postcode..."
+            aria-label="enter your postcode"
+            type="text"
+          />
+          <button type="submit" className="button button--search">
+            <i className="fa fa-search"></i>
+          </button>
+        </form>
         <p className="word">Featured stories</p>
         <hr className="line" />
         <hr className="line line--dark" />
