@@ -51,25 +51,28 @@ const StyleGuide = () => {
       <button className="button button--search">Search</button>
       <button className="button button--accept">Accept</button>
       <div className="dark-bg-gradient">
-        <img src="./favicon.ico"></img>
+        <img src="./favicon.ico" className="logo"></img>
         <h1 className="title1">Grid title</h1>
-        <div>Search bar</div>
-        <button>Search</button>
-        <p>Featured stories</p>
+        <div className="searchbar">
+          <input className="searchbar__input" placeholder="Enter your postcode..."/>
+          <button className="button button--search">
+          <i class="fa fa-search"></i></button>
+        </div>
+        <p className="word">Featured stories</p>
         <hr className="line" />
         <hr className="line line--dark" />
         <div className="container">
-          <article className="container__story--one">
+          <article className="container__story--0">
             <img src="./favicon.ico"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>
-          <article className="container__story--two">
+          <article className="container__story--1">
             <img src="./favicon.ico"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>
-          <article className="container__story--three">
+          <article className="container__story--2">
             <img src="./favicon.ico"></img>
             <h1>Project title</h1>
             <p>category</p>

@@ -1,45 +1,40 @@
 // FILES GO HERE ----------------------------------------------------------------
-
 @import './Normalize.sass'
 @import './Variables.sass'
 
 // FONTS GO HERE ----------------------------------------------------------------
-
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap')
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap')
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap')
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap')
+@import url(https://fonts.googleapis.com/css?family=Open+Sans)
 
 .title1
     font-family: 'Raleway', sans-serif
+    text-align: center
 .title2
     font-family: 'Montserrat', sans-serif
 .title3
     font-family: 'Lato', sans-serif
 .title4
     font-family: 'Quicksand', sans-serif
+// PAGE WRAPPERS
+.wrapper
+    font-family: $main-font
 
 // CONTAINERS GO HERE ----------------------------------------------------------------
 .container
     display: grid
     grid-template-columns: repeat(11, 1fr)
     grid-gap: 10px
-.container__story--one
+.container__story--0
     grid-column: 2/5
-.container__story--two
+.container__story--1
     grid-column: 5/8
-.container__story--three
+.container__story--2
     grid-column: 8/11
 
-// OTHERS
-.line
-    margin-top: 20px
-    margin-bottom: 20px
-    border: 0
-    height: 1px
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0))
 // BACKGROUNDS GO HERE ----------------------------------------------------------------
-
 .dark-bg-gradient
     height: 100vh
     color: $light-font-colour
@@ -58,15 +53,33 @@
     text-align: center
     display: inline-block
     border: none
-    margin: $btn-margin
     color: $btn-font-colour
     text-transform: uppercase
     font-weight: $btn-font-weight
     &--search
         background-color: $search-btn-color
+        font-family: $font-awesome
 
     &--accept
         background-color: $accept-btn-color
+
+// NAVBAR
+.logo
+    width: $width-height
+    height: $width-height
+    margin-left: $width-height/2
+
+// SEARCHBAR
+.searchbar
+    &__input
+        display: block
+        margin: 0 auto
+        width: $searchbar-width
+        height: $btn-height
+        font-family: $btn-font
+        border-radius: $btn-border-radius
+        border: none
+        padding: $small-padding
 
 // OTHERS
 .line
