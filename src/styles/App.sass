@@ -1,10 +1,54 @@
+// FILES GO HERE ----------------------------------------------------------------
+
 @import './Normalize.sass'
 @import './Variables.sass'
 
-html
-    margin: 0 auto
-    padding 0 auto
+// FONTS GO HERE ----------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap')
+
+.title1
+    font-family: 'Raleway', sans-serif
+.title2
+    font-family: 'Montserrat', sans-serif
+.title3
+    font-family: 'Lato', sans-serif
+.title4
+    font-family: 'Quicksand', sans-serif
+
+
+// CONTAINERS GO HERE ----------------------------------------------------------------
+.container
+    display: grid
+// BACKGROUNDS GO HERE ----------------------------------------------------------------
 
 .dark-bg-gradient
     height: 100vh
     background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
+.dark-bg-gradient--rectangle
+    height: 100px
+    width: 200px
+    background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
+
+// BUTTONS GO HERE ----------------------------------------------------------------
+.button
+    width: $btn-width
+    height: $btn-height
+    border-radius: $btn-border-radius
+    font-family: $btn-font
+    text-align: center
+    display: inline-block
+    border: none
+    margin: $btn-margin
+    color: $btn-font-colour
+    text-transform: uppercase
+    font-weight: $btn-font-weight
+
+.button--search
+    background-color: $search-btn-color
+
+.button--accept
+    background-color: $accept-btn-color
