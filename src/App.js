@@ -12,6 +12,8 @@ function App() {
     getData(setData);
   }, []);
 
+  console.log("data outside", data);
+
   return (
     <div>
       {/* <LandingPage className="dark-bg-gradient" /> */}
