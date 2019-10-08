@@ -1,6 +1,7 @@
 import React from "react";
 import "./Normalize.sass";
 import "./App.sass";
+import Searchbar from "../components/Universal/Searchbar";
 
 const StyleGuide = () => {
   return (
@@ -57,15 +58,7 @@ const StyleGuide = () => {
         <img src="./favicon.ico" className="logo" alt="logo"></img>
         <h1 className="title1">Grid title</h1>
         <div className="searchbar">
-          <input
-            className="searchbar__input"
-            placeholder="Enter your postcode..."
-            aria-label="enter your postcode"
-            type="text"
-          />
-          <button className="button button--search">
-            <i className="fa fa-search"></i>
-          </button>
+          <Searchbar />
         </div>
         <p className="word">Featured stories</p>
         <hr className="line" />
