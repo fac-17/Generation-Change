@@ -8,11 +8,13 @@ const Stories = () => {
       <hr className="line" />
       <hr className="line line--dark" />
       <div className="container">
-        <article className="container__story--0">
-          <img src="./logo.png" alt="story"></img>
-          <h1>Project title</h1>
-          <p>category</p>
-        </article>
+        <Link to={{ pathname: "/stories" }} className="container__story--0">
+          <article>
+            <img src="./logo.png" alt="story"></img>
+            <h1>Project title</h1>
+            <p>category</p>
+          </article>
+        </Link>
         <article className="container__story--1">
           <img src="./logo.png" alt="story"></img>
           <h1>Project title</h1>

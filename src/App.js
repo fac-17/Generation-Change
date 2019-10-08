@@ -26,19 +26,19 @@ function App() {
       />
       <Route
         exact
-        path="/"
+        path="/results"
         component={ResultsPage}
         className="dark-bg-gradient"
       />
       <Route
         exact
-        path="/"
+        path="/stories"
         component={StoriesPage}
         className="dark-bg-gradient"
       />
       <Route
         exact
-        path="/"
+        path="/details"
         component={DetailsPage}
         className="dark-bg-gradient"
       />
