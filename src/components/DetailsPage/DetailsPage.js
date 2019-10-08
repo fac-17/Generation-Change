@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const DetailsPage = () => {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default DetailsPage;
