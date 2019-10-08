@@ -6,7 +6,6 @@ const Stories = () => {
     <>
       <p className="word">Featured stories</p>
       <hr className="line" />
-      <hr className="line line--dark" />
       <div className="container">
         <Link to={{ pathname: "/stories" }} className="container__story--0">
           <article>
