@@ -14,7 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^9.2.0",
+    "cypress": "^3.4.1",
     "jest": "^24.9.0",
     "node-sass": "^4.12.0"
   }
