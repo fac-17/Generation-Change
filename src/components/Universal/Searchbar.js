@@ -1,5 +1,6 @@
 import React from "react";
 import convertPostcode from "./../../utils/convertPostcode";
+import { Link } from "react-router-dom";
 
 const Searchbar = () => {
   const [geocode, setGeocode] = React.useState("");
@@ -26,9 +27,11 @@ const Searchbar = () => {
           aria-label="enter your postcode"
         ></input>
       </label>
-      <button type="submit" className="button button--search">
-        <i className="fa fa-search"></i>
-      </button>
+      <Link to={{ pathname: "/results" }}>
+        <button type="submit" className="button button--search">
+          <i className="fa fa-search"></i>
+        </button>
+      </Link>
     </form>
   );
 };
