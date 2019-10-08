@@ -11,7 +11,7 @@
 
 
   # Directory with the serverless Lambda functions to deploy to AWS.
-  functions = ".netlify/functions/"
+  functions = "./functions/"
 
   #[dev] 
   #  command = "yarn start" # Command to start your dev server
