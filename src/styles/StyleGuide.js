@@ -6,7 +6,6 @@ import Searchbar from "../components/Universal/Searchbar";
 const StyleGuide = () => {
   return (
     <div className="wrapper">
-      <Searchbar />
       <h1 className="title1">H1 heading Raleway</h1>
       <p className="title1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -59,15 +58,7 @@ const StyleGuide = () => {
         <img alt="favicon" src="./favicon.ico" className="logo"></img>
         <h1 className="title1">Grid title</h1>
         <div className="searchbar">
-          <input
-            className="searchbar__input"
-            placeholder="Enter your postcode..."
-            aria-label="enter your postcode"
-            type="text"
-          />
-          <button className="button button--search">
-            <i className="fa fa-search"></i>
-          </button>
+          <Searchbar />
         </div>
         <p className="word">Featured stories</p>
         <hr className="line" />

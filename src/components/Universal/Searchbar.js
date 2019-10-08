@@ -5,14 +5,11 @@ const Searchbar = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const searchPostcode = event.target.elements.postcode.value;
-    console.log({ searchPostcode });
-    setPostcode(searchPostcode);
 
-    // setProfiles("loading");
-    // requestMembers(org, team).then(profiles => {
-    //   setProfiles(profiles);
-    // });
+    const searchPostcode = event.target.elements.postcode.value;
+    if (searchPostcode === "") return;
+    // console.log({ searchPostcode });
+    setPostcode(searchPostcode);
   }
 
   console.log({ postcode });
@@ -24,10 +21,14 @@ const Searchbar = () => {
         <input
           name="postcode"
           type="text"
-          placeholder="Enter a postcode"
+          className="searchbar__input"
+          placeholder="Enter your postcode..."
+          aria-label="enter your postcode"
         ></input>
       </label>
-      <button type="submit">Search</button>
+      <button type="submit" className="button button--search">
+        <i className="fa fa-search"></i>
+      </button>
     </form>
   );
 };
