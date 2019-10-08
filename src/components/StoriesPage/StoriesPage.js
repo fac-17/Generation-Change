@@ -1,7 +1,17 @@
 import React from "react";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const StoriesPage = () => {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+      <h2>Stories Page</h2>
+      <Link to={{ pathname: "/details" }}>
+        <h3>button which links to details page</h3>
+      </Link>
+    </>
+  );
 };
 
 export default StoriesPage;

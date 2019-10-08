@@ -55,7 +55,7 @@ const StyleGuide = () => {
       </button>
       <button className="button button--accept">Accept</button>
       <div className="dark-bg-gradient">
-        <img alt="favicon" src="./favicon.ico" className="logo"></img>
+        <img src="./favicon.ico" className="logo" alt="logo"></img>
         <h1 className="title1">Grid title</h1>
         <div className="searchbar">
           <Searchbar />
@@ -65,17 +65,17 @@ const StyleGuide = () => {
         <hr className="line line--dark" />
         <div className="container">
           <article className="container__story--0">
-            <img alt="favicon" src="./favicon.ico"></img>
+            <img src="./favicon.ico" alt="story"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>
           <article className="container__story--1">
-            <img alt="favicon" src="./favicon.ico"></img>
+            <img src="./favicon.ico" alt="story"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>
           <article className="container__story--2">
-            <img alt="favicon" src="./favicon.ico"></img>
+            <img src="./favicon.ico" alt="story"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>

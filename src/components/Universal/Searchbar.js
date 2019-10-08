@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Searchbar = () => {
   const [postcode, setPostcode] = React.useState("");
@@ -26,9 +27,11 @@ const Searchbar = () => {
           aria-label="enter your postcode"
         ></input>
       </label>
-      <button type="submit" className="button button--search">
-        <i className="fa fa-search"></i>
-      </button>
+      <Link to={{ pathname: "/results" }}>
+        <button type="submit" className="button button--search">
+          <i className="fa fa-search"></i>
+        </button>
+      </Link>
     </form>
   );
 };
