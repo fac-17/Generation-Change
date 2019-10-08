@@ -7,7 +7,7 @@ const Searchbar = () => {
     event.preventDefault();
 
     const searchPostcode = event.target.elements.postcode.value;
-    if (searchPostcode === "") return;
+    if (searchPostcode.length < 5) return;
     // console.log({ searchPostcode });
     setPostcode(searchPostcode);
   }
