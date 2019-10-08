@@ -6,8 +6,8 @@ import Stories from "./Stories";
 const LandingPage = () => {
   return (
     <div className="dark-bg-gradient">
-      <h2>Landing Page</h2>
       <Navbar />
+      <h2>Landing Page</h2>
       <Searchbar />
       <Stories />
     </div>
