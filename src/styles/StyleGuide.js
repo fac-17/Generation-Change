@@ -1,6 +1,7 @@
 import React from "react";
 import "./Normalize.sass";
 import "./App.sass";
+import Searchbar from "../components/Universal/Searchbar";
 
 const StyleGuide = () => {
   return (
@@ -54,35 +55,27 @@ const StyleGuide = () => {
       </button>
       <button className="button button--accept">Accept</button>
       <div className="dark-bg-gradient">
-        <img src="./favicon.ico" className="logo"></img>
+        <img alt="favicon" src="./favicon.ico" className="logo"></img>
         <h1 className="title1">Grid title</h1>
         <div className="searchbar">
-          <input
-            className="searchbar__input"
-            placeholder="Enter your postcode..."
-            aria-label="enter your postcode"
-            type="text"
-          />
-          <button className="button button--search">
-            <i className="fa fa-search"></i>
-          </button>
+          <Searchbar />
         </div>
         <p className="word">Featured stories</p>
         <hr className="line" />
         <hr className="line line--dark" />
         <div className="container">
           <article className="container__story--0">
-            <img src="./favicon.ico"></img>
+            <img alt="favicon" src="./favicon.ico"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>
           <article className="container__story--1">
-            <img src="./favicon.ico"></img>
+            <img alt="favicon" src="./favicon.ico"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>
           <article className="container__story--2">
-            <img src="./favicon.ico"></img>
+            <img alt="favicon" src="./favicon.ico"></img>
             <h1>Project title</h1>
             <p>category</p>
           </article>
