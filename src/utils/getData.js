@@ -5,7 +5,6 @@ const getData = setData => {
     .then(result => result.json())
     .then(result => {
       setData(result.records);
-      console.log("insiide");
     })
     .catch(err => console.error(err));
 };
