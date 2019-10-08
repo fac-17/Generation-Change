@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Searchbar from "./Searchbar";
+import Searchbar from "../Universal/Searchbar";
 import Stories from "./Stories";
 
 const LandingPage = () => {
