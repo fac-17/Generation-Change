@@ -1,18 +1,18 @@
 import React from "react";
+import convertPostcode from "./../../utils/convertPostcode";
 
 const Searchbar = () => {
-  const [postcode, setPostcode] = React.useState("");
+  const [geocode, setGeocode] = React.useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
     const searchPostcode = event.target.elements.postcode.value;
     if (searchPostcode.length < 5) return;
-    // console.log({ searchPostcode });
-    setPostcode(searchPostcode);
+    convertPostcode(searchPostcode).then(coordinates => {
+      setGeocode(coordinates);
+    });
   }
-
-  // console.log({ postcode });
 
   return (
     <form id="searchbar" onSubmit={handleSubmit}>
