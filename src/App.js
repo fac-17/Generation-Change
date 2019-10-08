@@ -5,6 +5,8 @@ import { getData } from "../src/utils/getData";
 // import LandingPage from "./components/LandingPage/LandingPage";
 import StyleGuide from "./styles/StyleGuide";
 
+import convertPostcode from "./utils/convertPostcode";
+
 function App() {
   const [data, setData] = React.useState(null);
 
@@ -12,7 +14,9 @@ function App() {
     getData(setData);
   }, []);
 
-  console.log("data outside", data);
+  // console.log("data outside", data);
+
+  convertPostcode("SY83DD");
 
   return (
     <div>

@@ -12,7 +12,7 @@ const Searchbar = () => {
     setPostcode(searchPostcode);
   }
 
-  console.log({ postcode });
+  // console.log({ postcode });
 
   return (
     <form id="searchbar" onSubmit={handleSubmit}>
