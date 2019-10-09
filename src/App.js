@@ -14,7 +14,7 @@ function App() {
   const [geocode, setGeocode] = React.useState("dog");
 
   React.useEffect(() => {
-    getData(setData);
+    getData().then(airtableData => setData(airtableData));
   }, []);
 
   return (
