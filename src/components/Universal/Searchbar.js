@@ -3,7 +3,7 @@ import convertPostcode from "./../../utils/convertPostcode";
 import { useHistory } from "react-router-dom";
 
 const Searchbar = ({ setGeocode }) => {
-  // let history = useHistory();
+  let history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
