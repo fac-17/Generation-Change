@@ -10,3 +10,15 @@ test("ConvertPostcode returns correct longitude and latitude ", () => {
     expect("BH15 4DH").toEqual(initialPostcode);
   });
 });
+
+// test("GetData takes callback and passes it airtable projects data", () => {
+//   let data = "initial data";
+//   console.log(data);
+//   // const expected = { longitude: -2.008298, latitude: 50.712412 };
+
+//   return getData().then(data => {
+//     expect(Array.isArray(data)).toBeTruthy;
+//     console.log(data);
+//     console.log("data");
+//   });
+// });
