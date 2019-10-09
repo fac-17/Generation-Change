@@ -1,13 +1,16 @@
-import React from "react";
-import ConvertPostcode from "../Utils/ConvertPostcode";
-import { getData } from "../Utils/getData";
+import { convertPostcode } from "../utils/convertPostcode";
+import { getData } from "../utils/getData";
 
-test("ConvertPostcode returns correct longitude and latitude ", () => {
-  const expected = { longitude: -2.008298, latitude: 50.712412 };
-  const initialPostcode = "BH15 4DH";
-  return ConvertPostcode(initialPostcode).then(actual => {
-    expect(actual).toEqual(expected);
-    expect("BH15 4DH").toEqual(initialPostcode);
+describe.only("Convert postcode to lon and lat", () => {
+  test("ConvertPostcode returns correct longitude and latitude ", () => {
+    const expected = {
+      longitude: -2.008298,
+      latitude: 50.712412
+    };
+    const initialPostcode = "BH15 4DH";
+    return convertPostcode(initialPostcode).then(actual => {
+      expect(actual).toEqual(expected);
+    });
   });
 });
 

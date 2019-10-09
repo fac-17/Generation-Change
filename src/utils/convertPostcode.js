@@ -9,4 +9,4 @@ const convertPostcode = postcode => {
     });
 };
 
-module.exports = convertPostcode;
+module.exports = { convertPostcode };
