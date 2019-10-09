@@ -16,8 +16,6 @@ function App() {
     getData(setData);
   }, []);
 
-  console.log("data outside", data);
-
   return (
     <Router>
       <Route
