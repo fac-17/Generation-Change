@@ -11,9 +11,10 @@ import StyleGuide from "./styles/StyleGuide";
 
 function App() {
   const [data, setData] = React.useState(null);
+  const [geocode, setGeocode] = React.useState("dog");
 
   React.useEffect(() => {
-    getData(setData);
+    getData().then(airtableData => setData(airtableData));
   }, []);
 
   return (
@@ -21,24 +22,26 @@ function App() {
       <Route
         exact
         path="/"
-        component={LandingPage}
+        render={() => <LandingPage setGeocode={setGeocode} />}
         className="dark-bg-gradient"
       />
       <Route
         exact
         path="/results"
-        component={ResultsPage}
+        render={() => <ResultsPage geocode={geocode} />}
         className="dark-bg-gradient"
       />
       <Route
         exact
         path="/stories"
+        setGeocode={setGeocode}
         component={StoriesPage}
         className="dark-bg-gradient"
       />
       <Route
         exact
         path="/details"
+        setGeocode={setGeocode}
         component={DetailsPage}
         className="dark-bg-gradient"
       />

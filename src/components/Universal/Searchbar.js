@@ -1,9 +1,9 @@
 import React from "react";
 import convertPostcode from "./../../utils/convertPostcode";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const Searchbar = () => {
-  const [geocode, setGeocode] = React.useState("");
+const Searchbar = ({ setGeocode }) => {
+  let history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -11,7 +11,16 @@ const Searchbar = () => {
     const searchPostcode = event.target.elements.postcode.value;
     if (searchPostcode.length < 5) return;
     convertPostcode(searchPostcode).then(coordinates => {
+      // console.log(coordinates);
+
+      console.log(
+        "searchbar - handle submit - set geocode function = ",
+        setGeocode
+      );
+
       setGeocode(coordinates);
+      console.log("line 24 cords = ", coordinates);
+      history.push("/results");
     });
   }
 
@@ -27,11 +36,9 @@ const Searchbar = () => {
           aria-label="enter your postcode"
         ></input>
       </label>
-      <Link to={{ pathname: "/results" }}>
-        <button type="submit" className="button button--search">
-          <i className="fa fa-search"></i>
-        </button>
-      </Link>
+      <button type="submit" className="button button--search">
+        <i className="fa fa-search"></i>
+      </button>
     </form>
   );
 };
