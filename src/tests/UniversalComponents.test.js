@@ -9,21 +9,21 @@ import {
 import SearchBar from "../components/Universal/Searchbar";
 import Navbar from "../components/Universal/Navbar";
 import { MemoryRouter } from "react-router-dom";
-import { convertPostcode } from "../utils/convertPostcode";
+// import { convertPostcode } from "../utils/convertPostcode";
 
 afterEach(cleanup);
 
-const mockConvertPostcode = jest.fn();
+// const mockConvertPostcode = jest.fn();
 
-jest.mock("../utils/convertPostcode", () => {
-  return jest.fn().mockImplementation(() => {
-    return { convertPostcode: mockConvertPostcode };
-  });
-});
+// jest.mock("../utils/convertPostcode", () => {
+//   return jest.fn().mockImplementation(() => {
+//     return { convertPostcode: mockConvertPostcode };
+//   });
+// });
 
-beforeEach(() => {
-  mockConvertPostcode.mockClear();
-});
+// beforeEach(() => {
+//   mockConvertPostcode.mockClear();
+// });
 
 describe.only("SearchBar behaves as expected", () => {
   const { getByText, getByLabelText, getByTestId, getByDisplayValue } = render(
