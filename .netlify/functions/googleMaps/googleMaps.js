@@ -6,8 +6,12 @@ const googleMapsAPIKey = process.env.GOOGLE_MAPS_API_KEY;
 
 exports.handler = async function(event, context) {
   try {
-    const url =
-      "https://maps.googleapis.com/maps/api/geocode/json?latlng=47.444,-122.176";
+    const latitude = 51.4909;
+    const longitude = 0.2528;
+    if (!latitude || !longitude) {
+      return { statusCode: 400, body: "Missing query parameters" };
+    }
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}`;
 
     const response = await fetch(`${url}&key=${googleMapsAPIKey}`);
     if (!response.ok) {
