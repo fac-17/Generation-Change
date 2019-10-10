@@ -1,5 +1,5 @@
 import React from "react";
-import convertPostcode from "./../../utils/convertPostcode";
+import { convertPostcode } from "./../../utils/convertPostcode";
 import { useHistory } from "react-router-dom";
 
 const Searchbar = ({ setGeocode }) => {
