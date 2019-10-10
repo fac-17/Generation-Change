@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {
   render,
   fireEvent,
@@ -8,7 +7,9 @@ import {
 } from "@testing-library/react";
 import SearchBar from "../components/Universal/Searchbar";
 import Navbar from "../components/Universal/Navbar";
-import { MemoryRouter } from "react-router-dom";
+import { createMemoryHistory } from "history";
+import { Router, MemoryRouter } from "react-router-dom";
+// import ReactDOM from "react-dom";
 // import { convertPostcode } from "../utils/convertPostcode";
 
 afterEach(cleanup);
@@ -53,15 +54,17 @@ describe.only("SearchBar behaves as expected", () => {
 });
 
 describe.only("NavBar behaves as expected", () => {
+  const history = createMemoryHistory();
   const { getByTestId } = render(
-    <MemoryRouter>
+    <Router history={history}>
       <Navbar />
-    </MemoryRouter>
+    </Router>
   );
 
   const logo = getByTestId("navbar--logo");
 
-  test("NavBar", () => {
+  test("Logo in Navbar takes you to home when clicked", () => {
     fireEvent.click(logo);
+    expect(history.location.pathname).toBe("/");
   });
 });
