@@ -17,7 +17,6 @@ function App() {
     getData().then(airtableData => setData(airtableData));
   }, []);
 
-  console.log({ data });
   if (!data)
     return (
       <div>

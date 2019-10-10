@@ -44,19 +44,20 @@ const ResultsPage = ({ geocode, data }) => {
 
   // console.log("fromentries", array);
 
-  console.log(
-    "distance",
-    getDistance(
-      { latitude: 51.5103, longitude: 7.49347 },
-      { latitude: "51° 31' N", longitude: "7° 28' E" }
-    )
-  );
+  // console.log(
+  //   "distance",
+  //   getDistance(
+  //     { latitude: 51.5103, longitude: 7.49347 },
+  //     { latitude: "51° 31' N", longitude: "7° 28' E" }
+  //   )
+  // );
 
   return (
     <div>
       <Navbar />
       <h2>Results Page</h2>
-      <ProjectCards />
+      <ProjectCards 
+      data={data}/>
     </div>
   );
 };
