@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Universal/Navbar";
 import { Link } from "react-router-dom";
 
 const ResultsPage = ({ geocode }) => {
