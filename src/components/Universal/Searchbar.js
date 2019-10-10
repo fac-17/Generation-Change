@@ -17,25 +17,26 @@ const Searchbar = ({ setGeocode }) => {
   }
 
   return (
-    <form id="searchbar" onSubmit={handleSubmit}>
-      <label>
-        Postcode Search
-        <input
-          name="postcode"
-          type="text"
-          className="searchbar__input"
-          placeholder="Enter your postcode..."
-          aria-label="enter your postcode"
-        ></input>
-      </label>
-      <button
-        type="submit"
-        className="button button--search"
-        data-testid="searchbar--search-button"
-      >
-        <i className="fa fa-search"></i>
-      </button>
-    </form>
+    <div className="searchbar">
+      <form id="searchbar" onSubmit={handleSubmit}>
+        <label for="postcode">
+          <input
+            name="postcode"
+            type="text"
+            className="searchbar__input"
+            placeholder="Enter postcode"
+            aria-label="enter postcode"
+          />
+        </label>
+        <button
+          type="submit"
+          className="button button--search"
+          data-testid="searchbar--search-button"
+        >
+          <i className="fa fa-search" />
+        </button>
+      </form>
+    </div>
   );
 };
 
