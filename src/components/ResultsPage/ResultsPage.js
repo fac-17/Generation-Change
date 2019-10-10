@@ -1,10 +1,11 @@
 import React from "react";
 import Navbar from "../Universal/Navbar";
 import { Link } from "react-router-dom";
+import { getDistance } from "geolib";
 
 const ResultsPage = ({ geocode, data }) => {
   console.log({ geocode });
-  console.log('data results', data);
+  console.log("data results", data);
 
   return (
     <>
