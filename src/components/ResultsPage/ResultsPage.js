@@ -1,31 +1,31 @@
 import React from "react";
 import Navbar from "../Universal/Navbar";
-import { Link } from "react-router-dom";
-import { getDistance } from "geolib";
+// import { Link } from "react-router-dom";
+// import { getDistance } from "geolib";
 import ProjectCards from "./ProjectCards";
 
 const ResultsPage = ({ geocode, data }) => {
-  const longs = data.reduce((acc, curr) => {
-    return curr.fields.longitude != null
-      ? acc.concat(curr.fields.longitude)
-      : acc;
-  }, []);
+  // const longs = data.reduce((acc, curr) => {
+  //   return curr.fields.longitude != null
+  //     ? acc.concat(curr.fields.longitude)
+  //     : acc;
+  // }, []);
   // console.log("sortelistingslongs", longs);
 
-  const coords = data.reduce((acc, curr) => {
-    return curr.fields.latitude !== undefined ||
-      curr.fields.longitude !== undefined
-      ? acc.concat(
-          Object.fromEntries(
-            new Map([
-              ["latitude", curr.fields.latitude],
-              ["longitude", curr.fields.longitude]
-            ])
-          )
-        )
-      : acc;
-  }, []);
-  console.log("coords", coords);
+  // const coords = data.reduce((acc, curr) => {
+  //   return curr.fields.latitude !== undefined ||
+  //     curr.fields.longitude !== undefined
+  //     ? acc.concat(
+  //         Object.fromEntries(
+  //           new Map([
+  //             ["latitude", curr.fields.latitude],
+  //             ["longitude", curr.fields.longitude]
+  //           ])
+  //         )
+  //       )
+  //     : acc;
+  // }, []);
+  // console.log("coords", coords);
 
   // const array = [];
   // data.map((e, index) => {
@@ -42,22 +42,28 @@ const ResultsPage = ({ geocode, data }) => {
   //   // );
   // });
 
-  // console.log("fromentries", array);
-
+  
   // console.log(
   //   "distance",
-  //   getDistance(
-  //     { latitude: 51.5103, longitude: 7.49347 },
-  //     { latitude: "51° 31' N", longitude: "7° 28' E" }
-  //   )
+  //   coords.map(coord => {
+  //     console.log("coord", coord, () => {
+        
+  //     });
+  //     getDistance(
+  //       {
+  //         latitude: 51.5103,
+  //         longitude: 7.49347
+  //       },
+  //       coord
+  //     );
+  //   })
   // );
 
   return (
     <div>
       <Navbar />
       <h2>Results Page</h2>
-      <ProjectCards 
-      data={data}/>
+      <ProjectCards data={data} />
     </div>
   );
 };

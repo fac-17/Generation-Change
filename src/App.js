@@ -7,7 +7,7 @@ import ResultsPage from "./components/ResultsPage/ResultsPage";
 import StoriesPage from "./components/StoriesPage/StoriesPage";
 import DetailsPage from "./components/DetailsPage/DetailsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import StyleGuide from "./styles/StyleGuide";
+// import StyleGuide from "./styles/StyleGuide";
 
 function App() {
   const [data, setData] = React.useState(null);

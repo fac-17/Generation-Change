@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import dishes from "./data";
 
 const ProjectCards = ({ data }) => {
   if (!data) {
