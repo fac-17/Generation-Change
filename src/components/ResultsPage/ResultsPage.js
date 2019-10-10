@@ -2,8 +2,9 @@ import React from "react";
 import Navbar from "../Universal/Navbar";
 import { Link } from "react-router-dom";
 
-const ResultsPage = ({ geocode }) => {
+const ResultsPage = ({ geocode, data }) => {
   console.log({ geocode });
+  console.log('data results', data);
 
   return (
     <>

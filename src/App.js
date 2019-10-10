@@ -17,6 +17,7 @@ function App() {
     getData().then(airtableData => setData(airtableData));
   }, []);
 
+  console.log({ data });
   return (
     <Router>
       <Route
@@ -24,12 +25,14 @@ function App() {
         path="/"
         render={() => <LandingPage setGeocode={setGeocode} />}
         className="dark-bg-gradient"
+        data={data}
       />
       <Route
         exact
         path="/results"
         render={() => <ResultsPage geocode={geocode} />}
         className="dark-bg-gradient"
+        data={data}
       />
       <Route
         exact
