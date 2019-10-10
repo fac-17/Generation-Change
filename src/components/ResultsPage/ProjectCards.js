@@ -5,11 +5,13 @@ import dishes from "./data";
 const ProjectCards = () => {
   const dishItems = dishes.map((dishItems, i) => (
     <li key={i} className="project-card">
+      <img src={dishItems.photo_1} />
       <p className="project-card__category">{dishItems.category}</p>
       <p className="project-card__title">{dishItems.title}</p>
       <div className="project-card__icon-info-outer-wrap">
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="26"
             height="24"
             viewBox="0 0 26 24"
@@ -43,6 +45,7 @@ const ProjectCards = () => {
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="24"
             height="18"
             viewBox="0 0 24 18"
@@ -59,6 +62,7 @@ const ProjectCards = () => {
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="23"
             height="21"
             viewBox="0 0 23 21"
@@ -80,6 +84,7 @@ const ProjectCards = () => {
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="20"
             height="20"
             viewBox="0 0 20 20"
