@@ -26,7 +26,7 @@ afterEach(cleanup);
 // });
 
 describe.only("SearchBar behaves as expected", () => {
-  const { getByText, getByLabelText, getByTestId, getByDisplayValue } = render(
+  const { getByLabelText, getByTestId } = render(
     <MemoryRouter>
       <SearchBar />
     </MemoryRouter>
@@ -53,7 +53,7 @@ describe.only("SearchBar behaves as expected", () => {
 });
 
 describe.only("NavBar behaves as expected", () => {
-  const { getByText, getByLabelText, getByTestId, getByDisplayValue } = render(
+  const { getByTestId } = render(
     <MemoryRouter>
       <Navbar />
     </MemoryRouter>
