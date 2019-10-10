@@ -9,18 +9,18 @@ const Stories = () => {
       <div className="container">
         <Link to={{ pathname: "/stories" }} className="container__story--0">
           <article>
-            <img src="./logo.png" alt="story"></img>
+            <img src="./logo.png" alt="story" />
             <h1>Project title</h1>
             <p>category</p>
           </article>
         </Link>
         <article className="container__story--1">
-          <img src="./logo.png" alt="story"></img>
+          <img src="./logo.png" alt="story" />
           <h1>Project title</h1>
           <p>category</p>
         </article>
         <article className="container__story--2">
-          <img src="./logo.png" alt="story"></img>
+          <img src="./logo.png" alt="story" />
           <h1>Project title</h1>
           <p>category</p>
         </article>
