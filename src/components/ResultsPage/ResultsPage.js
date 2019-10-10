@@ -1,18 +1,16 @@
 import React from "react";
 import Navbar from "../Universal/Navbar";
-import { Link } from "react-router-dom";
+import ProjectCards from "./ProjectCards";
 
 const ResultsPage = ({ geocode }) => {
   console.log({ geocode });
 
   return (
-    <>
+    <div>
       <Navbar />
       <h2>Results Page</h2>
-      <Link to={{ pathname: "/details" }}>
-        <h3>card which links to details page</h3>
-      </Link>
-    </>
+      <ProjectCards />
+    </div>
   );
 };
 
