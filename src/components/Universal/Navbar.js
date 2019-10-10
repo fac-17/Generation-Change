@@ -5,7 +5,12 @@ const Navbar = () => {
   return (
     <>
       <Link to={{ pathname: "/" }}>
-        <img src="logo.png" className="logo" alt="logo"></img>
+        <img
+          src="logo.png"
+          className="logo"
+          alt="logo"
+          data-testid="navbar--logo"
+        ></img>
       </Link>
     </>
   );
