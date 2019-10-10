@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
 import Searchbar from "../Universal/Searchbar";
+import Navbar from "../Universal/Navbar";
 import Stories from "./Stories";
 
 const LandingPage = ({ setGeocode }) => {
