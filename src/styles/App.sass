@@ -57,6 +57,7 @@
     color: $btn-font-colour
     text-transform: uppercase
     font-weight: $btn-font-weight
+    cursor: $btn-cursor
     &--search
         background-color: $search-btn-color
         font-family: $font-awesome
@@ -97,17 +98,27 @@
     border-radius: 5px
     box-shadow: 5px 6px 10px -10px rgba(64,60,60,0.75)
 
-ul
-  padding: 0
+.project-card__category
+    font-family: $btn-font
+    font-weight: bold
 
-.wrappy
+.project-card__title
+    font-family: $btn-font
+    font-size: 26px
+    font-weight: medium
+
+.project-card__icon-info-outer-wrap
   display: flex
   flex-direction: row
 
-.wrap
+.project-card__icon-info-individual-wrap
   display: flex
   flex-direction: column
   padding: 20px
+  font-family: $btn-font
+
+
+
 
 // OTHERS
 .line

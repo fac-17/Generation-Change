@@ -5,10 +5,10 @@ import dishes from "./data";
 const ProjectCards = () => {
   const dishItems = dishes.map(dishItems => (
     <li key={dishItems.id} className="project-card">
-      <p>{dishItems.category}</p>
-      <h2>{dishItems.title}</h2>
-      <div className="wrappy">
-        <div className="wrap">
+      <p className="project-card__category">{dishItems.category}</p>
+      <p className="project-card__title">{dishItems.title}</p>
+      <div className="project-card__icon-info-outer-wrap">
+        <div className="project-card__icon-info-individual-wrap">
           <svg
             width="26"
             height="24"
@@ -41,7 +41,7 @@ const ProjectCards = () => {
             {dishItems.minimum_age}-{dishItems.maximum_age}
           </div>
         </div>
-        <div className="wrap">
+        <div className="project-card__icon-info-individual-wrap">
           <svg
             width="24"
             height="18"
@@ -57,7 +57,7 @@ const ProjectCards = () => {
           <p>Group Size</p>
           <div>{dishItems.group_size}</div>
         </div>
-        <div className="wrap">
+        <div className="project-card__icon-info-individual-wrap">
           <svg
             width="23"
             height="21"
@@ -78,7 +78,7 @@ const ProjectCards = () => {
           <p>Duration</p>
           <div>{dishItems.session_duration_hours} hours</div>
         </div>
-        <div className="wrap">
+        <div className="project-card__icon-info-individual-wrap">
           <svg
             width="20"
             height="20"
@@ -102,11 +102,13 @@ const ProjectCards = () => {
   return (
     <div>
       <ul className="">
-        {dishItems.length ? (
-          dishItems
-        ) : (
-          <li className="project-card">No results found</li>
-        )}
+        <Link to={{ pathname: "/details" }}>
+          {dishItems.length ? (
+            dishItems
+          ) : (
+            <li className="project-card">No results found</li>
+          )}
+        </Link>
       </ul>
     </div>
   );

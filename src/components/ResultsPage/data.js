@@ -1,6 +1,39 @@
 const data = [
   {
     project_id: 1,
+    category: "VOLUNTEERING",
+    title: "Help keep Hamworthy Park amazing.",
+    project_duration_weeks: 8,
+    session_frequency_per_week: 1,
+    session_duration_hours: 2,
+    group_size: 15,
+    minimum_age: 8,
+    maximum_age: 10
+  },
+  {
+    project_id: 1,
+    category: "VOLUNTEERING",
+    title: "Help keep Hamworthy Park amazing.",
+    project_duration_weeks: 2,
+    session_frequency_per_week: 3,
+    session_duration_hours: 1,
+    group_size: 8,
+    minimum_age: 12,
+    maximum_age: 18
+  },
+  {
+    project_id: 1,
+    category: "FUNDRAISING",
+    title: "Help keep Hamworthy Park amazing.",
+    project_duration_weeks: 8,
+    session_frequency_per_week: 1,
+    session_duration_hours: 2,
+    group_size: 15,
+    minimum_age: 8,
+    maximum_age: 10
+  },
+  {
+    project_id: 1,
     category: "Volunteering",
     title: "Help keep Hamworthy Park amazing.",
     project_duration_weeks: 8,
@@ -11,36 +44,15 @@ const data = [
     maximum_age: 10
   },
   {
-    id: 2645902,
-    name: "Cheeseburger",
-    description:
-      "Our regular two-patty burger with two slices of melted American cheese added.",
-    price: 8,
-    category: "burger"
-  },
-  {
-    id: 2645905,
-    name: "Bacon Burger",
-    description:
-      "Our regular two-patty burger layered with two strips of crispy, sweet apple-wood smoked bacon.\r\n\r\n",
-    price: 9,
-    category: "burger"
-  },
-  {
-    id: 2645907,
-    name: "Bacon Cheeseburger",
-    description:
-      "Our regular two patty-burger with two strips of crispy apple-wood smoked bacon and two slices of melted American cheese.",
-    price: 9,
-    category: "burger"
-  },
-  {
-    id: 2645936,
-    name: "Little Hamburger",
-    description:
-      "One fresh high-quality patty hot off the grill, on a soft, toasted bun.",
-    price: 9,
-    category: "burger"
+    project_id: 1,
+    category: "Volunteering",
+    title: "Help keep Hamworthy Park amazing.",
+    project_duration_weeks: 8,
+    session_frequency_per_week: 1,
+    session_duration_hours: 2,
+    group_size: 15,
+    minimum_age: 8,
+    maximum_age: 10
   },
   {
     id: 2645952,
