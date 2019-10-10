@@ -1,11 +1,14 @@
 const data = [
   {
-    id: 2645900,
-    name: "Hamburger",
-    description:
-      "Two fresh high-quality beef patties hot off the grill, on a soft, toasted bun.",
-    price: 9,
-    category: "burger"
+    project_id: 1,
+    category: "Volunteering",
+    title: "Help keep Hamworthy Park amazing.",
+    project_duration_weeks: 8,
+    session_frequency_per_week: 1,
+    session_duration_hours: 2,
+    group_size: 15,
+    minimum_age: 8,
+    maximum_age: 10
   },
   {
     id: 2645902,
