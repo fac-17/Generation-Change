@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { getDistance } from "geolib";
 
 const ResultsPage = ({ geocode, data }) => {
-  console.log({ geocode });
-  console.log("data results", data);
-  const receivedData = data;
-  console.log("receiveddata", receivedData);
+  if (data) {
+    console.log({ geocode });
+    const receivedData = data;
+    console.log("receiveddata", receivedData[0]);
+  }
+
   // const sortedListings = receivedData.map(listing => {
   //   console.log(listing.fields.latitude);
   // });

@@ -17,7 +17,14 @@ function App() {
     getData().then(airtableData => setData(airtableData));
   }, []);
 
-  // console.log({ data });
+  console.log({ data });
+  if (!data)
+    return (
+      <div>
+        <h2>...loading</h2>
+      </div>
+    );
+
   return (
     <Router>
       <Route
