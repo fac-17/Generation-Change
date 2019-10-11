@@ -25,7 +25,7 @@ const ResultsPage = ({ geocode, data }) => {
         )
       : acc;
   }, []);
-  console.log("coords", coords[0].latitude);
+  console.log("coords", coords);
 
   // const array = [];
   // data.map((e, index) => {
@@ -42,15 +42,11 @@ const ResultsPage = ({ geocode, data }) => {
   //   // );
   // });
 
+  console.log("geocode", geocode);
+
   coords.map(coord => {
-    const distance = getDistance(
-      {
-        latitude: 51.5103,
-        longitude: 7.49347
-      },
-      coord
-    );
-    console.log(distance);
+    const distance = getDistance(geocode, coord);
+    console.log("this is distance", distance);
   });
 
   return (
