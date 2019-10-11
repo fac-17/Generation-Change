@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Universal/Navbar";
 // import { Link } from "react-router-dom";
 import { getDistance } from "geolib";
+import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 
 const ResultsPage = ({ geocode, data }) => {
@@ -56,6 +57,9 @@ const ResultsPage = ({ geocode, data }) => {
   return (
     <div>
       <Navbar />
+      <div id="container">
+        <LeafletMap className="container__map" />
+      </div>
       <h2>Results Page</h2>
       <ProjectCards data={data} />
     </div>
