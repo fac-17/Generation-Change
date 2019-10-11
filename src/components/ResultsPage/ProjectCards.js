@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import dishes from "./data";
 
-const ProjectCards = () => {
-  const dishItems = dishes.map((dishItems, i) => (
+const ProjectCards = ({ data }) => {
+  if (!data) {
+    return <h1>...loading</h1>;
+  }
+  console.log("projects data", data);
+  const project = data.map((project, i) => (
     <li key={i} className="project-card">
-      <img src={dishItems.photo_1} />
-      <p className="project-card__category">{dishItems.category}</p>
-      <p className="project-card__title">{dishItems.title}</p>
+      <img src={project.photo_1} />
+      <p className="project-card__category">{project.fields.category}</p>
+      <p className="project-card__title">{project.fields.title}</p>
       <div className="project-card__icon-info-outer-wrap">
         <div className="project-card__icon-info-individual-wrap">
           <svg
@@ -40,7 +43,7 @@ const ProjectCards = () => {
           </svg>
           <p>Age</p>
           <div>
-            {dishItems.minimum_age}-{dishItems.maximum_age}
+            {project.fields.minimum_age}-{project.fields.maximum_age}
           </div>
         </div>
         <div className="project-card__icon-info-individual-wrap">
@@ -58,7 +61,7 @@ const ProjectCards = () => {
             />
           </svg>
           <p>Group Size</p>
-          <div>{dishItems.group_size}</div>
+          <div>{project.fields.group_size}</div>
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
@@ -80,7 +83,7 @@ const ProjectCards = () => {
           </svg>
 
           <p>Duration</p>
-          <div>{dishItems.session_duration_hours} hours</div>
+          <div>{project.fields.session_duration_hours} hours</div>
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
@@ -98,7 +101,7 @@ const ProjectCards = () => {
           </svg>
 
           <p>Repeats</p>
-          <div>{dishItems.session_frequency_per_week} a week</div>
+          <div>{project.fields.session_frequency_per_week} a week</div>
         </div>
       </div>
     </li>
@@ -108,8 +111,8 @@ const ProjectCards = () => {
     <div>
       <ul className="container__projects">
         <Link to={{ pathname: "/details" }}>
-          {dishItems.length ? (
-            dishItems
+          {project.length ? (
+            project
           ) : (
             <li className="project-card">No results found</li>
           )}
