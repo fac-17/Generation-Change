@@ -24,6 +24,8 @@ function App() {
       </div>
     );
 
+  console.log("geocords", geocode);
+
   return (
     <Router>
       <Route
