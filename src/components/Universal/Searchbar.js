@@ -19,7 +19,8 @@ const Searchbar = ({ setGeocode }) => {
   return (
     <div className="searchbar">
       <form id="searchbar" onSubmit={handleSubmit}>
-        <label for="postcode">
+        <label>
+          Postcode Search
           <input
             name="postcode"
             type="text"
@@ -28,6 +29,7 @@ const Searchbar = ({ setGeocode }) => {
             aria-label="enter postcode"
           />
         </label>
+
         <button
           type="submit"
           className="button button--search"
