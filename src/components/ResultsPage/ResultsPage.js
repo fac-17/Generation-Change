@@ -12,12 +12,16 @@ const ResultsPage = ({ geocode, data }) => {
   // }, []);
   // console.log("sortelistingslongs", longs);
   //
+
+  console.log("airtabledata", data);
+
   const coords = data.reduce((acc, curr) => {
     return curr.fields.latitude !== undefined ||
       curr.fields.longitude !== undefined
       ? acc.concat(
           Object.fromEntries(
             new Map([
+              ["id", curr.id],
               ["latitude", curr.fields.latitude],
               ["longitude", curr.fields.longitude]
             ])
@@ -45,7 +49,10 @@ const ResultsPage = ({ geocode, data }) => {
   console.log("geocode", geocode);
 
   coords.map(coord => {
-    const distance = getDistance(geocode, coord);
+    const distance = getDistance(geocode, {
+      latitude: coord.latitude,
+      longtitude: coord.longitude
+    });
     console.log("this is distance", distance);
   });
 
