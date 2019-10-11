@@ -29,6 +29,7 @@ const Searchbar = ({ setGeocode }) => {
             aria-label="enter postcode"
           />
         </label>
+
         <button
           type="submit"
           className="button button--search"
