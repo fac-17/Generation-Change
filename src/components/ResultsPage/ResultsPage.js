@@ -5,14 +5,6 @@ import { getDistance } from "geolib";
 import ProjectCards from "./ProjectCards";
 
 const ResultsPage = ({ geocode, data }) => {
-  // const longs = data.reduce((acc, curr) => {
-  //   return curr.fields.longitude != null
-  //     ? acc.concat(curr.fields.longitude)
-  //     : acc;
-  // }, []);
-  // console.log("sortelistingslongs", longs);
-  //
-
   console.log("airtabledata", data);
 
   const coords = data.reduce((acc, curr) => {
@@ -46,15 +38,18 @@ const ResultsPage = ({ geocode, data }) => {
   //   // );
   // });
 
-  console.log("geocode", geocode);
+  // console.log("geocode", geocode);
 
-  coords.map(coord => {
-    const distance = getDistance(geocode, {
-      latitude: coord.latitude,
-      longtitude: coord.longitude
-    });
-    console.log("this is distance", distance);
+  const distanceIdArray = coords.map(coord => {
+    console.log("coord", coord);
+    const distance = getDistance(geocode, coord);
+    const distIdObj = Object.fromEntries(
+      new Map([["id", coord.id], ["distance", distance]])
+    );
+    return distIdObj;
   });
+
+  console.log("distanceIdArray", distanceIdArray);
 
   return (
     <div>

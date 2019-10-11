@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   const [data, setData] = React.useState(null);
-  const [geocode, setGeocode] = React.useState("dog");
+  const [geocode, setGeocode] = React.useState("51.49075,-0.25263");
 
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
