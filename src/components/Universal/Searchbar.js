@@ -19,7 +19,8 @@ const Searchbar = ({ setGeocode }) => {
   return (
     <div className="searchbar">
       <form id="searchbar" onSubmit={handleSubmit}>
-        <label htmlFor="postcode">
+        <label>
+          Postcode Search
           <input
             name="postcode"
             type="text"

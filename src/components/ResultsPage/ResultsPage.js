@@ -13,21 +13,21 @@ const ResultsPage = ({ geocode, data }) => {
   //     : acc;
   // }, []);
   // console.log("sortelistingslongs", longs);
-
-  const coords = data.reduce((acc, curr) => {
-    return curr.fields.latitude !== undefined ||
-      curr.fields.longitude !== undefined
-      ? acc.concat(
-          Object.fromEntries(
-            new Map([
-              ["latitude", curr.fields.latitude],
-              ["longitude", curr.fields.longitude]
-            ])
-          )
-        )
-      : acc;
-  }, []);
-  console.log("coords", coords[0].latitude);
+  //
+  // const coords = data.reduce((acc, curr) => {
+  //   return curr.fields.latitude !== undefined ||
+  //     curr.fields.longitude !== undefined
+  //     ? acc.concat(
+  //         Object.fromEntries(
+  //           new Map([
+  //             ["latitude", curr.fields.latitude],
+  //             ["longitude", curr.fields.longitude]
+  //           ])
+  //         )
+  //       )
+  //     : acc;
+  // }, []);
+  // console.log("coords", coords[0].latitude);
 
   // const array = [];
   // data.map((e, index) => {
@@ -44,16 +44,16 @@ const ResultsPage = ({ geocode, data }) => {
   //   // );
   // });
 
-  coords.map(coord => {
-    const distance = getDistance(
-      {
-        latitude: 51.5103,
-        longitude: 7.49347
-      },
-      coord
-    );
-    console.log(distance);
-  });
+  // coords.map(coord => {
+  //   const distance = getDistance(
+  //     {
+  //       latitude: 51.5103,
+  //       longitude: 7.49347
+  //     },
+  //     coord
+  //   );
+  //   console.log(distance);
+  // });
 
   return (
     <div>
