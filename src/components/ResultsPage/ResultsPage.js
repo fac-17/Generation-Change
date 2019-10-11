@@ -12,7 +12,7 @@ const ResultsPage = ({ geocode, data }) => {
   //     : acc;
   // }, []);
   // console.log("sortelistingslongs", longs);
-
+  //
   const coords = data.reduce((acc, curr) => {
     return curr.fields.latitude !== undefined ||
       curr.fields.longitude !== undefined

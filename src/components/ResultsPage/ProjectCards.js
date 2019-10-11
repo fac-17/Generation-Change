@@ -8,11 +8,13 @@ const ProjectCards = ({ data }) => {
   console.log("projects data", data);
   const project = data.map((project, i) => (
     <li key={i} className="project-card">
+      <img src={project.photo_1} />
       <p className="project-card__category">{project.fields.category}</p>
       <p className="project-card__title">{project.fields.title}</p>
       <div className="project-card__icon-info-outer-wrap">
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="26"
             height="24"
             viewBox="0 0 26 24"
@@ -46,6 +48,7 @@ const ProjectCards = ({ data }) => {
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="24"
             height="18"
             viewBox="0 0 24 18"
@@ -62,6 +65,7 @@ const ProjectCards = ({ data }) => {
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="23"
             height="21"
             viewBox="0 0 23 21"
@@ -83,6 +87,7 @@ const ProjectCards = ({ data }) => {
         </div>
         <div className="project-card__icon-info-individual-wrap">
           <svg
+            className="project-card__svg"
             width="20"
             height="20"
             viewBox="0 0 20 20"
