@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LeafletMap from "./LeafletMap";
 
 const ProjectCards = ({ data }) => {
   if (!data) {
@@ -104,6 +105,7 @@ const ProjectCards = ({ data }) => {
 
   return (
     <div>
+      <LeafletMap />
       <ul className="container__projects">
         <Link to={{ pathname: "/details" }}>
           {project.length ? (
