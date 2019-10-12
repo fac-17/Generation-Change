@@ -2,10 +2,10 @@ import React from "react";
 import "./styles/Normalize.sass";
 import "./styles/App.sass";
 import { getData } from "../src/utils/getData";
-import LandingPage from "./components/LandingPage/LandingPage";
-import ResultsPage from "./components/ResultsPage/ResultsPage";
-import StoriesPage from "./components/StoriesPage/StoriesPage";
-import DetailsPage from "./components/DetailsPage/DetailsPage";
+import LandingPage from "./components/LandingPage";
+import ResultsPage from "./components/ResultsPage";
+import StoriesPage from "./components/StoriesPage";
+import DetailsPage from "./components/DetailsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import StyleGuide from "./styles/StyleGuide";
 
