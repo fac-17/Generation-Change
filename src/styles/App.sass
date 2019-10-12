@@ -3,188 +3,20 @@
 @import './Variables.sass'
 
 // FONTS GO HERE ----------------------------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap')
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap')
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap')
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap')
-@import url(https://fonts.googleapis.com/css?family=Open+Sans)
-
-.title1
-    font-family: 'Raleway', sans-serif
-    text-align: center
-.title2
-    font-family: 'Montserrat', sans-serif
-.title3
-    font-family: 'Lato', sans-serif
-.title4
-    font-family: 'Quicksand', sans-serif
-// PAGE WRAPPERS
-.wrapper
-    font-family: $main-font
-
-// CONTAINERS GO HERE ----------------------------------------------------------------
-.container
-    display: grid
-    grid-template-columns: repeat(11, 1fr)
-    grid-gap: 10px
-    text-align: center
-.container__story--0
-    grid-column: 2/5
-.container__story--1
-    grid-column: 5/8
-.container__story--2
-    grid-column: 8/11
-.container__map
-    height: 400px
-    width: 100%
-// BACKGROUNDS GO HERE ----------------------------------------------------------------
-.dark-bg-gradient
-    height: 100vh
-    color: $light-font-colour
-    background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
-    &--rectangle
-        height: 100px
-        width: 200px
-        background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
-
-// BUTTONS GO HERE ----------------------------------------------------------------
-.button
-    width: $btn-width
-    height: $btn-height
-    border-radius: $btn-border-radius
-    font-family: $btn-font
-    text-align: center
-    display: inline-block
-    border: none
-    color: $btn-font-colour
-    text-transform: uppercase
-    font-weight: $btn-font-weight
-    cursor: $btn-cursor
-    &--search
-        background-color: $search-btn-color
-        font-family: $font-awesome
-        width: $searchbar-height
-        margin-left: -$searchbar-height
-        border-top: 1px solid $search-btn-color
-
-    &--accept
-        background-color: $accept-btn-color
-
-// NAVBAR
-.logo
-    width: $width-height
-    height: $width-height
-    margin-left: $width-height/2
-
-// SEARCHBAR
-.searchbar
-    text-align: center
-    &__input
-        width: $searchbar-width
-        height: $searchbar-height
-        font-family: $btn-font
-        border-radius: $btn-border-radius
-        border: none
-        padding: 0 0 0 $small-padding
-        right: 0%
-
-// PROJECT CARDS
-.container__projects
-    padding: 25px
-.project-card
-    display: flex
-    flex-direction: column
-    justify-content: center
-    border: 1px solid #ebebeb
-    list-style-type: none
-    padding: 20px
-    margin: 20px auto
-    border-radius: 5px
-    box-shadow: 5px 6px 10px -10px rgba(64,60,60,0.75)
-
-.project-card__category
-    font-family: $btn-font
-    font-weight: bold
-
-.project-card__title
-    font-family: $btn-font
-    font-size: 26px
-    font-weight: medium
-
-.project-card__icon-info-outer-wrap
-    display: flex
-    flex-direction: row
-
-.project-card__icon-info-individual-wrap
-    display: flex
-    flex-direction: column
-    padding: 20px
-    font-family: $btn-font
-
-// DETAILS PAGE
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap') @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap') @import url('https://fonts.googleapis.com/css?family=Lato&display=swap') @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap') @import url('https://fonts.googleapis.com/css?family=Open+Sans') .title1 font-family: 'Raleway', sans-serif text-align: center .title2 font-family: 'Montserrat', sans-serif .title3 font-family: 'Lato', sans-serif .title4 font-family: 'Quicksand', sans-serif // PAGE WRAPPERS
+.wrapper font-family: $main-font // CONTAINERS GO HERE ----------------------------------------------------------------
+.container display: grid grid-template-columns: repeat(11, 1fr) grid-gap: 10px text-align: center .container__story--0 grid-column: 2/5 .container__story--1 grid-column: 5/8 .container__story--2 grid-column: 8/11 .container__map height: 400px width: 100% // BACKGROUNDS GO HERE ----------------------------------------------------------------
+.dark-bg-gradient height: 100vh color: $light-font-colour background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour) &--rectangle height: 100px width: 200px background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour) // BUTTONS GO HERE ----------------------------------------------------------------
+.button width: $btn-width height: $btn-height border-radius: $btn-border-radius font-family: $btn-font text-align: center display: inline-block border: none color: $btn-font-colour text-transform: uppercase font-weight: $btn-font-weight cursor: $btn-cursor &--search background-color: $search-btn-color font-family: $font-awesome width: $searchbar-height margin-left: -$searchbar-height border-top: 1px solid $search-btn-color &--accept background-color: $accept-btn-color // NAVBAR
+.logo width: $width-height height: $width-height margin-left: $width-height/2 // SEARCHBAR
+.searchbar text-align: center &__input width: $searchbar-width height: $searchbar-height font-family: $btn-font border-radius: $btn-border-radius border: none padding: 0 0 0 $small-padding right: 0% // PROJECT CARDS
+.container__projects padding: 25px .project-card display: flex flex-direction: column justify-content: center border: 1px solid #ebebeb list-style-type: none padding: 20px margin: 20px auto border-radius: 5px box-shadow: 5px 6px 10px -10px rgba(64, 60, 60, 0.75) .project-card__category font-family: $btn-font font-weight: bold .project-card__title font-family: $btn-font font-size: 26px font-weight: medium .project-card__icon-info-outer-wrap display: flex flex-direction: row .project-card__icon-info-individual-wrap display: flex flex-direction: column padding: 20px font-family: $btn-font // DETAILS PAGE
 
 // IMAGE AND DETAILS
-.container__banner
-    height: 600px
-    background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
-
-.project-card__svg--white
-    filter: invert(100%)
-
-.wrappy
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
-    color: white
-
-.wrap
-    grid-column-start: 1
-    grid-column-end: 3
-    display: flex
-    flex-direction: column
-
-.wrap2
-    grid-column-start: 3
-    grid-column-end: 6
-    display: flex
-    flex-direction: column
-
-
-// PROJECT SUMMARY
+.container__banner height: 600px background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour) .project-card__svg--white filter: invert(100%) .wrappy display: grid grid-template-columns: 1fr 1fr 1fr 1fr 1fr color: white .wrap grid-column-start: 1 grid-column-end: 3 display: flex flex-direction: column .wrap2 grid-column-start: 3 grid-column-end: 6 display: flex flex-direction: column // PROJECT SUMMARY
 .organisers,
-.flexy
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
-
-.organisers__title,
-.flexy1
-    grid-column-start: 1
-    grid-column-end: 3
-
-.organisers__wrap,
-.flexy2
-    grid-column-start: 3
-    grid-column-end: 6
-
-.organisers__wrap_1
-    display: flex
-    flex-direction: row
-
-.organisers__wrap_2
-    display: flex
-    flex-direction: row
-
-// OTHERS
-.line
-    margin-top: 20px
-    margin-bottom: 20px
-    border: 0
-    height: 1px
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0))
-    &--dark
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
-.word
-    margin-left: 10%
-// MEDIA_QUERIES GO HERE ----------------------------------------------------------------
-@media screen and (max-width: 480px)
-    .container
-        display: block
+.flexy display: grid grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr .organisers__title,
+.flexy1 grid-column-start: 1 grid-column-end: 3 .organisers__wrap,
+.flexy2 grid-column-start: 3 grid-column-end: 6 .organisers__wrap_1 display: flex flex-direction: row .organisers__wrap_2 display: flex flex-direction: row // OTHERS
+.line margin-top: 20px margin-bottom: 20px border: 0 height: 1px background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) &--dark background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)) .word margin-left: 10% // MEDIA_QUERIES GO HERE ----------------------------------------------------------------
+@media screen and (max-width: 480px) .container display: block

@@ -7,7 +7,6 @@ import ResultsPage from "./components/ResultsPage";
 import StoriesPage from "./components/StoriesPage";
 import DetailsPage from "./components/DetailsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import StyleGuide from "./styles/StyleGuide";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -55,10 +54,6 @@ function App() {
         className="dark-bg-gradient"
       />
     </Router>
-    // <div>
-    //   {/* <LandingPage className="dark-bg-gradient" /> */}
-    //   <StyleGuide />
-    // </div>
   );
 }
 
