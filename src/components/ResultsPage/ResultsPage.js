@@ -5,20 +5,19 @@ import { getDistance } from "geolib";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 
-const ResultsPage = ({ geocode, data }) => {
-  // const longs = data.reduce((acc, curr) => {
-  //   return curr.fields.longitude != null
-  //     ? acc.concat(curr.fields.longitude)
-  //     : acc;
-  // }, []);
-  // console.log("sortelistingslongs", longs);
-  //
-  const coords = data.reduce((acc, curr) => {
+const ResultsPage = ({ searchLongLat, data }) => {
+  // Create an array of objects out of the incoming data from airtable.
+  // This "change of format" for the data is necessary for the geolib funciton (next function) to work
+  // When there is an empty row in airtable this would break the below function by throwing "undefined" values hence the ternary operator
+
+  const reformatedData = data.reduce((acc, curr) => {
     return curr.fields.latitude !== undefined ||
       curr.fields.longitude !== undefined
       ? acc.concat(
           Object.fromEntries(
             new Map([
+              ["id", curr.id],
+              ["fields", curr.fields],
               ["latitude", curr.fields.latitude],
               ["longitude", curr.fields.longitude]
             ])
@@ -26,34 +25,24 @@ const ResultsPage = ({ geocode, data }) => {
         )
       : acc;
   }, []);
-  console.log("coords", coords[0].latitude);
+  console.log("reformatedData", reformatedData);
 
-  // const array = [];
-  // data.map((e, index) => {
-  //   console.log(e.fields.latitude[index]);
-  //   return e.fields.latitude[index] != null
-  //     ? console.log("not in")
-  //     : // e.fields.longitude[index] != null
-  //       //   ? console.log(e, index)
-  //       //   : console.log("not in")
-  //       console.log("not in 2");
+  // filter through the reformated data array and call the geolib library getDistance function which returns the distance between two {longitude: x, latutude: y } objects that it is given.
+  // we pass each object wihtin the reformated Data array into the geolib getDistance function as coordinate 1 and the coordinate of the postcode that has been input in the search field as coordinate 2.
+  // this calculates the result listings distance from the searched postcode. We then only return an array with distances smaller or 5500000
 
-  //   // Object.fromEntries(
-  //   //   new Map([e.fields.latitude[index]], [e.fields.longitude[index]])
-  //   // );
-  // });
+  const listingsWithinXDistance = reformatedData.filter(
+    singleListingReformatedData => {
+      console.log("singleListingReformatedData", singleListingReformatedData);
+      const distance = getDistance(searchLongLat, singleListingReformatedData);
+      console.log("distance", distance);
+      return distance <= 5500000;
+    }
+  );
 
-  coords.map(coord => {
-    const distance = getDistance(
-      {
-        latitude: 51.5103,
-        longitude: 7.49347
-      },
-      coord
-    );
-    console.log(distance);
-  });
+  console.log("listingsWithinXDistance", listingsWithinXDistance);
 
+  // passing listingsWithinXDistance into the ProjectCards component to then render listings
   return (
     <div>
       <Navbar />
@@ -61,7 +50,10 @@ const ResultsPage = ({ geocode, data }) => {
         <LeafletMap className="container__map" />
       </div>
       <h2>Results Page</h2>
-      <ProjectCards data={data} />
+      <ProjectCards
+        listingsWithinXDistance={listingsWithinXDistance}
+        data={data}
+      />
     </div>
   );
 };

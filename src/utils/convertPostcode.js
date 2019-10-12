@@ -2,7 +2,7 @@ const convertPostcode = postcode => {
   return fetch(`https://api.postcodes.io/postcodes/${postcode}`)
     .then(response => response.json())
     .then(({ result: { latitude, longitude } }) => {
-      return { longitude, latitude };
+      return { latitude, longitude };
     })
     .catch(err => {
       return err;

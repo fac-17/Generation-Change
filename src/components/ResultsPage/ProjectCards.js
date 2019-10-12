@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProjectCards = ({ data }) => {
+const ProjectCards = ({ listingsWithinXDistance, data }) => {
   if (!data) {
     return <h1>...loading</h1>;
   }
-  console.log("projects data", data);
-  const project = data.map((project, i) => (
+  console.log(
+    "projects within distance data in projectcards.js",
+    listingsWithinXDistance
+  );
+  const project = listingsWithinXDistance.map((project, i) => (
     <li key={i} className="project-card">
       <img src={project.photo_1} />
       <p className="project-card__category">{project.fields.category}</p>

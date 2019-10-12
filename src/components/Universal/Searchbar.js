@@ -2,7 +2,7 @@ import React from "react";
 import { convertPostcode } from "./../../utils/convertPostcode";
 import { useHistory } from "react-router-dom";
 
-const Searchbar = ({ setGeocode }) => {
+const Searchbar = ({ setSearchLongLat }) => {
   let history = useHistory();
 
   function handleSubmit(event) {
@@ -11,7 +11,7 @@ const Searchbar = ({ setGeocode }) => {
     const searchPostcode = event.target.elements.postcode.value;
     if (searchPostcode.length < 5) return;
     convertPostcode(searchPostcode).then(coordinates => {
-      setGeocode(coordinates);
+      setSearchLongLat(coordinates);
       history.push("/results");
     });
   }
