@@ -41,11 +41,15 @@ const ResultsPage = ({ searchLongLat, data }) => {
 
   console.log("listingsWithinXDistance", listingsWithinXDistance);
 
+  // passing listingsWithinXDistance into the ProjectCards component to then render listings
   return (
     <div>
       <Navbar />
       <h2>Results Page</h2>
-      <ProjectCards data={data} />
+      <ProjectCards
+        listingsWithinXDistance={listingsWithinXDistance}
+        data={data}
+      />
     </div>
   );
 };
