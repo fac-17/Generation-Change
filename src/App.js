@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   const [data, setData] = React.useState(null);
-  const [geocode, setGeocode] = React.useState("51.49075,-0.25263");
+  const [searchLongLat, setSearchLongLat] = React.useState("51.49075,-0.25263");
 
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
@@ -24,33 +24,33 @@ function App() {
       </div>
     );
 
-  console.log("geocords", geocode);
+  console.log("geocords", searchLongLat);
 
   return (
     <Router>
       <Route
         exact
         path="/"
-        render={() => <LandingPage setGeocode={setGeocode} />}
+        render={() => <LandingPage setSearchLongLat={setSearchLongLat} />}
         className="dark-bg-gradient"
       />
       <Route
         exact
         path="/results"
-        render={() => <ResultsPage geocode={geocode} data={data} />}
+        render={() => <ResultsPage searchLongLat={searchLongLat} data={data} />}
         className="dark-bg-gradient"
       />
       <Route
         exact
         path="/stories"
-        setGeocode={setGeocode}
+        setsearchLongLat={setSearchLongLat}
         component={StoriesPage}
         className="dark-bg-gradient"
       />
       <Route
         exact
         path="/details"
-        setGeocode={setGeocode}
+        setSearchLongLat={setSearchLongLat}
         component={DetailsPage}
         className="dark-bg-gradient"
       />
