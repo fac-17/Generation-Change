@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <Link to={{ pathname: "/" }}>
         <img
-          src="logo.png"
+          src="./statics/logo.png"
           className="logo"
           alt="logo"
           data-testid="navbar--logo"
