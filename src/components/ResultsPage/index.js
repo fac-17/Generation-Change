@@ -7,7 +7,7 @@ import ProjectCards from "./ProjectCards";
 
 const ResultsPage = ({ searchLongLat, data }) => {
   // Create an array of objects out of the incoming data from airtable.
-  // This "change of format" for the data is necessary for the geolib funciton (next function) to work
+  // This "change of format" for the data is necessary for the geolib function (next function) to work
   // When there is an empty row in airtable this would break the below function by throwing "undefined" values hence the ternary operator
 
   const reformatedData = data.reduce((acc, curr) => {
@@ -33,14 +33,14 @@ const ResultsPage = ({ searchLongLat, data }) => {
 
   const listingsWithinXDistance = reformatedData.filter(
     singleListingReformatedData => {
-      console.log("singleListingReformatedData", singleListingReformatedData);
+      // console.log("singleListingReformatedData", singleListingReformatedData);
       const distance = getDistance(searchLongLat, singleListingReformatedData);
       console.log("distance", distance);
       return distance <= 5500000;
     }
   );
 
-  console.log("listingsWithinXDistance", listingsWithinXDistance);
+  // console.log("listingsWithinXDistance", listingsWithinXDistance);
 
   // passing listingsWithinXDistance into the ProjectCards component to then render listings
   return (

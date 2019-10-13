@@ -4,8 +4,6 @@ import Navbar from "../Universal/Navbar";
 import Stories from "./Stories";
 
 const LandingPage = ({ setSearchLongLat }) => {
-  // console.log("landing - set geocode function = ", setSearchLongLat);
-
   return (
     <div className="dark-bg-gradient">
       <Navbar />

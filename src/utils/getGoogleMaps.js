@@ -9,4 +9,4 @@ const getGoogleMaps = () => {
     });
 };
 
-module.exports = convertPostcode;
+module.exports = getGoogleMaps;

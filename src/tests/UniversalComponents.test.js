@@ -1,15 +1,9 @@
 import React from "react";
-import {
-  render,
-  fireEvent,
-  cleanup,
-  waitForElement
-} from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import SearchBar from "../components/Universal/Searchbar";
 import Navbar from "../components/Universal/Navbar";
 import { createMemoryHistory } from "history";
-import { Router, MemoryRouter } from "react-router-dom";
-// import ReactDOM from "react-dom";
+import { Router } from "react-router-dom";
 
 afterEach(cleanup);
 
