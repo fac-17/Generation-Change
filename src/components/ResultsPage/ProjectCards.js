@@ -32,11 +32,6 @@ const ProjectCards = ({ listingsWithinXDistance, data }) => {
 
         <div className="project-card__icon-info-individual-wrap">
           <Svg height="21" width="23" icon="duration" />
-          <object
-            className="project-card__svg"
-            type="image/svg+xml"
-            data="./statics/duration-icon.svg"
-          ></object>
           <p>Duration</p>
           <div>{project.fields.session_duration_hours} hours</div>
         </div>
