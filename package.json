@@ -17,7 +17,8 @@
     "react-scripts": "3.1.2"
   },
   "scripts": {
-    "start": "netlify dev",
+    "dev": "netlify dev",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
