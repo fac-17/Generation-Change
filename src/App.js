@@ -23,7 +23,7 @@ function App() {
       </div>
     );
 
-  console.log("geocords", searchLongLat);
+  // console.log("geocords", searchLongLat);
 
   return (
     <Router>
