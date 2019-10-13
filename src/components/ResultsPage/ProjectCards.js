@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Svg from "../Universal/Svg";
 
 const ProjectCards = ({ listingsWithinXDistance, data }) => {
   if (!data) {
@@ -16,12 +17,7 @@ const ProjectCards = ({ listingsWithinXDistance, data }) => {
       <p className="project-card__title">{project.fields.title}</p>
       <div className="project-card__icon-info-outer-wrap">
         <div className="project-card__icon-info-individual-wrap">
-          <object
-            className="project-card__svg"
-            type="image/svg+xml"
-            data="./statics/age-icon.svg"
-            fill="none"
-          ></object>
+          <Svg height="18" width="24" icon="age" />
           <p>Age</p>
           <div>
             {project.fields.minimum_age}-{project.fields.maximum_age}
@@ -29,16 +25,13 @@ const ProjectCards = ({ listingsWithinXDistance, data }) => {
         </div>
 
         <div className="project-card__icon-info-individual-wrap">
-          <object
-            className="project-card__svg"
-            type="image/svg+xml"
-            data="./statics/group-size-icon.svg"
-          ></object>
+          <Svg height="18" width="24" icon="group-size" />
           <p>Group Size</p>
           <div>{project.fields.group_size}</div>
         </div>
 
         <div className="project-card__icon-info-individual-wrap">
+          <Svg height="21" width="23" icon="duration" />
           <object
             className="project-card__svg"
             type="image/svg+xml"
@@ -49,11 +42,7 @@ const ProjectCards = ({ listingsWithinXDistance, data }) => {
         </div>
 
         <div className="project-card__icon-info-individual-wrap">
-          <object
-            className="project-card__svg"
-            type="image/svg+xml"
-            data="./statics/calendar-icon.svg"
-          ></object>
+          <Svg height="20" width="20" icon="calendar" />
           <p>Repeats</p>
           <div>{project.fields.session_frequency_per_week} a week</div>
         </div>

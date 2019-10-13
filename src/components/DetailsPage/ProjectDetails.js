@@ -1,4 +1,5 @@
 import React from "react";
+import Svg from "../Universal/Svg";
 
 const ProjectDetails = () => {
   return (
@@ -11,54 +12,25 @@ const ProjectDetails = () => {
         <div>tagline</div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
-            <object
-              className="project-card__svg--white"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              type="image/svg+xml"
-              data="./statics/age-icon.svg"
-              fill="none"
-            ></object>
+            <Svg color="--white" height="20" width="20" icon="age" />
             <p>Age</p>
             <div>minimum_age-maximum_age</div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
-            <object
-              className="project-card__svg--white"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              type="image/svg+xml"
-              data="./statics/group-size-icon.svg"
-            ></object>
+            <Svg color="--white" height="20" width="20" icon="group-size" />
             <p>Group Size</p>
             <div>group_size</div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
-            <object
-              className="project-card__svg--white"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              type="image/svg+xml"
-              data="./statics/duration-icon.svg"
-            ></object>
+            <Svg color="--white" height="20" width="20" icon="duration" />
             <p>Duration</p>
             <div>session_duration_hours hours</div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
-            <object
-              className="project-card__svg--white"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              type="image/svg+xml"
-              data="./statics/calendar-icon.svg"
-            ></object>
+            <Svg color="--white" height="20" width="20" icon="calendar" />
             <p>Repeats</p>
             <div>session_frequency_per_week a week</div>
           </div>

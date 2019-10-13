@@ -1,4 +1,5 @@
 import React from "react";
+import Svg from "../Universal/Svg";
 
 const ProjectSummary = () => {
   return (
@@ -19,20 +20,12 @@ const ProjectSummary = () => {
           <div>organisation_details</div>
           <div className="organisers__wrap_2">
             <div>
-              <object
-                type="image/svg+xml"
-                data="./statics/email-icon.svg"
-                fill="none"
-              ></object>
+              <Svg height="34" width="33" icon="email" />
               <div>email</div>
             </div>
 
             <div>
-              <object
-                type="image/svg+xml"
-                data="./statics/phone-icon.svg"
-                fill="none"
-              ></object>
+              <Svg height="32" width="31" icon="phone" />
               <div>phone</div>
             </div>
           </div>
