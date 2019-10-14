@@ -38,13 +38,22 @@ const ProjectDetails = ({ detailsData }) => {
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="duration" />
             <p>Duration</p>
-            <div>{detailsData.fields.session_duration_hours} hours</div>
+            <div>
+              {detailsData.fields.session_duration_hours === 0
+                ? "Any duration"
+                : detailsData.fields.session_frequency_per_week + " hours"}
+            </div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="calendar" />
             <p>Repeats</p>
-            <div>{detailsData.fields.session_frequency_per_week} a week</div>
+            <div>
+              {detailsData.fields.session_frequency_per_week === 0
+                ? "Anytime"
+                : detailsData.fields.session_frequency_per_week +
+                  "times a week"}
+            </div>
           </div>
         </div>
       </div>
