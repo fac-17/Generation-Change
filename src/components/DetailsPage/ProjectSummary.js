@@ -4,21 +4,21 @@ import Svg from "../Universal/Svg";
 const ProjectSummary = () => {
   return (
     <div>
-      <div className="flexy">
-        <h2 className="flexy1">What you'll do</h2>
-        <div className="flexy2">project_details</div>
+      <div className="what-grid">
+        <h2 className="what-grid__title">What you'll do</h2>
+        <div className="what-grid__text">project_details</div>
       </div>
-      <div className="organisers">
-        <h2 className="organisers__title">The Organisers</h2>
-        <div className="organisers__wrap">
-          <div className="organisers__wrap_1">
+      <div className="organisers-grid">
+        <h2 className="organisers-grid__title">The Organisers</h2>
+        <div className="organisers-grid__text">
+          <div className="organisers__text_1">
             <div />
             <div>facebook_url</div>
             <div>twitter_url</div>
             <div>organisation_logo</div>
           </div>
           <div>organisation_details</div>
-          <div className="organisers__wrap_2">
+          <div className="organisers__text_2">
             <div>
               <Svg height="34" width="33" icon="email" />
               <div>email</div>
