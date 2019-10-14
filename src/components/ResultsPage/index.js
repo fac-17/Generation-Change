@@ -11,19 +11,30 @@ const ResultsPage = ({ searchLongLat, data }) => {
   // When there is an empty row in airtable this would break the below function by throwing "undefined" values hence the ternary operator
 
   const reformatedData = data.reduce((acc, curr) => {
-    return curr.fields.latitude !== undefined ||
+    if (
+      curr.fields.latitude !== undefined ||
       curr.fields.longitude !== undefined
-      ? acc.concat(
-          Object.fromEntries(
-            new Map([
-              ["id", curr.id],
-              ["fields", curr.fields],
-              ["latitude", curr.fields.latitude],
-              ["longitude", curr.fields.longitude]
-            ])
-          )
+    ) {
+      const projectLongLat = {};
+      projectLongLat["longitude"] = curr.fields.longitude;
+      projectLongLat["latitude"] = curr.fields.latitude;
+      console.log(projectLongLat);
+      const distance = getDistance(searchLongLat, projectLongLat);
+      console.log("distance", distance);
+      return acc.concat(
+        Object.fromEntries(
+          new Map([
+            ["id", curr.id],
+            ["fields", curr.fields],
+            ["latitude", curr.fields.latitude],
+            ["longitude", curr.fields.longitude],
+            ["distance", distance]
+          ])
         )
-      : acc;
+      );
+    } else {
+      return acc;
+    }
   }, []);
   console.log("reformatedData", reformatedData);
 
@@ -35,8 +46,8 @@ const ResultsPage = ({ searchLongLat, data }) => {
     singleListingReformatedData => {
       // console.log("singleListingReformatedData", singleListingReformatedData);
       const distance = getDistance(searchLongLat, singleListingReformatedData);
-      console.log("distance", distance);
-      return distance <= 16093; //metres which equals 10miles 
+      // console.log("distance", distance);
+      return distance <= 16093; //metres which equals 10miles
     }
   );
 
