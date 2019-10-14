@@ -12,7 +12,11 @@ const ProjectDetails = ({ detailsData }) => {
         <div>{detailsData.fields.title}</div>
       </div>
       <div className="project-bulletpoints">
-        <div>{detailsData.fields.tagline}</div>
+        <div>
+          {detailsData.fields.tagline.endsWith(".")
+            ? detailsData.fields.tagline
+            : detailsData.fields.tagline + "."}
+        </div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="age" />
@@ -52,7 +56,7 @@ const ProjectDetails = ({ detailsData }) => {
               {detailsData.fields.session_frequency_per_week === 0
                 ? "Anytime"
                 : detailsData.fields.session_frequency_per_week +
-                  "times a week"}
+                  " times a week"}
             </div>
           </div>
         </div>
