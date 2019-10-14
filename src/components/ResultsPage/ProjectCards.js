@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Svg from "../Universal/Svg";
 
-const ProjectCards = ({ detailsData, setDetailsData, listingsWithinXDistance, data }) => {
+const ProjectCards = ({
+  detailsData,
+  setDetailsData,
+  listingsWithinXDistance,
+  data
+}) => {
   if (!data) {
     return <h1>...loading</h1>;
   }
@@ -14,8 +19,12 @@ const ProjectCards = ({ detailsData, setDetailsData, listingsWithinXDistance, da
     <li key={i} className="project-card">
       <img src={project.photo_1} />
       <p className="project-card__category">{project.fields.category}</p>
-      <p className="project-card__title" onClick={() => {setDetailsData(project)}}>
-
+      <p
+        className="project-card__title"
+        onClick={() => {
+          setDetailsData(project);
+        }}
+      >
         {project.fields.title}
       </p>
       <div className="project-card__icon-info-outer-wrap">
@@ -23,7 +32,10 @@ const ProjectCards = ({ detailsData, setDetailsData, listingsWithinXDistance, da
           <Svg height="18" width="24" icon="age" />
           <p>Age</p>
           <div>
-            {project.fields.minimum_age}-{project.fields.maximum_age}
+            {project.fields.minimum_age}
+            {project.fields.maximum_age === 0
+              ? "+"
+              : " - " + project.fields.maximum_age}
           </div>
         </div>
 
