@@ -5,7 +5,7 @@ import { getDistance } from "geolib";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 
-const ResultsPage = ({ searchLongLat, data }) => {
+const ResultsPage = ({ detailsData, setDetailsData, searchLongLat, data }) => {
   // Create an array of objects out of the incoming data from airtable.
   // This "change of format" for the data is necessary for the geolib function (next function) to work
   // When there is an empty row in airtable this would break the below function by throwing "undefined" values hence the ternary operator
@@ -58,6 +58,7 @@ const ResultsPage = ({ searchLongLat, data }) => {
       </div>
       <h2>Results Page</h2>
       <ProjectCards
+      detailsData={detailsData} setDetailsData={setDetailsData}
         listingsWithinXDistance={listingsWithinXDistance}
         data={data}
       />
