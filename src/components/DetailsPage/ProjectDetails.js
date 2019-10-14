@@ -1,7 +1,7 @@
 import React from "react";
 import Svg from "../Universal/Svg";
 
-const ProjectDetails = () => {
+const ProjectDetails = ({detailsData}) => {
   return (
     <div className="wrappy">
       <div className="wrap">
@@ -9,7 +9,7 @@ const ProjectDetails = () => {
         <div>title</div>
       </div>
       <div className="wrap2">
-        <div>tagline</div>
+        <div>{detailsData.fields.title}</div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="age" />

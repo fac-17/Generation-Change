@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   const [data, setData] = React.useState(null);
   const [searchLongLat, setSearchLongLat] = React.useState("51.49075,-0.25263");
+  const [detailsData, setDetailsData] = React.useState({});
 
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
@@ -36,7 +37,7 @@ function App() {
       <Route
         exact
         path="/results"
-        render={() => <ResultsPage searchLongLat={searchLongLat} data={data} />}
+        render={() => <ResultsPage detailsData={detailsData} setDetailsData={setDetailsData} searchLongLat={searchLongLat} data={data} />}
         className="dark-bg-gradient"
       />
       <Route
@@ -50,7 +51,7 @@ function App() {
         exact
         path="/details"
         setSearchLongLat={setSearchLongLat}
-        component={DetailsPage}
+        render={() => <DetailsPage detailsData={detailsData} setDetailsData={setDetailsData}/>}
         className="dark-bg-gradient"
       />
     </Router>
