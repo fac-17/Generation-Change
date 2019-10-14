@@ -18,7 +18,10 @@ const ProjectDetails = ({ detailsData }) => {
             <Svg color="--white" height="20" width="20" icon="age" />
             <p>Age</p>
             <div>
-              {detailsData.fields.minimum_age}-{detailsData.fields.maximum_age}
+              {detailsData.fields.minimum_age}
+              {detailsData.fields.maximum_age === 0
+                ? "+"
+                : " - " + detailsData.fields.maximum_age}
             </div>
           </div>
 
