@@ -18,9 +18,7 @@ const ResultsPage = ({ searchLongLat, data }) => {
       const projectLongLat = {};
       projectLongLat["longitude"] = curr.fields.longitude;
       projectLongLat["latitude"] = curr.fields.latitude;
-      console.log(projectLongLat);
       const distance = getDistance(searchLongLat, projectLongLat);
-      console.log("distance", distance);
       return acc.concat(
         Object.fromEntries(
           new Map([
@@ -43,13 +41,11 @@ const ResultsPage = ({ searchLongLat, data }) => {
   // this calculates the result listings distance from the searched postcode. We then only return an array with distances smaller or 5500000
 
   const listingsWithinXDistance = reformatedData.filter(
-    singleListingReformatedData => {
-      // console.log("singleListingReformatedData", singleListingReformatedData);
-      const distance = getDistance(searchLongLat, singleListingReformatedData);
-      // console.log("distance", distance);
-      return distance <= 16093; //metres which equals 10miles
-    }
-  );
+    e => e.distance <= 16093
+    //metres which equals 10miles
+  )
+  .sort((a, b) => a.distance - b.distance);
+  console.log('sorted data', listingsWithinXDistance)
 
   // console.log("listingsWithinXDistance", listingsWithinXDistance);
 
