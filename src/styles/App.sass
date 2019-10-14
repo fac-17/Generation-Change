@@ -127,7 +127,7 @@
 
 // IMAGE AND DETAILS
 .container__banner
-    height: 600px
+    height: 80vh
     background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
 
 .project-card__svg--white
@@ -181,12 +181,15 @@
     display: flex
     height: 50vh
     max-height: 450px
-
     justify-content: center
+
+.project-image-flex img
+    height: 100%
+    object-fit: cover
 
 .project-image-flex__small-photos
     display: flex
-    height: 50vh
+    height: 100%
     flex-direction: column
 
 .project-image-flex__small-photos img
