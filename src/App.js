@@ -44,7 +44,7 @@ function App() {
         exact
         path="/stories"
         setsearchLongLat={setSearchLongLat}
-        component={StoriesPage}
+        render={() => <StoriesPage data={data} />}
         className="dark-bg-gradient"
       />
       <Route
