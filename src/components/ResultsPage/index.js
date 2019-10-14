@@ -36,7 +36,7 @@ const ResultsPage = ({ searchLongLat, data }) => {
       // console.log("singleListingReformatedData", singleListingReformatedData);
       const distance = getDistance(searchLongLat, singleListingReformatedData);
       console.log("distance", distance);
-      return distance <= 5500000;
+      return distance <= 16093; //metres which equals 10miles 
     }
   );
 
