@@ -37,7 +37,15 @@ function App() {
       <Route
         exact
         path="/results"
-        render={() => <ResultsPage detailsData={detailsData} setDetailsData={setDetailsData} searchLongLat={searchLongLat} data={data} />}
+        render={() => (
+          <ResultsPage
+            detailsData={detailsData}
+            setDetailsData={setDetailsData}
+            searchLongLat={searchLongLat}
+            setSearchLongLat={setSearchLongLat}
+            data={data}
+          />
+        )}
         className="dark-bg-gradient"
       />
       <Route
@@ -51,7 +59,13 @@ function App() {
         exact
         path="/details"
         setSearchLongLat={setSearchLongLat}
-        render={() => <DetailsPage detailsData={detailsData} setDetailsData={setDetailsData}/>}
+        render={() => (
+          <DetailsPage
+            setSearchLongLat={setSearchLongLat}
+            detailsData={detailsData}
+            setDetailsData={setDetailsData}
+          />
+        )}
         className="dark-bg-gradient"
       />
     </Router>

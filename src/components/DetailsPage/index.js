@@ -5,18 +5,17 @@ import ProjectDetails from "./ProjectDetails";
 import ProjectSummary from "./ProjectSummary";
 import Searchbar from "../Universal/Searchbar";
 
-const DetailsPage = ({detailsData}) => {
-  console.log("details data",detailsData)
+const DetailsPage = ({ detailsData, setSearchLongLat }) => {
+  console.log("details data", detailsData);
   return (
     <div>
       <div className="container__banner">
-        <Navbar>
-          <Searchbar />
-        </Navbar>
+        <Navbar />
+        <Searchbar setSearchLongLat={setSearchLongLat} />
         <ImageContainer detailsData={detailsData} />
-        <ProjectDetails detailsData={detailsData}/>
+        <ProjectDetails detailsData={detailsData} />
       </div>
-      <ProjectSummary detailsData={detailsData}/>
+      <ProjectSummary detailsData={detailsData} />
     </div>
   );
 };
