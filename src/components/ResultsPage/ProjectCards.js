@@ -42,7 +42,11 @@ const ProjectCards = ({
         <div className="project-card__icon-info-individual-wrap">
           <Svg height="18" width="24" icon="group-size" />
           <p>Group Size</p>
-          <div>{project.fields.group_size}</div>
+          <div>
+            {project.fields.group_size === 0
+              ? "Any"
+              : project.fields.group_size}
+          </div>
         </div>
 
         <div className="project-card__icon-info-individual-wrap">
