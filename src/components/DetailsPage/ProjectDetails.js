@@ -1,14 +1,17 @@
 import React from "react";
 import Svg from "../Universal/Svg";
 
-const ProjectDetails = () => {
+const ProjectDetails = data => {
+  if (!data) {
+    return <h1>...loading</h1>;
+  }
   return (
-    <div className="wrappy">
-      <div className="wrap">
+    <div className="project-summary-grid">
+      <div className="project-title-cat">
         <div>category</div>
         <div>title</div>
       </div>
-      <div className="wrap2">
+      <div className="project-bulletpoints">
         <div>tagline</div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
