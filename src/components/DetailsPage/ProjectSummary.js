@@ -7,15 +7,13 @@ const ProjectSummary = ({ detailsData }) => {
   }
   return (
     <div className="project-long-summary">
-      <div className="what-grid">
-        <h2 className="what-grid__title">What you'll do</h2>
-        <div className="what-grid__text">
-          {detailsData.fields.project_details}
-        </div>
+      <div className="what">
+        <h2 className="what__title">What you'll do</h2>
+        <div className="what__text">{detailsData.fields.project_details}</div>
       </div>
-      <div className="organisers-grid">
-        <h2 className="organisers-grid__title">The Organisers</h2>
-        <div className="organisers-grid__text">
+      <div className="organisers">
+        <h2 className="organisers__title">The Organisers</h2>
+        <div className="organisers__text">
           <div className="organisers__text_1">
             <div />
             <div>{detailsData.fields.facebook_url}</div>
