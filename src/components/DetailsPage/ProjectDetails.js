@@ -6,7 +6,7 @@ const ProjectDetails = ({ detailsData }) => {
     return <h1>...loading</h1>;
   }
   return (
-    <div className="project-short-summary-grid">
+    <div className="project-short-summary">
       <div className="project-title-cat">
         <div className="project-title-cat__category">
           {detailsData.fields.category}

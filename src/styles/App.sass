@@ -137,14 +137,26 @@ html
 .project-card__svg--white
     filter: invert(100%)
 
-.project-short-summary-grid
+.project-short-summary
+    display: flex
+    justify-content: center
+    width: 100vw
     color: white
 
 .project-title-cat
-    grid-column-start: 1
-    grid-column-end: 3
+    width: 30vw
+    margin: 30px 10px 0 0;
     display: flex
     flex-direction: column
+
+.project-bulletpoints
+    display: flex
+    flex-direction: column
+    width: 30vw
+    margin: 30px 0 0 0
+
+.project-bulletpoints__tagline
+    font-size: 1.2em
 
 .project-title-cat__category
     font-size: 1.2em
@@ -154,18 +166,15 @@ html
 .project-title-cat__title
     font-size: 1.7em
     font-weight: 600
-
-.project-bulletpoints
-    grid-column-start: 3
-    grid-column-end: 6
-    display: flex
-    flex-direction: column
-
-.project-bulletpoints__tagline
-    font-size: 1.2em
    
 
 // PROJECT SUMMARY
+
+.project-long-summary
+    display: flex
+    flex-direction: column
+    justify-content: center
+    
 .organisers,
 .what
     display: flex
@@ -186,35 +195,6 @@ html
     margin: 30px 0 0 0
     font-size: 1.15em
 
-
-.project-short-summary-grid
-    display: flex
-    justify-content: center
-    width: 100vw
-
-.project-title-cat
-    width: 30vw
-    margin: 30px 10px 0 0;
-
-
-.project-bulletpoints
-    width: 30vw
-    margin: 30px 0 0 0
-
-
-.project-long-summary
-    display: flex
-    flex-direction: column
-    justify-content: center
-
-.organisers-grid__title,
-.what-grid__title
-
-
-.organisers__text,
-.what-grid__text
-    grid-column-start: 3
-    grid-column-end: 6
 
 .organisers__text_1
     display: flex
