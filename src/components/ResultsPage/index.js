@@ -15,7 +15,9 @@ const ResultsPage = ({
   setDetailsData,
   searchLongLat,
   data,
-  setSearchLongLat
+  setSearchLongLat,
+  markersData,
+  setMarkersData
 }) => {
   // Create an array of objects out of the incoming data from airtable.
   // This "change of format" for the data is necessary for the geolib function (next function) to work
@@ -37,13 +39,34 @@ const ResultsPage = ({
 
   // console.log("listingsWithinXDistance", listingsWithinXDistance);
 
+  // this is adding a layer and markers to our map
+  const addMarker = () => {
+    const lastMarker = markersData[markersData.length - 1];
+
+    return setMarkersData([
+      ...markersData,
+      {
+        title: +lastMarker.title + 1,
+        latLng: {
+          lat: lastMarker.latLng.lat + 0.0001,
+          lng: lastMarker.latLng.lng + 0.0001
+        }
+      }
+    ]);
+  };
+
   // passing listingsWithinXDistance into the ProjectCards component to then render listings
   return (
     <div>
       <Navbar />
       <Searchbar setSearchLongLat={setSearchLongLat} />
       <div id="container">
-        <LeafletMap className="container__map" />
+        <LeafletMap
+          className="container__map"
+          markersData={markersData}
+          setMarkersData={setMarkersData}
+        />
+        <button onClick={addMarker}>Add marker</button>
       </div>
       <h2>Results Page</h2>
       <ProjectCards

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/Normalize.sass";
 import "./styles/App.sass";
 import { getData } from "../src/utils/getData";
@@ -9,10 +9,16 @@ import DetailsPage from "./components/DetailsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  const [data, setData] = React.useState(null);
-  const [searchLongLat, setSearchLongLat] = React.useState("51.49075,-0.25263");
-  const [detailsData, setDetailsData] = React.useState({});
+  const [data, setData] = useState(null);
+  const [searchLongLat, setSearchLongLat] = useState("51.49075,-0.25263");
+  const [detailsData, setDetailsData] = useState({});
+  const [markersData, setMarkersData] = useState([
+    { latLng: { lat: 51.5007, lng: -0.1246 }, title: 1 }
+  ]);
 
+  // below postcode to latlng transition
+
+  console.log("setsearch", setSearchLongLat);
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
   }, []);
@@ -44,6 +50,8 @@ function App() {
             searchLongLat={searchLongLat}
             setSearchLongLat={setSearchLongLat}
             data={data}
+            markersData={markersData}
+            setMarkersData={setMarkersData}
           />
         )}
         className="dark-bg-gradient"
