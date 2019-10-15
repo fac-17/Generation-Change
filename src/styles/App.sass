@@ -134,8 +134,6 @@
     filter: invert(100%)
 
 .project-short-summary-grid
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
     color: white
 
 .project-title-cat
@@ -154,13 +152,33 @@
 // PROJECT SUMMARY
 .organisers-grid,
 .what-grid
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+    display: flex
+    justify-content: center
+    width: 100vw
+    align-content: center
 
 .organisers-grid__title,
 .what-grid__title
-    grid-column-start: 1
-    grid-column-end: 3
+    width: 40vw
+    background: blue
+
+.organisers-grid__text,
+.what-grid__text
+    width: 50vw
+    background: red
+
+.project-short-summary-grid
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+
+.project-long-summary
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.organisers-grid__title,
+.what-grid__title
+
 
 .organisers__text,
 .what-grid__text
@@ -205,7 +223,7 @@
     &--dark
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 .word
-    margin-left: 10%
+    margin-left: 10%s
 // MEDIA_QUERIES GO HERE ----------------------------------------------------------------
 @media screen and (max-width: 480px)
     .container

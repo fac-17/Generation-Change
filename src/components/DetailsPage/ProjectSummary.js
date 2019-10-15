@@ -3,7 +3,7 @@ import Svg from "../Universal/Svg";
 
 const ProjectSummary = () => {
   return (
-    <div>
+    <div className="project-long-summary">
       <div className="what-grid">
         <h2 className="what-grid__title">What you'll do</h2>
         <div className="what-grid__text">project_details</div>
