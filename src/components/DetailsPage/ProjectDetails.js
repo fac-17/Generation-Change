@@ -8,11 +8,17 @@ const ProjectDetails = ({ detailsData }) => {
   return (
     <div className="project-short-summary-grid">
       <div className="project-title-cat">
-        <div>{detailsData.fields.category}</div>
-        <div>{detailsData.fields.title}</div>
+        <div className="project-title-cat__category">
+          {detailsData.fields.category}
+        </div>
+        <div className="project-title-cat__title">
+          {detailsData.fields.title}
+        </div>
       </div>
       <div className="project-bulletpoints">
-        <div>{detailsData.fields.tagline}</div>
+        <div className="project-bulletpoints__tagline">
+          {detailsData.fields.tagline}
+        </div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="age" />
