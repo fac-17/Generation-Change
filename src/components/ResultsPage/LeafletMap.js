@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 import { Map, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 
-const LeafletMap = () => {
-  const markerPosition = [51.5007, -0.1246];
+const LeafletMap = markersData => {
   // create map
-  const mapRef = React.useRef(null);
+  const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
       center: [51.5007, -0.1246],
@@ -19,17 +18,24 @@ const LeafletMap = () => {
     });
   }, []);
 
-  // add marker
-  const markerRef = React.useRef(null);
+  // add layer
+  const layerRef = useRef(null);
+  useEffect(() => {
+    layerRef.current = L.layerGroup().addTo(mapRef.current);
+  }, []);
+
+  // update markers
   useEffect(
     () => {
-      if (markerRef.current) {
-        markerRef.current.setLatLng(markerPosition);
-      } else {
-        markerRef.current = L.marker(markerPosition).addTo(mapRef.current);
-      }
+      layerRef.current.clearLayers();
+      console.log("markersData", markersData.markersData);
+      markersData.markersData.forEach(marker => {
+        L.marker(marker.latLng, { title: marker.title }).addTo(
+          layerRef.current
+        );
+      });
     },
-    [markerPosition]
+    [markersData]
   );
 
   return <div id="map" />;
