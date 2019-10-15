@@ -14,11 +14,17 @@ const ProjectSummary = ({ detailsData }) => {
       <div className="organisers">
         <h2 className="organisers__title">The Organisers</h2>
         <div className="organisers__text">
-          <div className="organisers__text_1">
-            <div />
-            <div>{detailsData.fields.facebook_url}</div>
-            <div> {detailsData.fields.twitter_url}</div>
-            <div>{detailsData.fields.organisation_logo}</div>
+          <div className="organisers__socialmedia">
+            <h2 className="oranisers__socialmedia--name">Hemsworth Park</h2>
+            <div className="organisers__socialmedia--logos">
+              <a href={detailsData.fields.facebook_url}>
+                <Svg height="34" width="33" icon="facebook" />
+              </a>
+              <a href={detailsData.fields.twitter_url}>
+                <Svg height="34" width="33" icon="twitter" />
+              </a>
+              <img src={detailsData.fields.organisation_logo} />
+            </div>
           </div>
           <div>{detailsData.fields.organisation_details}</div>
           <div className="organisers__text_2">

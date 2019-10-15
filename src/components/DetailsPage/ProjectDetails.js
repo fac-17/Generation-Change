@@ -21,7 +21,13 @@ const ProjectDetails = ({ detailsData }) => {
         </div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
-            <Svg color="--white" height="20" width="20" icon="age" />
+            <Svg
+              className="project-card__svg"
+              color="--white"
+              height="20"
+              width="20"
+              icon="age"
+            />
             <p>Age</p>
             <div>
               {detailsData.fields.minimum_age}-{detailsData.fields.maximum_age}

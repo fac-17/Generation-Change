@@ -126,12 +126,15 @@ html
     flex-direction: column
     padding: 20px
     font-family: $btn-font
+    width: 80px
 
+.project-card__svg
+    widht: 30px
 // DETAILS PAGE
 
 // IMAGE AND DETAILS
 .container__banner
-    height: 80vh
+    height: 85vh
     background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
 
 .project-card__svg--white
@@ -195,10 +198,19 @@ html
     margin: 30px 0 0 0
     font-size: 1.15em
 
+.organisers__text
+    display: flex
+    flex-direction: column
 
-.organisers__text_1
+.organisers__socialmedia
     display: flex
     flex-direction: row
+    justify-content: space-between
+
+.organisers__socialmedia--name
+
+.organisers__socialmedia--logos
+    align-items: center
 
 .organisers__text_2
     display: flex
@@ -211,6 +223,7 @@ html
     height: 50vh
     max-height: 450px
     justify-content: center
+    padding-top: 40px
 
 .project-image-flex img
     height: 100%
