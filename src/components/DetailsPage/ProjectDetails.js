@@ -17,7 +17,9 @@ const ProjectDetails = ({ detailsData }) => {
       </div>
       <div className="project-bulletpoints">
         <div className="project-bulletpoints__tagline">
-          {detailsData.fields.tagline}
+          {detailsData.fields.tagline.endsWith(".")
+            ? detailsData.fields.tagline
+            : detailsData.fields.tagline + "."}
         </div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
@@ -30,26 +32,42 @@ const ProjectDetails = ({ detailsData }) => {
             />
             <p>Age</p>
             <div>
-              {detailsData.fields.minimum_age}-{detailsData.fields.maximum_age}
+              {detailsData.fields.minimum_age}
+              {detailsData.fields.maximum_age === 0
+                ? "+"
+                : " - " + detailsData.fields.maximum_age}
             </div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="group-size" />
             <p>Group Size</p>
-            <div>{detailsData.fields.group_size}</div>
+            <div>
+              {detailsData.fields.group_size === 0
+                ? "Any"
+                : detailsData.fields.group_size}
+            </div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="duration" />
             <p>Duration</p>
-            <div>{detailsData.fields.session_duration_hours} hours</div>
+            <div>
+              {detailsData.fields.session_duration_hours === 0
+                ? "Any duration"
+                : detailsData.fields.session_frequency_per_week + " hours"}
+            </div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="calendar" />
             <p>Repeats</p>
-            <div>{detailsData.fields.session_frequency_per_week} a week</div>
+            <div>
+              {detailsData.fields.session_frequency_per_week === 0
+                ? "Anytime"
+                : detailsData.fields.session_frequency_per_week +
+                  " times a week"}
+            </div>
           </div>
         </div>
       </div>
