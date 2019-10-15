@@ -20,7 +20,7 @@ const ResultsPage = ({
   // Create an array of objects out of the incoming data from airtable.
   // This "change of format" for the data is necessary for the geolib function (next function) to work
   // When there is an empty row in airtable this would break the below function by throwing "undefined" values hence the ternary operator
-  const calcDistance = dataWithDistances(data);
+  const calcDistance = dataWithDistances(data, searchLongLat);
   console.log("dataWithDistances", calcDistance);
 
   // filter through the reformated data array and call the geolib library getDistance function which returns the distance between two {longitude: x, latutude: y } objects that it is given.
