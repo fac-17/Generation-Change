@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = React.useState(null);
   const [searchLongLat, setSearchLongLat] = React.useState("51.49075,-0.25263");
   const [detailsData, setDetailsData] = React.useState({});
-
+  console.log("setsearch", setSearchLongLat);
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
   }, []);
