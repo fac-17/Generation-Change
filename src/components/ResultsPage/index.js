@@ -5,6 +5,10 @@ import { getDistance } from "geolib";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 import Searchbar from "../Universal/Searchbar";
+import {
+  dataWithDistances,
+  listingsWithinXDistance
+} from "../../utils/dataManipulation";
 
 const ResultsPage = ({
   detailsData,
@@ -16,38 +20,14 @@ const ResultsPage = ({
   // Create an array of objects out of the incoming data from airtable.
   // This "change of format" for the data is necessary for the geolib function (next function) to work
   // When there is an empty row in airtable this would break the below function by throwing "undefined" values hence the ternary operator
-
-  const reformatedData = data.reduce((acc, curr) => {
-    if (
-      curr.fields.latitude !== undefined ||
-      curr.fields.longitude !== undefined
-    ) {
-      const projectLongLat = {};
-      projectLongLat["longitude"] = curr.fields.longitude;
-      projectLongLat["latitude"] = curr.fields.latitude;
-      const distance = getDistance(searchLongLat, projectLongLat);
-      return acc.concat(
-        Object.fromEntries(
-          new Map([
-            ["id", curr.id],
-            ["fields", curr.fields],
-            ["latitude", curr.fields.latitude],
-            ["longitude", curr.fields.longitude],
-            ["distance", distance]
-          ])
-        )
-      );
-    } else {
-      return acc;
-    }
-  }, []);
-  console.log("reformatedData", reformatedData);
+  const calcDistance = dataWithDistances(data);
+  console.log("dataWithDistances", calcDistance);
 
   // filter through the reformated data array and call the geolib library getDistance function which returns the distance between two {longitude: x, latutude: y } objects that it is given.
   // we pass each object wihtin the reformated Data array into the geolib getDistance function as coordinate 1 and the coordinate of the postcode that has been input in the search field as coordinate 2.
   // this calculates the result listings distance from the searched postcode. We then only return an array with distances smaller or 5500000
 
-  const listingsWithinXDistance = reformatedData
+  const listingsWithinXDistance = calcDistance
     .filter(
       e => e.distance <= 16093
       //metres which equals 10miles

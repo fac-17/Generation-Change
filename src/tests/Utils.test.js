@@ -1,5 +1,10 @@
 import { convertPostcode } from "../utils/convertPostcode";
 import { getData } from "../utils/getData";
+import data from "./mock";
+import {
+  dataWithDistances,
+  listingsWithinXDistance
+} from "../utils/dataManipulation";
 
 describe.only("ConvertPostcodeConvert postcode to lon and lat", () => {
   const expected = {
@@ -12,6 +17,12 @@ describe.only("ConvertPostcodeConvert postcode to lon and lat", () => {
       expect(actual).toEqual(expected);
       expect(initialPostcode).toEqual("BH15 4DH");
     });
+  });
+
+  test("Check dataWithDistances function works", () => {
+    const actual = data;
+    const expected = dataWithDistances(data);
+    return expect(actual).toMatchObject(expected);
   });
 });
 
