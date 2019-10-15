@@ -1,7 +1,7 @@
 import React from "react";
 import Svg from "../Universal/Svg";
 
-const ProjectDetails = ({detailsData}) => {
+const ProjectDetails = ({ detailsData }) => {
   if (!detailsData) {
     return <h1>...loading</h1>;
   }
@@ -12,12 +12,14 @@ const ProjectDetails = ({detailsData}) => {
         <div>{detailsData.fields.title}</div>
       </div>
       <div className="project-bulletpoints">
-        <div>tagline</div>
+        <div>{detailsData.fields.tagline}</div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
             <Svg color="--white" height="20" width="20" icon="age" />
             <p>Age</p>
-            <div>{detailsData.fields.minimum_age}-{detailsData.fields.maximum_age}</div>
+            <div>
+              {detailsData.fields.minimum_age}-{detailsData.fields.maximum_age}
+            </div>
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
