@@ -52,13 +52,21 @@ const ProjectCards = ({
         <div className="project-card__icon-info-individual-wrap">
           <Svg height="21" width="23" icon="duration" />
           <p>Duration</p>
-          <div>{project.fields.session_duration_hours} hours</div>
+          <div>
+            {project.fields.session_duration_hours === 0
+              ? "Any duration"
+              : project.fields.session_duration_hours + " hours"}
+          </div>
         </div>
 
         <div className="project-card__icon-info-individual-wrap">
           <Svg height="20" width="20" icon="calendar" />
           <p>Repeats</p>
-          <div>{project.fields.session_frequency_per_week} a week</div>
+          <div>
+            {project.fields.session_frequency_per_week === 0
+              ? "Anytime"
+              : project.fields.session_frequency_per_week + " times a week"}
+          </div>
         </div>
       </div>
     </li>
