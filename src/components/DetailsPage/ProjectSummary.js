@@ -27,7 +27,12 @@ const ProjectSummary = ({ detailsData }) => {
             </div>
           </div>
           <div>{detailsData.fields.organisation_details}</div>
-          <div className="organisers__text_2">
+          <div className="organisers__contact">
+            <div>
+              <Svg height="32" width="31" icon="website" />
+              <div>{detailsData.fields.website}</div>
+            </div>
+
             <div>
               <Svg height="34" width="33" icon="email" />
               <div>{detailsData.fields.email}</div>
