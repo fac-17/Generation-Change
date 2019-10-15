@@ -1,6 +1,6 @@
 import { convertPostcode } from "../utils/convertPostcode";
 import { getData } from "../utils/getData";
-import data from "./mock";
+import { dataBefore, dataAfter } from "./mock";
 import {
   dataWithDistances,
   listingsWithinXDistance
@@ -20,8 +20,8 @@ describe.only("ConvertPostcodeConvert postcode to lon and lat", () => {
   });
 
   test("Check dataWithDistances function works", () => {
-    const actual = data;
-    const expected = dataWithDistances(data);
+    const actual = dataBefore;
+    const expected = dataWithDistances(dataBefore);
     return expect(actual).toMatchObject(expected);
   });
 });

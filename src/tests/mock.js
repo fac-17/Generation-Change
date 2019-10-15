@@ -17,25 +17,25 @@ const dataBefore = [
 
 const dataAfter = [
   {
-    distance: 669480,
+    id: "recP19Z2CCWFQNWKQ",
     fields: {
       latitude: 50.712412,
       longitude: -2.008298
     },
-    id: "recP19Z2CCWFQNWKQ",
     latitude: 50.712412,
-    longitude: -2.008298
+    longitude: -2.008298,
+    distance: 669480
   },
   {
-    distance: 669360,
+    id: "reck5HOHxGPBMkr8f",
     fields: {
       latitude: 50.718168,
       longitude: -2.008376
     },
-    id: "reck5HOHxGPBMkr8f",
     latitude: 50.718168,
-    longitude: -2.008376
+    longitude: -2.008376,
+    distance: 669360
   }
 ];
 
-export default {dataBefore, dataAfter};
+export default { dataBefore, dataAfter };

@@ -6,6 +6,7 @@ import { getDistance } from "geolib";
 
 const searchLongLat = { latitude: 51.5103, longitude: 7.49347 };
 const dataWithDistances = data => {
+    console.log('reduce', data)
   return data.reduce((acc, curr) => {
     if (
       curr.fields.latitude !== undefined ||
