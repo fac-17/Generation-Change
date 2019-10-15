@@ -6,20 +6,30 @@ const ProjectDetails = ({ detailsData }) => {
     return <h1>...loading</h1>;
   }
   return (
-    <div className="project-short-summary-grid">
+    <div className="project-short-summary">
       <div className="project-title-cat">
-        <div>{detailsData.fields.category}</div>
-        <div>{detailsData.fields.title}</div>
+        <div className="project-title-cat__category">
+          {detailsData.fields.category}
+        </div>
+        <div className="project-title-cat__title">
+          {detailsData.fields.title}
+        </div>
       </div>
       <div className="project-bulletpoints">
-        <div>
+        <div className="project-bulletpoints__tagline">
           {detailsData.fields.tagline.endsWith(".")
             ? detailsData.fields.tagline
             : detailsData.fields.tagline + "."}
         </div>
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
-            <Svg color="--white" height="20" width="20" icon="age" />
+            <Svg
+              className="project-card__svg"
+              color="--white"
+              height="20"
+              width="20"
+              icon="age"
+            />
             <p>Age</p>
             <div>
               {detailsData.fields.minimum_age}
