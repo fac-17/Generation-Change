@@ -1,6 +1,5 @@
 import { convertPostcode } from "../utils/convertPostcode";
 import { getData } from "../utils/getData";
-import { dataBefore, dataAfter } from "./mock";
 import {
   dataWithDistances,
   listingsWithinXDistance
