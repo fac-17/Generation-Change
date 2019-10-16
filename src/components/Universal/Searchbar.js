@@ -19,7 +19,7 @@ const Searchbar = ({ setSearchLongLat }) => {
   return (
     <div className="searchbar">
       <form id="searchbar" onSubmit={handleSubmit}>
-        <label>
+        <label className="searchbar__label">
           Postcode Search
           <input
             name="postcode"
