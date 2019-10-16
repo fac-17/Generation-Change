@@ -13,12 +13,12 @@ function App() {
   const [searchLongLat, setSearchLongLat] = useState("51.49075,-0.25263");
   const [detailsData, setDetailsData] = useState({});
   const [markersData, setMarkersData] = useState([
-    { latLng: { lat: 51.5007, lng: -0.1246 }, title: 1 }
+    { latLng: { lat: 51.5007, lng: -0.1246 }, title: "your location" }
   ]);
 
   // below postcode to latlng transition
 
-  console.log("setsearch", setSearchLongLat);
+  console.log("searchLongLat", searchLongLat);
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
   }, []);

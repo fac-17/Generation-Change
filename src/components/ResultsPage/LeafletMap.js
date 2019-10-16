@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import L from "leaflet";
-import { Map, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 
 const LeafletMap = markersData => {
   // create map

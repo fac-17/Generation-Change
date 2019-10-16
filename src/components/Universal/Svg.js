@@ -10,6 +10,7 @@ const Svg = ({ icon, height, width, color = "" }) => {
       type="image/svg+xml"
       data={`./statics/${icon}-icon.svg`}
       fill="none"
+      aria-label="logo"
     ></object>
   );
 };
