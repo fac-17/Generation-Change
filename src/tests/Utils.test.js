@@ -1,9 +1,5 @@
 import { convertPostcode } from "../utils/convertPostcode";
-import { getData } from "../utils/getData";
-import {
-  dataWithDistances,
-  listingsWithinXDistance
-} from "../utils/dataManipulation";
+import { dataWithDistances } from "../utils/dataManipulation";
 
 describe.only("ConvertPostcodeConvert postcode to lon and lat", () => {
   const expected = {

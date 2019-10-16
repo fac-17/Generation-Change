@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Svg from "../Universal/Svg";
 
 const ProjectCards = ({
-  detailsData,
   setDetailsData,
   listingsWithinXDistance,
   data
