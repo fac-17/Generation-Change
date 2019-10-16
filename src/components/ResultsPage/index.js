@@ -6,8 +6,6 @@ import Searchbar from "../Universal/Searchbar";
 import { dataWithDistances } from "../../utils/dataManipulation";
 import showResultsAsMarkers from "../../utils/showResultsAsMarkers";
 
-showResultsAsMarkers();
-
 const ResultsPage = ({
   detailsData,
   setDetailsData,
@@ -35,6 +33,7 @@ const ResultsPage = ({
     .sort((a, b) => a.distance - b.distance);
   console.log("sorted data", listingsWithinXDistance);
 
+  showResultsAsMarkers(listingsWithinXDistance);
   // console.log("listingsWithinXDistance", listingsWithinXDistance);
 
   // this is adding a layer and markers to our map
