@@ -67,7 +67,6 @@ const ResultsPage = ({
           markersData={markersData}
           setMarkersData={setMarkersData}
         />
-        <button onClick={addMarker}>Add marker</button>
       </div>
       <h2>Results Page</h2>
       <ProjectCards
