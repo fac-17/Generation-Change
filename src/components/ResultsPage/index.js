@@ -67,7 +67,7 @@ const ResultsPage = ({
           markersData={markersData}
           setMarkersData={setMarkersData}
         />
-        <h2>Results Page</h2>
+        <h2>Results: {listingsWithinXDistance.length}</h2>
         <ProjectCards
         className="project-card"
           detailsData={detailsData}
