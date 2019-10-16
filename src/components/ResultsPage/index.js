@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Universal/Navbar";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
@@ -51,6 +51,10 @@ const ResultsPage = ({
       }
     ]);
   };
+
+  useEffect(() => {
+    projectMarkers.map(addMarker);
+  }, []);
 
   // passing listingsWithinXDistance into the ProjectCards component to then render listings
   return (
