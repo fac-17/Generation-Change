@@ -10,12 +10,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState(null);
-  const [searchLongLat, setSearchLongLat] = useState("51.49075,-0.25263");
+  const [searchLongLat, setSearchLongLat] = useState("");
   const [detailsData, setDetailsData] = useState({});
-  const [markersData, setMarkersData] = useState([
-    { latLng: { lat: 51.5007, lng: -0.1246 }, title: "your location" },
-    { latLng: { lat: 51.5008, lng: -0.1248 }, title: "your location" }
-  ]);
+  const [markersData, setMarkersData] = useState([]);
 
   // below postcode to latlng transition
   React.useEffect(() => {
