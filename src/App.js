@@ -9,24 +9,22 @@ import DetailsPage from "./components/DetailsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
+  
   const [data, setData] = useState(null);
   const [searchLongLat, setSearchLongLat] = useState("");
   const [detailsData, setDetailsData] = useState({});
   const [markersData, setMarkersData] = useState([]);
-
   // below postcode to latlng transition
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
   }, []);
-
+  
   if (!data)
-    return (
-      <div>
+  return (
+    <div>
         <h2>...loading</h2>
       </div>
     );
-
-  // console.log("geocords", searchLongLat);
 
   return (
     <Router>
