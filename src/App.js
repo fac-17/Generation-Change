@@ -18,8 +18,6 @@ function App() {
   ]);
 
   // below postcode to latlng transition
-
-  console.log("searchLongLat", searchLongLat);
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
   }, []);

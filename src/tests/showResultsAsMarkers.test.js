@@ -1,5 +1,4 @@
-import React from "react";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { cleanup } from "@testing-library/react";
 import showResultsAsMarkers from "../utils/showResultsAsMarkers";
 
 afterEach(cleanup);

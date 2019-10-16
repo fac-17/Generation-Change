@@ -2,22 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Svg from "../Universal/Svg";
 
-const ProjectCards = ({
-  detailsData,
-  setDetailsData,
-  listingsWithinXDistance,
-  data
-}) => {
+const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
   if (!data) {
     return <h1>...loading</h1>;
   }
-  console.log(
-    "projects within distance data in projectcards.js",
-    listingsWithinXDistance
-  );
-  const project = listingsWithinXDistance.map((project, i) => (
+  const project = sortedListings.map((project, i) => (
     <li key={i} className="project-card">
-      <img src={project.photo_1} alt="story"/>
+      <img src={project.photo_1} alt="story" />
       <p className="project-card__category">{project.fields.category}</p>
       <p
         className="project-card__title"
@@ -74,13 +65,9 @@ const ProjectCards = ({
 
   return (
     <div>
-      <ul className="container__projects">
+      <ul>
         <Link to={{ pathname: "/details" }}>
-          {project.length ? (
-            project
-          ) : (
-            <li className="project-card">No results found</li>
-          )}
+          {project.length ? project : <li>No results found</li>}
         </Link>
       </ul>
     </div>
