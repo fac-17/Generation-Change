@@ -31,8 +31,8 @@ const dataWithDistances = (data, searchLongLat) => {
   }, []);
 };
 
-const listingsWithinXDistance = arr => {
-  return arr
+const listingsWithinXDistance = data => {
+  return data
     .filter(
       e => e.distance <= 16093
       //metres which equals 10miles
