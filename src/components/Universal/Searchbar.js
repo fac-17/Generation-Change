@@ -19,16 +19,15 @@ const Searchbar = ({ setSearchLongLat }) => {
   return (
     <div className="searchbar">
       <form id="searchbar" onSubmit={handleSubmit}>
-        <label className="searchbar__label">
-          Postcode Search
-          <input
-            name="postcode"
-            type="text"
-            className="searchbar__input"
-            placeholder="Enter postcode"
-            aria-label="enter postcode"
-          />
-        </label>
+        <input
+          aria-label="input-postcode"
+          data-testid="searchbar__input"
+          name="postcode"
+          type="text"
+          className="searchbar__input"
+          placeholder="Enter postcode"
+          aria-label="enter postcode"
+        />
 
         <button
           type="submit"
