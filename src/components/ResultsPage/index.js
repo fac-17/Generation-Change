@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Universal/Navbar";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 import Searchbar from "../Universal/Searchbar";
-import {
-  dataWithDistances
-} from "../../utils/dataManipulation";
+import { dataWithDistances } from "../../utils/dataManipulation";
+import showResultsAsMarkers from "../../utils/showResultsAsMarkers";
 
 const ResultsPage = ({
   detailsData,
@@ -34,23 +33,28 @@ const ResultsPage = ({
     .sort((a, b) => a.distance - b.distance);
   console.log("sorted data", listingsWithinXDistance);
 
+  const projectMarkers = showResultsAsMarkers(listingsWithinXDistance);
   // console.log("listingsWithinXDistance", listingsWithinXDistance);
 
   // this is adding a layer and markers to our map
   const addMarker = () => {
-    const lastMarker = markersData[markersData.length - 1];
+    const lastMarker = projectMarkers[projectMarkers.length - 1];
 
     return setMarkersData([
-      ...markersData,
+      ...projectMarkers,
       {
         title: +lastMarker.title + 1,
         latLng: {
-          lat: lastMarker.latLng.lat + 0.0001,
-          lng: lastMarker.latLng.lng + 0.0001
+          lat: lastMarker.latLng.lat,
+          lng: lastMarker.latLng.lng
         }
       }
     ]);
   };
+
+  useEffect(() => {
+    projectMarkers.map(addMarker);
+  }, []);
 
   // passing listingsWithinXDistance into the ProjectCards component to then render listings
   return (
@@ -63,7 +67,6 @@ const ResultsPage = ({
           markersData={markersData}
           setMarkersData={setMarkersData}
         />
-        <button onClick={addMarker}>Add marker</button>
       </div>
       <h2>Results Page</h2>
       <ProjectCards
