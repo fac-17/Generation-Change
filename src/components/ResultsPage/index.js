@@ -33,15 +33,15 @@ const ResultsPage = ({
     .sort((a, b) => a.distance - b.distance);
   console.log("sorted data", listingsWithinXDistance);
 
-  showResultsAsMarkers(listingsWithinXDistance);
+  const projectMarkers = showResultsAsMarkers(listingsWithinXDistance);
   // console.log("listingsWithinXDistance", listingsWithinXDistance);
 
   // this is adding a layer and markers to our map
   const addMarker = () => {
-    const lastMarker = markersData[markersData.length - 1];
+    const lastMarker = projectMarkers[projectMarkers.length - 1];
 
     return setMarkersData([
-      ...markersData,
+      ...projectMarkers,
       {
         title: +lastMarker.title + 1,
         latLng: {
