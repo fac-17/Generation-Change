@@ -57,17 +57,29 @@ const expected = [
 
 const showResultsAsMarkers = data => {
   return data.reduce((acc, curr) => {
-    console.log("this is acc", acc);
     if (
       curr.fields.latitude !== undefined ||
       curr.fields.longitude !== undefined
     ) {
       const latLngObject = {};
-      latLngObject["title"] = curr.fields.title;
-      latLngObject["latitude"] = curr.fields.latitude;
-      latLngObject["longitude"] = curr.fields.longitude;
+      // latLngObject["title"] = curr.fields.title;
+      // latLngObject["latitude"] = curr.fields.latitude;
+      // latLngObject["longitude"] = curr.fields.longitude;
       return acc.concat(
-        Object.fromEntries(new Map([["title", curr.fields.title]]))
+        Object.fromEntries(
+          new Map([
+            [
+              "latLng",
+              Object.fromEntries(
+                new Map([
+                  ["lat", curr.fields.latitude],
+                  ["lng", curr.fields.longitude]
+                ])
+              )
+            ],
+            ["title", curr.fields.title]
+          ])
+        )
       );
     } else {
       return acc;
