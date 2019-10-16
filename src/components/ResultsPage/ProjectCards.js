@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Svg from "../Universal/Svg";
 
@@ -17,7 +17,7 @@ const ProjectCards = ({
   );
   const project = listingsWithinXDistance.map((project, i) => (
     <li key={i} className="project-card">
-      <img src={project.photo_1} />
+      <img src={project.photo_1} alt="story"/>
       <p className="project-card__category">{project.fields.category}</p>
       <p
         className="project-card__title"

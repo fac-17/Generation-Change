@@ -1,13 +1,10 @@
 import React from "react";
 import Navbar from "../Universal/Navbar";
-// import { Link } from "react-router-dom";
-import { getDistance } from "geolib";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 import Searchbar from "../Universal/Searchbar";
 import {
-  dataWithDistances,
-  listingsWithinXDistance
+  dataWithDistances
 } from "../../utils/dataManipulation";
 
 const ResultsPage = ({
