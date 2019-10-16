@@ -2,18 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Svg from "../Universal/Svg";
 
-const ProjectCards = ({
-  setDetailsData,
-  sortedListings,
-  data
-}) => {
+const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
   if (!data) {
     return <h1>...loading</h1>;
   }
-  console.log(
-    "projects within distance data in projectcards.js",
-    sortedListings
-  );
   const project = sortedListings.map((project, i) => (
     <li key={i} className="project-card">
       <img src={project.photo_1} alt="story" />
