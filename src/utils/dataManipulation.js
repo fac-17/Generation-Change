@@ -32,7 +32,12 @@ const dataWithDistances = (data, searchLongLat) => {
 };
 
 const listingsWithinXDistance = arr => {
-  return arr;
+  return arr
+    .filter(
+      e => e.distance <= 16093
+      //metres which equals 10miles
+    )
+    .sort((a, b) => a.distance - b.distance);
 };
 
 export { dataWithDistances, listingsWithinXDistance };

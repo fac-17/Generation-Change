@@ -4,7 +4,7 @@ import Svg from "../Universal/Svg";
 
 const ProjectCards = ({
   setDetailsData,
-  listingsWithinXDistance,
+  sortedListings,
   data
 }) => {
   if (!data) {
@@ -12,9 +12,9 @@ const ProjectCards = ({
   }
   console.log(
     "projects within distance data in projectcards.js",
-    listingsWithinXDistance
+    sortedListings
   );
-  const project = listingsWithinXDistance.map((project, i) => (
+  const project = sortedListings.map((project, i) => (
     <li key={i} className="project-card">
       <img src={project.photo_1} alt="story" />
       <p className="project-card__category">{project.fields.category}</p>

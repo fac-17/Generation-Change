@@ -3,7 +3,7 @@ import Navbar from "../Universal/Navbar";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 import Searchbar from "../Universal/Searchbar";
-import { dataWithDistances } from "../../utils/dataManipulation";
+import { dataWithDistances, listingsWithinXDistance } from "../../utils/dataManipulation";
 import showResultsAsMarkers from "../../utils/showResultsAsMarkers";
 
 const ResultsPage = ({
@@ -25,15 +25,11 @@ const ResultsPage = ({
   // we pass each object wihtin the reformated Data array into the geolib getDistance function as coordinate 1 and the coordinate of the postcode that has been input in the search field as coordinate 2.
   // this calculates the result listings distance from the searched postcode. We then only return an array with distances smaller or 5500000
 
-  const listingsWithinXDistance = calcDistance
-    .filter(
-      e => e.distance <= 16093
-      //metres which equals 10miles
-    )
-    .sort((a, b) => a.distance - b.distance);
-  console.log("sorted data", listingsWithinXDistance);
+  const sortedListings = listingsWithinXDistance(calcDistance);
+    
+  console.log("sorted data", sortedListings);
 
-  const projectMarkers = showResultsAsMarkers(listingsWithinXDistance);
+  const projectMarkers = showResultsAsMarkers(sortedListings);
   // console.log("listingsWithinXDistance", listingsWithinXDistance);
 
   // this is adding a layer and markers to our map
@@ -72,7 +68,7 @@ const ResultsPage = ({
         className="project-card"
           detailsData={detailsData}
           setDetailsData={setDetailsData}
-          listingsWithinXDistance={listingsWithinXDistance}
+          sortedListings={sortedListings}
           data={data}
         />
       </div>
