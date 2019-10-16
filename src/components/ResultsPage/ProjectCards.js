@@ -17,7 +17,7 @@ const ProjectCards = ({
   );
   const project = listingsWithinXDistance.map((project, i) => (
     <li key={i} className="project-card">
-      <img src={project.photo_1} alt="story"/>
+      <img src={project.photo_1} alt="story" />
       <p className="project-card__category">{project.fields.category}</p>
       <p
         className="project-card__title"
@@ -74,13 +74,9 @@ const ProjectCards = ({
 
   return (
     <div>
-      <ul className="container__projects">
+      <ul>
         <Link to={{ pathname: "/details" }}>
-          {project.length ? (
-            project
-          ) : (
-            <li className="project-card">No results found</li>
-          )}
+          {project.length ? project : <li>No results found</li>}
         </Link>
       </ul>
     </div>

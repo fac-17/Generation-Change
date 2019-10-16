@@ -61,20 +61,21 @@ const ResultsPage = ({
     <div>
       <Navbar />
       <Searchbar setSearchLongLat={setSearchLongLat} />
-      <div id="container">
+      <div id="container" className="container__projects">
         <LeafletMap
           className="container__map"
           markersData={markersData}
           setMarkersData={setMarkersData}
         />
+        <h2>Results Page</h2>
+        <ProjectCards
+        className="project-card"
+          detailsData={detailsData}
+          setDetailsData={setDetailsData}
+          listingsWithinXDistance={listingsWithinXDistance}
+          data={data}
+        />
       </div>
-      <h2>Results Page</h2>
-      <ProjectCards
-        detailsData={detailsData}
-        setDetailsData={setDetailsData}
-        listingsWithinXDistance={listingsWithinXDistance}
-        data={data}
-      />
     </div>
   );
 };
