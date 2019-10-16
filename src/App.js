@@ -13,7 +13,8 @@ function App() {
   const [searchLongLat, setSearchLongLat] = useState("51.49075,-0.25263");
   const [detailsData, setDetailsData] = useState({});
   const [markersData, setMarkersData] = useState([
-    { latLng: { lat: 51.5007, lng: -0.1246 }, title: "your location" }
+    { latLng: { lat: 51.5007, lng: -0.1246 }, title: "your location" },
+    { latLng: { lat: 51.5008, lng: -0.1248 }, title: "your location" }
   ]);
 
   // below postcode to latlng transition

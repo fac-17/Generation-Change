@@ -3,9 +3,10 @@ import Navbar from "../Universal/Navbar";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 import Searchbar from "../Universal/Searchbar";
-import {
-  dataWithDistances
-} from "../../utils/dataManipulation";
+import { dataWithDistances } from "../../utils/dataManipulation";
+import showResultsAsMarkers from "../../utils/showResultsAsMarkers";
+
+showResultsAsMarkers();
 
 const ResultsPage = ({
   detailsData,
@@ -45,8 +46,8 @@ const ResultsPage = ({
       {
         title: +lastMarker.title + 1,
         latLng: {
-          lat: lastMarker.latLng.lat + 0.0001,
-          lng: lastMarker.latLng.lng + 0.0001
+          lat: lastMarker.latLng.lat,
+          lng: lastMarker.latLng.lng
         }
       }
     ]);
