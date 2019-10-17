@@ -6,9 +6,7 @@ const ImageContainer = ({ detailsData }) => {
   }
   return (
     <div className="project-image-flex">
-      <div>
-        <img src={detailsData.fields.photo_1} alt="story" />
-      </div>
+      <img src={detailsData.fields.photo_1} alt="story" />
       <div className="project-image-flex__small-photos">
         <img src={detailsData.fields.photo_2} alt="story" />
         <img src={detailsData.fields.photo_3} alt="story" />
