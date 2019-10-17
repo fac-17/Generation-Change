@@ -15,7 +15,7 @@ const Stories = ({ data }) => {
               alt="story"
               className="story__img"
             />
-            <h1>{data[85].fields.story_title}</h1>
+            <h1 className="story__title--landing">{data[85].fields.story_title}</h1>
             <p className="category--landing">{data[85].fields.category}</p>
           </article>
         </Link>
