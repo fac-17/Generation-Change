@@ -23,7 +23,7 @@ const ProjectSummary = ({ detailsData }) => {
               <a href={detailsData.fields.twitter_url}>
                 <Svg height="34" width="33" icon="twitter" />
               </a>
-              <img src={detailsData.fields.organisation_logo} alt="story"/>
+              <img src={detailsData.fields.organisation_logo} alt="story" />
             </div>
           </div>
           <div>{detailsData.fields.organisation_details}</div>
