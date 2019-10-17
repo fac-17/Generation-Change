@@ -31,6 +31,8 @@
     text-align: justify
     align-items: center
     line-height: 1.6
+.category--landing
+    text-transform: uppercase
 .category--story
     text-align: left
     align-self: left
@@ -214,14 +216,14 @@ a
 // DETAILS PAGE
 // STORY PAGES
 .story__img
-    max-width: 350px
+    width: 350px
     min-width: 100px
-    max-height: 350px
+    height: 250px
     min-height: 100px
 
 // IMAGE AND DETAILS
 .container__banner
-    height: 87vh
+    height: 800px
     background-image: linear-gradient(to bottom, $bg-primary-colour, $bg-secondary-colour)
 
 .project-card__svg--white
@@ -247,6 +249,7 @@ a
 
 .project-bulletpoints__tagline
     font-size: 1.2em
+    padding-top: 1em
 
 .project-title-cat__category
     font-size: 1.2em
@@ -282,6 +285,8 @@ a
     width: 40vw
     margin: 30px 0 0 0
     font-size: 1.15em
+    line-height: 1.6
+
 
 .organisers__text
     display: flex
@@ -345,23 +350,23 @@ a
     margin-left: 10%
 
 #map
-  height: 100%
-  width: 100%
-  position: fixed
+    height: 100%
+    width: 100%
+    position: fixed
 
 .navbar-flexbox
     border-bottom: 2px solid #d6d6d8
     display: flex
     width: fit-content
-    padding-top: 18px
-    padding-left: 2em
-
+    
 .searchbar-container__results-and-details
     display: flex
     width: fit-content
     padding-top: 18px
     padding-left: 2em
 
+.loading-text
+    color: red
 // MEDIA_QUERIES GO HERE ----------------------------------------------------------------
 @media screen and (max-width: 480px)
     .container
@@ -380,3 +385,4 @@ a
     a
         text-decoration: none
         list-style: none
+
