@@ -28,7 +28,7 @@ const LeafletMap = ({ markersData }) => {
     () => {
       layerRef.current.clearLayers();
       markersData.pop();
-      markersData.forEach((marker, i) => {
+      markersData.forEach(marker => {
         L.marker(marker.latLng, { title: marker.title })
           .addTo(layerRef.current)
           .bindPopup(marker.title);
