@@ -14,13 +14,13 @@ const ProjectDetails = ({ detailsData }) => {
         <div className="project-title-cat__title">
           {detailsData.fields.title}
         </div>
-      </div>
-      <div className="project-bulletpoints">
         <div className="project-bulletpoints__tagline">
           {detailsData.fields.tagline.endsWith(".")
             ? detailsData.fields.tagline
             : detailsData.fields.tagline + "."}
         </div>
+      </div>
+      <div className="project-bulletpoints">
         <div className="project-card__icon-info-outer-wrap">
           <div className="project-card__icon-info-individual-wrap">
             <Svg
