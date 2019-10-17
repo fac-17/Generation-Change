@@ -45,13 +45,15 @@ const ResultsPage = ({
 
   return (
     <div>
-      <div className="navbar-flexbox">
-        <Navbar />
-        <div className="searchbar-container__results-and-details">
-          <Searchbar setSearchLongLat={setSearchLongLat} />
+      <div className="fix-navbar">
+        <div className="navbar-flexbox">
+          <Navbar />
+          <div className="searchbar-container__results-and-details">
+            <Searchbar setSearchLongLat={setSearchLongLat} />
+          </div>
         </div>
+        <hr className="line--dark--nav" />
       </div>
-      <hr className="line--dark" />
       <div id="container" className="container__projects">
         <div className="container__projects__inner-wrap">
           <h2 className="number-of-results">
