@@ -39,12 +39,9 @@ const ResultsPage = ({
     ]);
   };
 
-  useEffect(
-    () => {
-      projectMarkers.map(addMarker);
-    },
-    [searchLongLat]
-  );
+  useEffect(() => {
+    projectMarkers.map(addMarker);
+  }, [searchLongLat]);
 
   return (
     <div>
@@ -54,6 +51,7 @@ const ResultsPage = ({
           <Searchbar setSearchLongLat={setSearchLongLat} />
         </div>
       </div>
+      <hr className="line--dark" />
       <div id="container" className="container__projects">
         <div className="container__projects__inner-wrap">
           <h2 className="number-of-results">
