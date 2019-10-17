@@ -16,7 +16,7 @@ const Stories = ({ data }) => {
               className="story__img"
             />
             <h1>{data[85].fields.story_title}</h1>
-            <p>{data[85].fields.category}</p>
+            <p className="category--landing">{data[85].fields.category}</p>
           </article>
         </Link>
 
@@ -27,7 +27,7 @@ const Stories = ({ data }) => {
               className="story__img"
             />
             <h1>Princes Trust bring hospital garden back to life</h1>
-            <p>Volunteering</p>
+            <p className="category--landing">Volunteering</p>
           </article>
           <article className="container__story--2">
             <img
@@ -36,7 +36,7 @@ const Stories = ({ data }) => {
               className="story__img"
             />
             <h1>Change society and the environment</h1>
-            <p>Fundraising</p>
+            <p className="category--landing">Fundraising</p>
           </article>
       </div>
     </>
