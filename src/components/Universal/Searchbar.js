@@ -12,7 +12,7 @@ const Searchbar = ({ setSearchLongLat }) => {
     if (searchPostcode.length < 5) return;
     convertPostcode(searchPostcode).then(coordinates => {
       setSearchLongLat(coordinates);
-      history.push("/results");
+      history.push(`/results?${searchPostcode}`);
     });
   }
 

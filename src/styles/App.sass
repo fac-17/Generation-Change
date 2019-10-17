@@ -31,6 +31,8 @@
     text-align: justify
     align-items: center
     line-height: 1.6
+.category--landing
+    text-transform: uppercase
 .category--story
     text-align: left
     align-self: left
@@ -69,10 +71,13 @@ html
     text-align: center
 .container__story--0
     grid-column: 2/5
+    color: $light-font-colour
 .container__story--1
     grid-column: 5/8
+    color: $light-font-colour
 .container__story--2
     grid-column: 8/11
+    color: $light-font-colour
 .container__map
     height: 400px
     width: 100%
@@ -211,9 +216,9 @@ a
 // DETAILS PAGE
 // STORY PAGES
 .story__img
-    max-width: 350px
+    width: 350px
     min-width: 100px
-    max-height: 350px
+    height: 250px
     min-height: 100px
 
 // IMAGE AND DETAILS
@@ -350,6 +355,7 @@ a
     position: fixed
 
 .navbar-flexbox
+    border-bottom: 2px solid #d6d6d8
     display: flex
     width: fit-content
     
