@@ -6,25 +6,25 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
   const mapRef = useRef(null);
   console.log(searchLongLat.latitude);
   useEffect(() => {
-    searchLongLat
-      ? (mapRef.current = L.map("map", {
-          center: [searchLongLat.latitude, searchLongLat.longitude],
-          zoom: 14,
-          layers: [
-            L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-              attribution:
-                '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            })
-          ]
-        }))
-      : alert("searchLongLat not defined in Leaflet Map component");
+    mapRef.current = L.map("map", {
+      center: [51.509865, -0.118092],
+      zoom: 9,
+      layers: [
+        L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        })
+      ]
+    });
   }, []);
 
   useEffect(() => {
-    mapRef.current.setView(
-      [searchLongLat.latitude, searchLongLat.longitude],
-      11
-    );
+    searchLongLat
+      ? mapRef.current.setView(
+          [searchLongLat.latitude, searchLongLat.longitude],
+          11
+        )
+      : console.log("searchLongLat not defined in Leaflet Map component");
   }, [searchLongLat]);
 
   // add layer
