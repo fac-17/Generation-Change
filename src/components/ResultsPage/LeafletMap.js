@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 
-const LeafletMap = markersData => {
+const LeafletMap = ({ markersData }) => {
   // create map
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [51.5007, -0.1246],
-      zoom: 10,
+      center: [53.41058, -2.97794],
+      zoom: 6,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
@@ -26,7 +26,7 @@ const LeafletMap = markersData => {
   // update markers
   useEffect(() => {
     layerRef.current.clearLayers();
-    markersData.markersData.forEach(marker => {
+    markersData.forEach(marker => {
       L.marker(marker.latLng, { title: marker.title }).addTo(layerRef.current);
     });
   }, [markersData]);
