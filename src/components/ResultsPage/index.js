@@ -56,7 +56,9 @@ const ResultsPage = ({
       </div>
       <div id="container" className="container__projects">
         <div className="container__projects__inner-wrap">
-          <h2>{sortedListings.length} results within 10 miles distance</h2>
+          <h2 className="number-of-results">
+            {sortedListings.length} results within 10 miles distance
+          </h2>
           <ProjectCards
             className="project-card"
             detailsData={detailsData}
@@ -65,7 +67,7 @@ const ResultsPage = ({
             data={data}
           />
         </div>
-        <div>
+        <div className="leaflet-map-container">
           <LeafletMap
             className="container__map"
             markersData={markersData}

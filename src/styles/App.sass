@@ -101,7 +101,7 @@ html
 .container__projects__inner-wrap
     display: flex
     flex-direction: column
-    padding: 25px
+    padding: 0 25px
     max-width: 55%
 
 .project-card
@@ -116,6 +116,9 @@ html
     box-shadow: 5px 6px 10px -10px rgba(64,60,60,0.75)
     align-items: center
 
+.leaflet-map-container
+    display: flex
+    flex-wrap: wrap
 
 .project-card__inner-wrap
     display: flex
@@ -148,13 +151,22 @@ a
 .project-card__icon-info-outer-wrap
     display: flex
     flex-direction: row
+    width: 95%
 
 .project-card__icon-info-individual-wrap
     display: flex
     flex-direction: column
-    padding: 10px
+    padding: 7px
     font-family: $btn-font
     width: 80px
+
+#icon-age
+    width: 70px
+    margin-top: 3px
+
+#icon-group-size
+    width: 90px
+    margin-top: 3px
 
 .project-card__svg
     width: 30px
@@ -277,6 +289,9 @@ a
 .project-image-flex__small-photos img
     height: 50%
 
+.number-of-results
+    margin-top: 0px
+
 // OTHERS
 a
     text-decoration: none
@@ -290,7 +305,7 @@ a
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 .word
     margin-left: 10%
-    
+
 #map
   height: 100%
   width: 100%

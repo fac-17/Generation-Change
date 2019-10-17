@@ -26,7 +26,10 @@ const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
           </p>
         </Link>
         <div className="project-card__icon-info-outer-wrap">
-          <div className="project-card__icon-info-individual-wrap">
+          <div
+            className="project-card__icon-info-individual-wrap"
+            id="icon-age"
+          >
             <Svg height="18" width="24" icon="age" />
             <p>Age</p>
             <div>
@@ -37,7 +40,10 @@ const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
             </div>
           </div>
 
-          <div className="project-card__icon-info-individual-wrap">
+          <div
+            className="project-card__icon-info-individual-wrap"
+            id="icon-group-size"
+          >
             <Svg height="18" width="24" icon="group-size" />
             <p>Group Size</p>
             <div>

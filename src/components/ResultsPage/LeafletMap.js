@@ -6,7 +6,7 @@ const LeafletMap = ({ markersData }) => {
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [53.41058, -2.97794],
+      center: [51.2277, 6.7735],
       zoom: 6,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
