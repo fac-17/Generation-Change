@@ -42,10 +42,12 @@ const ProjectSummary = ({ detailsData }) => {
           </div>
           <div>{detailsData.fields.organisation_details}</div>
           <div className="organisers__contact">
-            <div className="organisers__contact__individual-wrap--website">
-              <Svg height="32" width="31" icon="website" />
-              <div>{detailsData.fields.website}</div>
-            </div>
+            <a href="{detailsData.fields.website}" target="_blank">
+              <div className="organisers__contact__individual-wrap--website">
+                <Svg height="32" width="31" icon="website" />
+                <div>{detailsData.fields.website}</div>
+              </div>
+            </a>
 
             <div className="organisers__contact__individual-wrap">
               <Svg height="40" width="50" icon="email" />
