@@ -10,8 +10,12 @@ const DetailsPage = ({ detailsData, setSearchLongLat }) => {
   return (
     <div>
       <div className="container__banner">
-        <Navbar />
-        <Searchbar setSearchLongLat={setSearchLongLat} />
+        <div className="navbar-flexbox">
+          <Navbar />
+          <div className="searchbar-container__results-and-details">
+            <Searchbar setSearchLongLat={setSearchLongLat} />
+          </div>
+        </div>
         <ImageContainer detailsData={detailsData} />
         <ProjectDetails detailsData={detailsData} />
       </div>

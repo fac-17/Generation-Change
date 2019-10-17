@@ -27,10 +27,11 @@ const LeafletMap = ({ markersData }) => {
   useEffect(
     () => {
       layerRef.current.clearLayers();
-      markersData.forEach(marker => {
-        L.marker(marker.latLng, { title: marker.title }).addTo(
-          layerRef.current
-        );
+      markersData.pop();
+      markersData.forEach((marker, i) => {
+        L.marker(marker.latLng, { title: marker.title })
+          .addTo(layerRef.current)
+          .bindPopup(marker.title);
       });
     },
     [markersData]

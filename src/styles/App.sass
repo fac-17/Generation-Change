@@ -82,6 +82,8 @@ html
 // SEARCHBAR
 .searchbar
     text-align: center
+    height: fit-content
+
     &__input
         width: $searchbar-width
         height: $searchbar-height
@@ -158,6 +160,13 @@ a
     width: 30px
 
 // DETAILS PAGE
+// STORY PAGES
+.story__img
+    max-width: 350px
+    min-width: 100px
+    max-height: 350px
+    min-height: 100px
+    border-radius: 15px
 
 // IMAGE AND DETAILS
 .container__banner
@@ -269,6 +278,8 @@ a
     height: 50%
 
 // OTHERS
+a
+    text-decoration: none
 .line
     margin-top: 20px
     margin-bottom: 20px
@@ -279,10 +290,24 @@ a
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 .word
     margin-left: 10%
+    
 #map
   height: 100%
   width: 100%
   position: fixed
+
+.navbar-flexbox
+    display: flex
+    width: fit-content
+    padding-top: 18px
+    padding-left: 2em
+
+.searchbar-container__results-and-details
+    display: flex
+    width: fit-content
+    padding-top: 18px
+    padding-left: 2em
+>>>>>>> master
 
 // MEDIA_QUERIES GO HERE ----------------------------------------------------------------
 @media screen and (max-width: 480px)
