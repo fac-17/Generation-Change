@@ -6,8 +6,8 @@ const LeafletMap = ({ markersData }) => {
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [51.2277, 6.7735],
-      zoom: 6,
+      center: [51.5007, 0.1246],
+      zoom: 9,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
