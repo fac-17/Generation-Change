@@ -4,13 +4,13 @@ import Navbar from "../Universal/Navbar";
 import Title from "./Title";
 import Stories from "./Stories";
 
-const LandingPage = ({ setSearchLongLat }) => {
+const LandingPage = ({ setSearchLongLat, data }) => {
   return (
     <div className="dark-bg-gradient">
       <Navbar />
       <Title />
       <Searchbar setSearchLongLat={setSearchLongLat} />
-      <Stories />
+      <Stories data={data}/>
     </div>
   );
 };
