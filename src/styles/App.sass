@@ -82,6 +82,8 @@ html
 // SEARCHBAR
 .searchbar
     text-align: center
+    height: fit-content
+
     &__input
         width: $searchbar-width
         height: $searchbar-height
@@ -269,6 +271,19 @@ a
     right: 0
     position: fixed
     z-index: 100
+
+.navbar-flexbox
+    display: flex
+    width: fit-content
+    padding-top: 18px
+    padding-left: 2em
+
+.searchbar-container__results-and-details
+    display: flex
+    width: fit-content
+    padding-top: 18px
+    padding-left: 2em
+
 // MEDIA_QUERIES GO HERE ----------------------------------------------------------------
 @media screen and (max-width: 480px)
     .container

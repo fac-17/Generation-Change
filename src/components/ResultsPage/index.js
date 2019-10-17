@@ -45,8 +45,12 @@ const ResultsPage = ({
 
   return (
     <div>
-      <Navbar />
-      <Searchbar setSearchLongLat={setSearchLongLat} />
+      <div className="navbar-flexbox">
+        <Navbar />
+        <div className="searchbar-container__results-and-details">
+          <Searchbar setSearchLongLat={setSearchLongLat} />
+        </div>
+      </div>
       <div id="container" className="container__projects">
         <LeafletMap
           className="container__map"
