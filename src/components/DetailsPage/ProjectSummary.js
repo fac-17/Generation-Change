@@ -28,10 +28,10 @@ const ProjectSummary = ({ detailsData }) => {
           </div>
           <div>{detailsData.fields.organisation_details}</div>
           <div className="organisers__contact">
-            <div>
+            <a href="{detailsData.fields.website}" target="_blank">
               <Svg height="32" width="31" icon="website" />
               <div>{detailsData.fields.website}</div>
-            </div>
+            </a>
 
             <div>
               <Svg height="34" width="33" icon="email" />
