@@ -20,7 +20,18 @@
 // PAGE WRAPPERS
 .wrapper
     font-family: $main-font
-
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    
+.wrapper__story
+    max-width: 900px
+    display: flex
+    margin: 0 auto
+    flex-direction: column
+    text-align: justify
+    align-items: center
+.category--story
+    text-transform: uppercase
 html
     font-family: $btn-font
 
