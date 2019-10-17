@@ -19,6 +19,7 @@ const ResultsPage = ({
   setMarkersData
 }) => {
   const calcDistance = dataWithDistances(data, searchLongLat);
+
   const sortedListings = listingsWithinXDistance(calcDistance);
 
   const projectMarkers = showResultsAsMarkers(sortedListings);
@@ -72,6 +73,7 @@ const ResultsPage = ({
             className="container__map"
             markersData={markersData}
             setMarkersData={setMarkersData}
+            searchLongLat={searchLongLat}
           />
         </div>
       </div>
