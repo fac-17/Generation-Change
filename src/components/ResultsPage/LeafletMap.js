@@ -1,20 +1,23 @@
 import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 
-const LeafletMap = ({ markersData }) => {
+const LeafletMap = ({ searchLongLat, markersData }) => {
   // create map
   const mapRef = useRef(null);
+  console.log(searchLongLat.latitude);
   useEffect(() => {
-    mapRef.current = L.map("map", {
-      center: [51.509865, -0.118092],
-      zoom: 9,
-      layers: [
-        L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-          attribution:
-            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        })
-      ]
-    });
+    searchLongLat
+      ? (mapRef.current = L.map("map", {
+          center: [searchLongLat.latitude, searchLongLat.longitude],
+          zoom: 13,
+          layers: [
+            L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+              attribution:
+                '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            })
+          ]
+        }))
+      : alert("not defined");
   }, []);
 
   // add layer
@@ -24,18 +27,15 @@ const LeafletMap = ({ markersData }) => {
   }, []);
 
   // update markers
-  useEffect(
-    () => {
-      layerRef.current.clearLayers();
-      markersData.pop();
-      markersData.forEach(marker => {
-        L.marker(marker.latLng, { title: marker.title })
-          .addTo(layerRef.current)
-          .bindPopup(marker.title);
-      });
-    },
-    [markersData]
-  );
+  useEffect(() => {
+    layerRef.current.clearLayers();
+    markersData.pop();
+    markersData.forEach(marker => {
+      L.marker(marker.latLng, { title: marker.title })
+        .addTo(layerRef.current)
+        .bindPopup(marker.title);
+    });
+  }, [markersData]);
 
   return <div id="map" />;
 };
