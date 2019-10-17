@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 
 const Searchbar = ({ setSearchLongLat }) => {
   let history = useHistory();
-
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -14,7 +13,7 @@ const Searchbar = ({ setSearchLongLat }) => {
     if (searchPostcode.length < 5) return;
     convertPostcode(searchPostcode).then(coordinates => {
       setSearchLongLat(coordinates);
-      history.push(`/results?${trimmedPostcode}`);
+      history.push(`/results?postcode=${trimmedPostcode}`);
     });
   }
 

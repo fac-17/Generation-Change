@@ -3,12 +3,12 @@ import Navbar from "../Universal/Navbar";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 import Searchbar from "../Universal/Searchbar";
+import queryString from "query-string";
 import {
   dataWithDistances,
   listingsWithinXDistance
 } from "../../utils/dataManipulation";
 import showResultsAsMarkers from "../../utils/showResultsAsMarkers";
-
 const ResultsPage = ({
   detailsData,
   setDetailsData,
@@ -18,10 +18,15 @@ const ResultsPage = ({
   markersData,
   setMarkersData
 }) => {
+  // getting postcode from querystring
+
+  useEffect(() => {
+    console.log(window.location.search);
+  }, []);
+
+  // consts for map & markers
   const calcDistance = dataWithDistances(data, searchLongLat);
-
   const sortedListings = listingsWithinXDistance(calcDistance);
-
   const projectMarkers = showResultsAsMarkers(sortedListings);
 
   // this is adding a layer and markers to our map
