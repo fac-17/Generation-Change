@@ -6,8 +6,8 @@ const LeafletMap = ({ markersData }) => {
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [53.41058, -2.97794],
-      zoom: 6,
+      center: [51.5007, 0.1246],
+      zoom: 9,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
@@ -24,15 +24,18 @@ const LeafletMap = ({ markersData }) => {
   }, []);
 
   // update markers
-  useEffect(() => {
-    layerRef.current.clearLayers();
-    markersData.pop();
-    markersData.forEach((marker, i) => {
-      L.marker(marker.latLng, { title: marker.title })
-        .addTo(layerRef.current)
-        .bindPopup(marker.title);
-    });
-  }, [markersData]);
+  useEffect(
+    () => {
+      layerRef.current.clearLayers();
+      markersData.pop();
+      markersData.forEach((marker, i) => {
+        L.marker(marker.latLng, { title: marker.title })
+          .addTo(layerRef.current)
+          .bindPopup(marker.title);
+      });
+    },
+    [markersData]
+  );
 
   return <div id="map" />;
 };
