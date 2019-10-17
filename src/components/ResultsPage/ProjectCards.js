@@ -30,7 +30,7 @@ const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
             className="project-card__icon-info-individual-wrap"
             id="icon-age"
           >
-            <Svg height="18" width="24" icon="age" />
+            <Svg height="25" width="24" icon="age" />
             <p>Age</p>
             <div>
               {project.fields.minimum_age}

@@ -26,8 +26,8 @@ const ProjectDetails = ({ detailsData }) => {
             <Svg
               className="project-card__svg"
               color="--white"
-              height="20"
-              width="20"
+              height="25"
+              width="25"
               icon="age"
             />
             <p>Age</p>
@@ -40,7 +40,7 @@ const ProjectDetails = ({ detailsData }) => {
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
-            <Svg color="--white" height="20" width="20" icon="group-size" />
+            <Svg color="--white" height="20" width="25" icon="group-size" />
             <p>Group Size</p>
             <div>
               {detailsData.fields.group_size === 0
@@ -50,7 +50,7 @@ const ProjectDetails = ({ detailsData }) => {
           </div>
 
           <div className="project-card__icon-info-individual-wrap">
-            <Svg color="--white" height="20" width="20" icon="duration" />
+            <Svg color="--white" height="20" width="25" icon="duration" />
             <p>Duration</p>
             <div>
               {detailsData.fields.session_duration_hours === 0
