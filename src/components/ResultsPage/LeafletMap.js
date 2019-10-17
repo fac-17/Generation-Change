@@ -24,12 +24,17 @@ const LeafletMap = ({ markersData }) => {
   }, []);
 
   // update markers
-  useEffect(() => {
-    layerRef.current.clearLayers();
-    markersData.forEach(marker => {
-      L.marker(marker.latLng, { title: marker.title }).addTo(layerRef.current);
-    });
-  }, [markersData]);
+  useEffect(
+    () => {
+      layerRef.current.clearLayers();
+      markersData.forEach(marker => {
+        L.marker(marker.latLng, { title: marker.title }).addTo(
+          layerRef.current
+        );
+      });
+    },
+    [markersData]
+  );
 
   return <div id="map" />;
 };

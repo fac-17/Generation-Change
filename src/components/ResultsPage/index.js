@@ -39,28 +39,35 @@ const ResultsPage = ({
     ]);
   };
 
-  useEffect(() => {
-    projectMarkers.map(addMarker);
-  }, [searchLongLat]);
+  useEffect(
+    () => {
+      projectMarkers.map(addMarker);
+    },
+    [searchLongLat]
+  );
 
   return (
     <div>
       <Navbar />
       <Searchbar setSearchLongLat={setSearchLongLat} />
       <div id="container" className="container__projects">
-        <LeafletMap
-          className="container__map"
-          markersData={markersData}
-          setMarkersData={setMarkersData}
-        />
-        <h2>{sortedListings.length} results within 10 miles distance</h2>
-        <ProjectCards
-          className="project-card"
-          detailsData={detailsData}
-          setDetailsData={setDetailsData}
-          sortedListings={sortedListings}
-          data={data}
-        />
+        <div className="container__projects__inner-wrap">
+          <h2>{sortedListings.length} results within 10 miles distance</h2>
+          <ProjectCards
+            className="project-card"
+            detailsData={detailsData}
+            setDetailsData={setDetailsData}
+            sortedListings={sortedListings}
+            data={data}
+          />
+        </div>
+        <div>
+          <LeafletMap
+            className="container__map"
+            markersData={markersData}
+            setMarkersData={setMarkersData}
+          />
+        </div>
       </div>
     </div>
   );
