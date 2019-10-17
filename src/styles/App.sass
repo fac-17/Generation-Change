@@ -20,6 +20,43 @@
 // PAGE WRAPPERS
 .wrapper
     font-family: $main-font
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+
+.wrapper__story
+    max-width: 900px
+    display: flex
+    margin: 0 auto
+    flex-direction: column
+    text-align: justify
+    align-items: center
+    line-height: 1.6
+.category--story
+    text-align: left
+    align-self: left
+    text-transform: uppercase
+    font-family: 'Raleway', sans-serif
+    font-weight: 900
+.story-impact
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    text-align: left
+    color: #282828
+.story-impact-num
+    font-size: 2rem
+    margin-right: 3px
+    text-align: right
+.story-impact-txt
+    display: grid
+    text-align: left
+    grid-template-columns: repeat(2, 1fr)
+    font-size: 15px
+    text-transform: uppercase
+.story__link h1
+    color: black
+    margin-bottom: 10px
+.story__img--page
+    max-width: 900px
 
 html
     font-family: $btn-font
@@ -136,7 +173,6 @@ html
     min-width: 100px
     max-height: 350px
     min-height: 100px
-    border-radius: 15px
 
 // IMAGE AND DETAILS
 .container__banner
@@ -300,5 +336,5 @@ a
     ul,
     li,
     a
-        text-decoration:none
-        list-style:none
+        text-decoration: none
+        list-style: none
