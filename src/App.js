@@ -9,7 +9,6 @@ import DetailsPage from "./components/DetailsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  
   const [data, setData] = useState(null);
   const [searchLongLat, setSearchLongLat] = useState("");
   const [detailsData, setDetailsData] = useState({});
@@ -18,10 +17,10 @@ function App() {
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
   }, []);
-  
+
   if (!data)
-  return (
-    <div>
+    return (
+      <div>
         <h2>...loading</h2>
       </div>
     );
@@ -31,7 +30,9 @@ function App() {
       <Route
         exact
         path="/"
-        render={() => <LandingPage setSearchLongLat={setSearchLongLat} />}
+        render={() => (
+          <LandingPage setSearchLongLat={setSearchLongLat} data={data} />
+        )}
         className="dark-bg-gradient"
       />
       <Route
