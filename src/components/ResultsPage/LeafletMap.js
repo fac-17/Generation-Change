@@ -17,8 +17,15 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
             })
           ]
         }))
-      : alert("not defined");
+      : alert("searchLongLat not defined in Leaflet Map component");
   }, []);
+
+  useEffect(() => {
+    mapRef.current.setView(
+      [searchLongLat.latitude, searchLongLat.longitude],
+      9
+    );
+  }, [searchLongLat]);
 
   // add layer
   const layerRef = useRef(null);
