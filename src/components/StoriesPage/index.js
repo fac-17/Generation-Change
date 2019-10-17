@@ -1,20 +1,25 @@
 import React from "react";
 import Navbar from "../Universal/Navbar";
 import { Link } from "react-router-dom";
+import Searchbar from "../Universal/Searchbar";
 
-const StoriesPage = ({ data }) => {
+const StoriesPage = ({ data, setSearchLongLat }) => {
   console.log(data[85].fields.charity_about);
   return (
     <>
-      <Navbar />
+      <div className="navbar-flexbox">
+        <Navbar />
+        <div className="searchbar-container__results-and-details">
+          <Searchbar setSearchLongLat={setSearchLongLat} />
+        </div>
+      </div>
       <div className="wrapper__story">
         <img
           src={data[85].fields.story_photo_1}
           alt="story"
           className="story__img--page"
         />
-        <Link to={{ pathname: "/details" }}
-        className="story__link">
+        <Link to={{ pathname: "/details" }} className="story__link">
           <h1 className="title1">{data[85].fields.story_title}</h1>
         </Link>
         <p className="category--story">{data[85].fields.category}</p>
