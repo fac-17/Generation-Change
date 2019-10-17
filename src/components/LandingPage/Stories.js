@@ -15,34 +15,29 @@ const Stories = ({ data }) => {
               alt="story"
               className="story__img"
             />
-            <h1>{data[85].fields.title}</h1>
+            <h1>{data[85].fields.story_title}</h1>
             <p>{data[85].fields.category}</p>
           </article>
         </Link>
 
-        <Link to={{ pathname: "/stories" }} className="container__story--1">
           <article className="container__story--1">
             <img
-              src={data[85].fields.story_photo_1}
+              src="statics/story2.jpg"
               alt="story"
               className="story__img"
             />
-            <h1>{data[85].fields.title}</h1>
-            <p>{data[85].fields.category}</p>
+            <h1>Princes Trust bring hospital garden back to life</h1>
+            <p>Volunteering</p>
           </article>
-        </Link>
-
-        <Link to={{ pathname: "/stories" }} className="container__story--2">
           <article className="container__story--2">
             <img
-              src={data[85].fields.story_photo_1}
+              src='statics/story3.jpg'
               alt="story"
               className="story__img"
             />
-            <h1>{data[85].fields.title}</h1>
-            <p>{data[85].fields.category}</p>
+            <h1>Change society and the environment</h1>
+            <p>Fundraising</p>
           </article>
-        </Link>
       </div>
     </>
   );
