@@ -9,7 +9,7 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
     searchLongLat
       ? (mapRef.current = L.map("map", {
           center: [searchLongLat.latitude, searchLongLat.longitude],
-          zoom: 13,
+          zoom: 14,
           layers: [
             L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
               attribution:
@@ -23,7 +23,7 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
   useEffect(() => {
     mapRef.current.setView(
       [searchLongLat.latitude, searchLongLat.longitude],
-      9
+      11
     );
   }, [searchLongLat]);
 
