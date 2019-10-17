@@ -53,7 +53,7 @@ const ResultsPage = ({
           markersData={markersData}
           setMarkersData={setMarkersData}
         />
-        <h2>Results: {sortedListings.length} within 10 miles distance</h2>
+        <h2>{sortedListings.length} results within 10 miles distance</h2>
         <ProjectCards
           className="project-card"
           detailsData={detailsData}
