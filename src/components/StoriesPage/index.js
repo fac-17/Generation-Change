@@ -29,7 +29,7 @@ const StoriesPage = ({ data }) => {
             </p>
             <p className="story-impact-txt">
               <b className="story-impact-num">40</b>
-              <p>nights away from home</p>
+              <p>nights away</p>
             </p>
             <p className="story-impact-txt">
               <b className="story-impact-num">£2,000</b>
