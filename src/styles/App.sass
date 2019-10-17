@@ -125,6 +125,7 @@ html
     position: fixed
     background: white
     width: 100vw
+    z-index: 999
 
 // SEARCHBAR
 .searchbar
@@ -304,9 +305,11 @@ a
     padding-bottom: 20px
 
 .organisers__socialmedia--name
+    margin: 0
 
 .organisers__socialmedia--logos
     align-items: center
+    display: flex
 
 .organisers__contact
     padding: 30px 0 30px 0
@@ -314,8 +317,12 @@ a
     justify-content: space-between
     flex-direction: row
 
-.organisers__contact *
-    width: 170px
+.organisers__contact__individual-wrap
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    &--website
+        margin-top: 5px
 
 // DETAILS IMAGES
 
@@ -355,11 +362,17 @@ a
     border: 0
     height: 1px
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+.line--dark--nav
+    margin-top: 20px
+    border: 0
+    height: 1px
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 .word
     margin-left: 10%
 
 #map
     height: 100%
+    margin-top: 120px
     min-width: 40%
     position: fixed
     right: 0

@@ -52,7 +52,7 @@ const ResultsPage = ({
             <Searchbar setSearchLongLat={setSearchLongLat} />
           </div>
         </div>
-        <hr className="line--dark" />
+        <hr className="line--dark--nav" />
       </div>
       <div id="container" className="container__projects">
         <div className="container__projects__inner-wrap">
