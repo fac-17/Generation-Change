@@ -6,6 +6,7 @@ const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
   if (!data) {
     return <h1 className="loading-text">...loading</h1>;
   }
+
   const project = sortedListings.map((project, i) => (
     <li key={i} className="project-card">
       <img
