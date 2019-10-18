@@ -8,7 +8,6 @@ import {
   listingsWithinXDistance
 } from "../../utils/dataManipulation";
 import showResultsAsMarkers from "../../utils/showResultsAsMarkers";
-
 const ResultsPage = ({
   detailsData,
   setDetailsData,
@@ -18,10 +17,28 @@ const ResultsPage = ({
   markersData,
   setMarkersData
 }) => {
-  const calcDistance = dataWithDistances(data, searchLongLat);
+  // consts for map & markers
 
+  useEffect(() => {
+    if (searchLongLat !== "") {
+      console.log(searchLongLat);
+      window.sessionStorage.setItem("searchLat", searchLongLat.latitude);
+      window.sessionStorage.setItem("searchLong", searchLongLat.longitude);
+    }
+  }, [searchLongLat]);
+
+  console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
+  const storageLongLat = Object.fromEntries(
+    new Map([
+      ["latitude", Number(window.sessionStorage.getItem("searchLat"))],
+      ["longitude", Number(window.sessionStorage.getItem("searchLong"))]
+    ])
+  );
+
+  console.log(storageLongLat, searchLongLat);
+
+  const calcDistance = dataWithDistances(data, searchLongLat || storageLongLat);
   const sortedListings = listingsWithinXDistance(calcDistance);
-
   const projectMarkers = showResultsAsMarkers(sortedListings);
 
   // this is adding a layer and markers to our map
@@ -50,7 +67,10 @@ const ResultsPage = ({
         <div className="navbar-flexbox">
           <Navbar />
           <div className="searchbar-container__results-and-details">
-            <Searchbar setSearchLongLat={setSearchLongLat} />
+            <Searchbar
+              searchLongLat={searchLongLat}
+              setSearchLongLat={setSearchLongLat}
+            />
           </div>
         </div>
         <hr className="line--dark--nav" />
