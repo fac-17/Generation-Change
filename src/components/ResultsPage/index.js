@@ -20,9 +20,16 @@ const ResultsPage = ({
 }) => {
   // getting postcode from querystring
 
-  useEffect(() => {
-    console.log(window.location.search);
-  }, []);
+  // window.onpopstate = function(event) {
+  //   alert(
+  //     "location: " +
+  //       document.location +
+  //       ", state: " +
+  //       JSON.stringify(event.state)
+  //   );
+  // };
+
+  console.log(window.location.search);
 
   // consts for map & markers
   const calcDistance = dataWithDistances(data, searchLongLat);
@@ -49,13 +56,24 @@ const ResultsPage = ({
     projectMarkers.map(addMarker);
   }, [searchLongLat]);
 
+  useEffect(() => {
+    if (!window.sessionStorage.getItem("searchLat") && searchLongLat !== "") {
+      console.log(searchLongLat);
+      window.sessionStorage.setItem("searchLat", searchLongLat.latitude);
+      window.sessionStorage.setItem("searchLong", searchLongLat.longitude);
+    }
+  }, [searchLongLat]);
+
   return (
     <div>
       <div className="fix-navbar">
         <div className="navbar-flexbox">
           <Navbar />
           <div className="searchbar-container__results-and-details">
-            <Searchbar setSearchLongLat={setSearchLongLat} />
+            <Searchbar
+              searchLongLat={searchLongLat}
+              setSearchLongLat={setSearchLongLat}
+            />
           </div>
         </div>
         <hr className="line--dark--nav" />

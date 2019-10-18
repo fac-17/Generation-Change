@@ -1,12 +1,13 @@
 import React from "react";
 import { convertPostcode } from "./../../utils/convertPostcode";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Searchbar = ({ setSearchLongLat }) => {
+const Searchbar = ({ setSearchLongLat, searchLongLat }) => {
   let history = useHistory();
+
   function handleSubmit(event) {
     event.preventDefault();
-
     const searchPostcode = event.target.elements.postcode.value;
     const trimmedPostcode = searchPostcode.replace(/\s+/g, "");
     console.log(trimmedPostcode);
@@ -16,6 +17,15 @@ const Searchbar = ({ setSearchLongLat }) => {
       history.push(`/results?postcode=${trimmedPostcode}`);
     });
   }
+
+  // window.onpopstate = function(event) {
+  //   alert(
+  //     "location: " +
+  //       document.location +
+  //       ", state: " +
+  //       JSON.stringify(event.state)
+  //   );
+  // };
 
   return (
     <div className="searchbar">
@@ -30,6 +40,7 @@ const Searchbar = ({ setSearchLongLat }) => {
           aria-label="enter postcode"
         />
 
+        {/* <Link to={`/results?${trimmedPostcode}`}> */}
         <button
           type="submit"
           className="button button--search"
@@ -37,6 +48,7 @@ const Searchbar = ({ setSearchLongLat }) => {
         >
           <i className="fa fa-search" />
         </button>
+        {/* </Link> */}
       </form>
     </div>
   );
