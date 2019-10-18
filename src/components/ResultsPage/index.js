@@ -21,7 +21,7 @@ const ResultsPage = ({
   // consts for map & markers
 
   useEffect(() => {
-    if (!window.sessionStorage.getItem("searchLat") && searchLongLat !== "") {
+    if (searchLongLat !== "") {
       console.log(searchLongLat);
       window.sessionStorage.setItem("searchLat", searchLongLat.latitude);
       window.sessionStorage.setItem("searchLong", searchLongLat.longitude);
