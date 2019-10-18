@@ -18,15 +18,6 @@ const Searchbar = ({ setSearchLongLat, searchLongLat }) => {
     });
   }
 
-  // window.onpopstate = function(event) {
-  //   alert(
-  //     "location: " +
-  //       document.location +
-  //       ", state: " +
-  //       JSON.stringify(event.state)
-  //   );
-  // };
-
   return (
     <div className="searchbar">
       <form id="searchbar" onSubmit={handleSubmit}>
@@ -40,7 +31,6 @@ const Searchbar = ({ setSearchLongLat, searchLongLat }) => {
           aria-label="enter postcode"
         />
 
-        {/* <Link to={`/results?${trimmedPostcode}`}> */}
         <button
           type="submit"
           className="button button--search"
@@ -48,7 +38,6 @@ const Searchbar = ({ setSearchLongLat, searchLongLat }) => {
         >
           <i className="fa fa-search" />
         </button>
-        {/* </Link> */}
       </form>
     </div>
   );

@@ -18,20 +18,17 @@ const ResultsPage = ({
   markersData,
   setMarkersData
 }) => {
-  // getting postcode from querystring
-
-  // window.onpopstate = function(event) {
-  //   alert(
-  //     "location: " +
-  //       document.location +
-  //       ", state: " +
-  //       JSON.stringify(event.state)
-  //   );
-  // };
-
-  console.log(window.location.search);
-
   // consts for map & markers
+  console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
+  const storageLongLat = Object.fromEntries(
+    new Map([
+      ["latitude", Number(window.sessionStorage.getItem("searchLat"))],
+      ["longitude", Number(window.sessionStorage.getItem("searchLong"))]
+    ])
+  );
+
+  console.log(storageLongLat, searchLongLat);
+
   const calcDistance = dataWithDistances(data, searchLongLat);
   const sortedListings = listingsWithinXDistance(calcDistance);
   const projectMarkers = showResultsAsMarkers(sortedListings);
