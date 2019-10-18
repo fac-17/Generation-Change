@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../Universal/Navbar";
-import { Link } from "react-router-dom";
 import Searchbar from "../Universal/Searchbar";
 
 const StoriesPage = ({ data, setSearchLongLat }) => {
