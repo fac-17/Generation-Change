@@ -29,7 +29,7 @@ const ResultsPage = ({
 
   console.log(storageLongLat, searchLongLat);
 
-  const calcDistance = dataWithDistances(data, searchLongLat);
+  const calcDistance = dataWithDistances(data, searchLongLat || storageLongLat);
   const sortedListings = listingsWithinXDistance(calcDistance);
   const projectMarkers = showResultsAsMarkers(sortedListings);
 
