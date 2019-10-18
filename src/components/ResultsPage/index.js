@@ -3,7 +3,6 @@ import Navbar from "../Universal/Navbar";
 import LeafletMap from "./LeafletMap";
 import ProjectCards from "./ProjectCards";
 import Searchbar from "../Universal/Searchbar";
-import queryString from "query-string";
 import {
   dataWithDistances,
   listingsWithinXDistance

@@ -1,9 +1,8 @@
 import React from "react";
 import { convertPostcode } from "./../../utils/convertPostcode";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-const Searchbar = ({ setSearchLongLat, searchLongLat }) => {
+const Searchbar = ({ setSearchLongLat }) => {
   let history = useHistory();
 
   function handleSubmit(event) {
