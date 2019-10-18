@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../Universal/Navbar";
-import { Link } from "react-router-dom";
 import Searchbar from "../Universal/Searchbar";
 
 const StoriesPage = ({ data, setSearchLongLat }) => {
@@ -19,9 +18,7 @@ const StoriesPage = ({ data, setSearchLongLat }) => {
           alt="story"
           className="story__img--page"
         />
-        <Link to={{ pathname: "/details" }} className="story__link">
-          <h1 className="title1">{data[85].fields.story_title}</h1>
-        </Link>
+        <h1 className="title1">{data[85].fields.story_title}</h1>
         <p className="category--story">{data[85].fields.category}</p>
         <div className="wrapper">
           <h2>What happened: </h2>
