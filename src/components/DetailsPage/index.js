@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Universal/Navbar";
 import ImageContainer from "./ImageContainer";
 import ProjectDetails from "./ProjectDetails";
@@ -7,6 +7,14 @@ import Searchbar from "../Universal/Searchbar";
 
 const DetailsPage = ({ detailsData, setSearchLongLat }) => {
   console.log("details data", detailsData);
+
+  useEffect(() => {
+    if (detailsData !== {}) {
+      console.log(detailsData);
+      window.sessionStorage.setItem("storeObj", JSON.stringify(detailsData));
+    }
+  }, [detailsData]);
+
   return (
     <div>
       <div className="container__banner">
