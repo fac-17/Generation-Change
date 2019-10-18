@@ -6,14 +6,18 @@ import ProjectSummary from "./ProjectSummary";
 import Searchbar from "../Universal/Searchbar";
 
 const DetailsPage = ({ detailsData, setSearchLongLat }) => {
-  console.log("details data", detailsData);
-
   useEffect(() => {
     if (detailsData !== {}) {
-      console.log(detailsData);
-      window.sessionStorage.setItem("storeObj", JSON.stringify(detailsData));
+      window.sessionStorage.setItem("detailsObj", JSON.stringify(detailsData));
     }
   }, [detailsData]);
+
+  console.log("localstoragekey", window.sessionStorage.getItem("detailsObj"));
+  const storageDetails = JSON.parse(
+    window.sessionStorage.getItem("detailsObj")
+  );
+
+  console.log("storageDetails", storageDetails);
 
   return (
     <div>
