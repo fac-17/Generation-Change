@@ -18,14 +18,30 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
     });
   }, []);
 
+  // retrieve data from localstorage
+
+  console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
+  const storageLongLat = Object.fromEntries(
+    new Map([
+      ["latitude", Number(window.sessionStorage.getItem("searchLat"))],
+      ["longitude", Number(window.sessionStorage.getItem("searchLong"))]
+    ])
+  );
+
+  console.log(storageLongLat);
+
   useEffect(() => {
+    // console.log(storageLongLat);
     searchLongLat
       ? mapRef.current.setView(
           [searchLongLat.latitude, searchLongLat.longitude],
           11
         )
-      : console.log("searchLongLat not defined in Leaflet Map component");
-  }, [searchLongLat]);
+      : mapRef.current.setView(
+          [storageLongLat.latitude, storageLongLat.longitude],
+          11
+        );
+  }, [searchLongLat || storageLongLat]);
 
   // add layer
   const layerRef = useRef(null);

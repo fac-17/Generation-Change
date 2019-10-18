@@ -19,6 +19,15 @@ const ResultsPage = ({
   setMarkersData
 }) => {
   // consts for map & markers
+
+  useEffect(() => {
+    if (!window.sessionStorage.getItem("searchLat") && searchLongLat !== "") {
+      console.log(searchLongLat);
+      window.sessionStorage.setItem("searchLat", searchLongLat.latitude);
+      window.sessionStorage.setItem("searchLong", searchLongLat.longitude);
+    }
+  }, [searchLongLat]);
+
   console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
   const storageLongLat = Object.fromEntries(
     new Map([
@@ -51,14 +60,6 @@ const ResultsPage = ({
 
   useEffect(() => {
     projectMarkers.map(addMarker);
-  }, [searchLongLat]);
-
-  useEffect(() => {
-    if (!window.sessionStorage.getItem("searchLat") && searchLongLat !== "") {
-      console.log(searchLongLat);
-      window.sessionStorage.setItem("searchLat", searchLongLat.latitude);
-      window.sessionStorage.setItem("searchLong", searchLongLat.longitude);
-    }
   }, [searchLongLat]);
 
   return (
