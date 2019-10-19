@@ -10,12 +10,12 @@ afterEach(cleanup);
 
 describe.only("SearchBar behaves as expected", () => {
   const history = createMemoryHistory();
-  const { getByLabelText, getByTestId, getByDisplayValue } = render(
+  const { getByTestId, getByDisplayValue } = render(
     <Router history={history}>
       <SearchBar />
     </Router>
   );
-  const input = getByLabelText("Postcode Search");
+  const input = getByTestId("searchbar__input");
   const submitButton = getByTestId("searchbar--search-button");
 
   test("SearchBar will not search for a postcode under 5 char", () => {

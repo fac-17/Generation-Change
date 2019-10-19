@@ -1,13 +1,20 @@
 import React from "react";
 
-const ImageContainer = () => {
+const ImageContainer = ({ detailsData }) => {
+  if (!detailsData) {
+    return <h1 className="loading-text">...loading</h1>;
+  }
   return (
-    <div>
-      <div>photo_1</div>
-      <div>photo_2</div>
-      <div>photo_3</div>
-      <div>photo_4</div>
-      <div>photo_5</div>
+    <div className="project-image-flex">
+      <img src={detailsData.fields.photo_1} alt="story" />
+      <div className="project-image-flex__small-photos">
+        <img src={detailsData.fields.photo_2} alt="story" />
+        <img src={detailsData.fields.photo_3} alt="story" />
+      </div>
+      <div className="project-image-flex__small-photos">
+        <img src={detailsData.fields.photo_4} alt="story" />
+        <img src={detailsData.fields.photo_5} alt="story" />
+      </div>
     </div>
   );
 };

@@ -7,28 +7,28 @@ const Searchbar = ({ setSearchLongLat }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     const searchPostcode = event.target.elements.postcode.value;
+    const trimmedPostcode = searchPostcode.replace(/\s+/g, "");
+    console.log(trimmedPostcode);
     if (searchPostcode.length < 5) return;
     convertPostcode(searchPostcode).then(coordinates => {
       setSearchLongLat(coordinates);
-      history.push("/results");
+      history.push(`/results?postcode=${trimmedPostcode}`);
     });
   }
 
   return (
     <div className="searchbar">
       <form id="searchbar" onSubmit={handleSubmit}>
-        <label>
-          Postcode Search
-          <input
-            name="postcode"
-            type="text"
-            className="searchbar__input"
-            placeholder="Enter postcode"
-            aria-label="enter postcode"
-          />
-        </label>
+        <input
+          aria-label="input-postcode"
+          data-testid="searchbar__input"
+          name="postcode"
+          type="text"
+          className="searchbar__input"
+          placeholder="Enter postcode"
+          aria-label="enter postcode"
+        />
 
         <button
           type="submit"

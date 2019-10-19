@@ -1,5 +1,8 @@
 import { convertPostcode } from "../utils/convertPostcode";
-import { getData } from "../utils/getData";
+import {
+  dataWithDistances,
+  listingsWithinXDistance
+} from "../utils/dataManipulation";
 
 describe.only("ConvertPostcodeConvert postcode to lon and lat", () => {
   const expected = {
@@ -10,8 +13,102 @@ describe.only("ConvertPostcodeConvert postcode to lon and lat", () => {
   test("ConvertPostcode returns correct longitude and latitude ", () => {
     return convertPostcode(initialPostcode).then(actual => {
       expect(actual).toEqual(expected);
-      expect(initialPostcode).toEqual("BH15 4DH");
     });
+  });
+
+  test("Check dataWithDistances function works", () => {
+    const searchLongLat = { latitude: 51.5103, longitude: 7.49347 };
+    const dataBefore = [
+      {
+        id: "recP19Z2CCWFQNWKQ",
+        fields: {
+          longitude: -2.008298,
+          latitude: 50.712412
+        }
+      },
+      {
+        id: "reck5HOHxGPBMkr8f",
+        fields: {
+          longitude: -2.008376,
+          latitude: 50.718168
+        }
+      }
+    ];
+
+    const dataAfter = [
+      {
+        id: "recP19Z2CCWFQNWKQ",
+        fields: {
+          latitude: 50.712412,
+          longitude: -2.008298
+        },
+        latitude: 50.712412,
+        longitude: -2.008298,
+        distance: 669480
+      },
+      {
+        id: "reck5HOHxGPBMkr8f",
+        fields: {
+          latitude: 50.718168,
+          longitude: -2.008376
+        },
+        latitude: 50.718168,
+        longitude: -2.008376,
+        distance: 669360
+      }
+    ];
+    const actual = dataWithDistances(dataBefore, searchLongLat);
+    const expected = dataAfter;
+    return expect(actual).toMatchObject(expected);
+  });
+
+  test("listingsWithinXDistance sorts correctly ", () => {
+    const data = [
+      {
+        id: "recP19Z2CCWFQNWKQ",
+        fields: {
+          latitude: 50.712412,
+          longitude: -2.008298
+        },
+        latitude: 50.712412,
+        longitude: -2.008298,
+        distance: 200
+      },
+      {
+        id: "reck5HOHxGPBMkr8f",
+        fields: {
+          latitude: 50.718168,
+          longitude: -2.008376
+        },
+        latitude: 50.718168,
+        longitude: -2.008376,
+        distance: 100
+      }
+    ];
+    const actual = listingsWithinXDistance(data);
+    const expected = [
+      {
+        id: "reck5HOHxGPBMkr8f",
+        fields: {
+          latitude: 50.718168,
+          longitude: -2.008376
+        },
+        latitude: 50.718168,
+        longitude: -2.008376,
+        distance: 100
+      },
+      {
+        id: "recP19Z2CCWFQNWKQ",
+        fields: {
+          latitude: 50.712412,
+          longitude: -2.008298
+        },
+        latitude: 50.712412,
+        longitude: -2.008298,
+        distance: 200
+      }
+    ];
+    return expect(actual).toMatchObject(expected);
   });
 });
 
