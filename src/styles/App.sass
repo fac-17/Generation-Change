@@ -114,6 +114,10 @@ html
 
     &--accept
         background-color: $accept-btn-color
+    &--home
+        display: block
+        margin: 0 auto
+        background-color: $search-btn-color
 
 // NAVBAR
 .logo
@@ -388,8 +392,12 @@ a
     padding-top: 18px
     padding-left: 2em
 
-.loading-text
-    color: red
+.loading,
+.notfound
+    margin: 150px auto
+    display: block
+    text-align: center
+
 // MEDIA_QUERIES GO HERE ----------------------------------------------------------------
 @media screen and (max-width: 480px)
     .container
