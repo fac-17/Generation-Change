@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Stories = ({ data }) => {
   return (
     <>
-      <p className="featured-stories">FEARTURED STORIES</p>
+      <p className="featured-stories">FEATURED STORIES</p>
       <hr className="line" />
       <div className="container">
         <Link to={{ pathname: "/stories" }} className="container__story--0">

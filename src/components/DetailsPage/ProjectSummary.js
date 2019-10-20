@@ -3,7 +3,7 @@ import Svg from "../Universal/Svg";
 
 const ProjectSummary = ({ detailsData }) => {
   if (!detailsData) {
-    return <h1 className="loading-text">...loading</h1>;
+    return <h1 className="loading">...loading</h1>;
   }
   return (
     <div className="project-long-summary">
