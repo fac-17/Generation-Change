@@ -32,7 +32,7 @@ describe.only("SearchBar behaves as expected", () => {
     fireEvent.change(input, { target: { value: fullPostcode } });
     fireEvent.click(submitButton);
     setTimeout(() => {
-      expect(history.location.pathname).toBe("/results");
+      expect(history.location.pathname).toBe("/results?postcode=EC25HY");
     }, 1000);
   });
 });
