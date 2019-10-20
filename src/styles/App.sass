@@ -121,6 +121,10 @@ html
 
     &--accept
         background-color: $accept-btn-color
+    &--home
+        display: block
+        margin: 0 auto
+        background-color: $search-btn-color
 
 // NAVBAR
 .logo
@@ -384,11 +388,11 @@ a
     border: 0
     height: 1px
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+
 .featured-stories
-    font-size: 1.4em
-    font-weight: 600
+    text-transform: uppercase
+    font-size: 1em
     margin-left: 10%
-    margin-top: 3%
 
 #map
     height: 100%
@@ -407,11 +411,11 @@ a
     padding-top: 18px
     padding-left: 2em
 
-.loading-text
-    color: black
+.loading,
+.notfound
+    margin: 150px auto
+    display: block
     text-align: center
-    margin-top: 45vh
-    font-size: 2em
 
 // MEDIA_QUERIES GO HERE ----------------------------------------------------------------
 @media screen and (max-width: 480px)

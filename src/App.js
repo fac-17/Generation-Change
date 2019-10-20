@@ -6,7 +6,9 @@ import LandingPage from "./components/LandingPage";
 import ResultsPage from "./components/ResultsPage";
 import StoriesPage from "./components/StoriesPage";
 import DetailsPage from "./components/DetailsPage";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Loading from "./components/Universal/Loading.js";
+import notFound from "./components/Universal/404";
 
 function App() {
   const [data, setData] = useState(null);
@@ -18,58 +20,58 @@ function App() {
     getData().then(airtableData => setData(airtableData));
   }, []);
 
-  if (!data)
-    return (
-      <div>
-        <h2 className="loading-text">...loading</h2>
-      </div>
-    );
+  if (!data) {
+    return <Loading />;
+  }
 
   return (
     <Router>
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <LandingPage setSearchLongLat={setSearchLongLat} data={data} />
-        )}
-        className="dark-bg-gradient"
-      />
-      <Route
-        exact
-        path="/results"
-        render={() => (
-          <ResultsPage
-            detailsData={detailsData}
-            setDetailsData={setDetailsData}
-            searchLongLat={searchLongLat}
-            setSearchLongLat={setSearchLongLat}
-            data={data}
-          />
-        )}
-        className="dark-bg-gradient"
-      />
-      <Route
-        exact
-        path="/stories"
-        render={() => (
-          <StoriesPage data={data} setSearchLongLat={setSearchLongLat} />
-        )}
-        className="dark-bg-gradient"
-      />
-      <Route
-        exact
-        path="/details"
-        setSearchLongLat={setSearchLongLat}
-        render={() => (
-          <DetailsPage
-            setSearchLongLat={setSearchLongLat}
-            detailsData={detailsData}
-            setDetailsData={setDetailsData}
-          />
-        )}
-        className="dark-bg-gradient"
-      />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <LandingPage setSearchLongLat={setSearchLongLat} data={data} />
+          )}
+          className="dark-bg-gradient"
+        />
+        <Route
+          exact
+          path="/results"
+          render={() => (
+            <ResultsPage
+              detailsData={detailsData}
+              setDetailsData={setDetailsData}
+              searchLongLat={searchLongLat}
+              setSearchLongLat={setSearchLongLat}
+              data={data}
+            />
+          )}
+          className="dark-bg-gradient"
+        />
+        <Route
+          exact
+          path="/stories"
+          render={() => (
+            <StoriesPage data={data} setSearchLongLat={setSearchLongLat} />
+          )}
+          className="dark-bg-gradient"
+        />
+        <Route
+          exact
+          path="/details"
+          setSearchLongLat={setSearchLongLat}
+          render={() => (
+            <DetailsPage
+              setSearchLongLat={setSearchLongLat}
+              detailsData={detailsData}
+              setDetailsData={setDetailsData}
+            />
+          )}
+          className="dark-bg-gradient"
+        />
+        <Route path="*" component={notFound} />
+      </Switch>
     </Router>
   );
 }
