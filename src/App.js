@@ -21,7 +21,7 @@ function App() {
   if (!data)
     return (
       <div>
-        <h2>...loading</h2>
+        <h2 className="loading-text">...loading</h2>
       </div>
     );
 
