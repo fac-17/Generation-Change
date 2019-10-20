@@ -4,7 +4,7 @@ import L from "leaflet";
 const LeafletMap = ({ searchLongLat, markersData }) => {
   // create map
   const mapRef = useRef(null);
-  console.log(searchLongLat.latitude);
+  // console.log(searchLongLat.latitude);
   useEffect(() => {
     mapRef.current = L.map("map", {
       center: [51.509865, -0.118092],
@@ -20,15 +20,13 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
 
   // retrieve data from localstorage
 
-  console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
+  // console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
   const storageLongLat = Object.fromEntries(
     new Map([
       ["latitude", Number(window.sessionStorage.getItem("searchLat"))],
       ["longitude", Number(window.sessionStorage.getItem("searchLong"))]
     ])
   );
-
-  console.log(storageLongLat);
 
   useEffect(() => {
     // console.log(storageLongLat);
@@ -41,7 +39,7 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
           [storageLongLat.latitude, storageLongLat.longitude],
           11
         );
-  }, [searchLongLat || storageLongLat]);
+  }, [searchLongLat, storageLongLat.latitude, storageLongLat.longitude]);
 
   // add layer
   const layerRef = useRef(null);
