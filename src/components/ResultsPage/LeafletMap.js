@@ -2,6 +2,18 @@ import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 
 const LeafletMap = ({ searchLongLat, markersData }) => {
+  // marker style
+  var greenIcon = new L.Icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [30, 46],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
   // create map
   const mapRef = useRef(null);
   // console.log(searchLongLat.latitude);
@@ -52,7 +64,7 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
     layerRef.current.clearLayers();
     markersData.pop();
     markersData.forEach(marker => {
-      L.marker(marker.latLng, { title: marker.title })
+      L.marker(marker.latLng, { icon: greenIcon })
         .addTo(layerRef.current)
         .bindPopup(marker.title);
     });
