@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = useState(null);
   const [searchLongLat, setSearchLongLat] = useState("");
   const [detailsData, setDetailsData] = useState({});
-  const [markersData, setMarkersData] = useState([]);
+
   // below postcode to latlng transition
   React.useEffect(() => {
     getData().then(airtableData => setData(airtableData));
@@ -45,8 +45,6 @@ function App() {
             searchLongLat={searchLongLat}
             setSearchLongLat={setSearchLongLat}
             data={data}
-            markersData={markersData}
-            setMarkersData={setMarkersData}
           />
         )}
         className="dark-bg-gradient"

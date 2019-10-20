@@ -8,26 +8,22 @@ import {
   listingsWithinXDistance
 } from "../../utils/dataManipulation";
 import showResultsAsMarkers from "../../utils/showResultsAsMarkers";
+
 const ResultsPage = ({
   detailsData,
   setDetailsData,
   searchLongLat,
   data,
-  setSearchLongLat,
-  markersData,
-  setMarkersData
+  setSearchLongLat
 }) => {
-  // consts for map & markers
-
   useEffect(() => {
     if (searchLongLat !== "") {
-      console.log(searchLongLat);
       window.sessionStorage.setItem("searchLat", searchLongLat.latitude);
       window.sessionStorage.setItem("searchLong", searchLongLat.longitude);
     }
   }, [searchLongLat]);
 
-  console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
+  // consts for map & markers
   const storageLongLat = Object.fromEntries(
     new Map([
       ["latitude", Number(window.sessionStorage.getItem("searchLat"))],
@@ -35,31 +31,18 @@ const ResultsPage = ({
     ])
   );
 
-  console.log(storageLongLat, searchLongLat);
-
   const calcDistance = dataWithDistances(data, searchLongLat || storageLongLat);
   const sortedListings = listingsWithinXDistance(calcDistance);
   const projectMarkers = showResultsAsMarkers(sortedListings);
-
-  // this is adding a layer and markers to our map
-  const addMarker = () => {
-    const lastMarker = projectMarkers[projectMarkers.length - 1];
-
-    return setMarkersData([
-      ...projectMarkers,
-      {
-        title: +lastMarker.title + 1,
-        latLng: {
-          lat: lastMarker.latLng.lat,
-          lng: lastMarker.latLng.lng
-        }
+  const markersData = projectMarkers.map(marker => {
+    return {
+      title: marker.title,
+      latLng: {
+        lat: marker.latLng.lat,
+        lng: marker.latLng.lng
       }
-    ]);
-  };
-
-  useEffect(() => {
-    projectMarkers.map(addMarker);
-  }, [searchLongLat]);
+    };
+  });
 
   return (
     <div>
@@ -92,7 +75,6 @@ const ResultsPage = ({
           <LeafletMap
             className="container__map"
             markersData={markersData}
-            setMarkersData={setMarkersData}
             searchLongLat={searchLongLat}
           />
         </div>

@@ -12,13 +12,6 @@ const DetailsPage = ({ detailsData, setSearchLongLat }) => {
     }
   }, [detailsData]);
 
-  console.log("localstoragekey", window.sessionStorage.getItem("detailsObj"));
-  const storageDetails = JSON.parse(
-    window.sessionStorage.getItem("detailsObj")
-  );
-
-  console.log("storageDetails", storageDetails);
-
   return (
     <div>
       <div className="container__banner">

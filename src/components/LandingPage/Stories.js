@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Stories = ({ data }) => {
-  console.log(data[85].fields.story_photo_1);
   return (
     <>
       <p className="featured-stories">FEARTURED STORIES</p>

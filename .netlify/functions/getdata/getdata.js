@@ -11,7 +11,6 @@ Airtable.configure({
 const base = Airtable.base(process.env.AIRTABLE_BASE);
 
 exports.handler = (event, context, callback) => {
-  console.log("inside getdata");
   const allRecords = [];
   base("projects_table")
     .select({
@@ -42,23 +41,3 @@ exports.handler = (event, context, callback) => {
       })
     );
 };
-
-// async function hello() {
-//   return Promise.resolve("Hello, World");
-// }
-
-// exports.handler = async (event, context) => {
-//   try {
-//     const body = await helper();
-//     return {
-//       statusCode: 200,
-//       body: JSON.stringify({ message: `H${body}` })
-//     };
-//     // body: JSON.stringify({ message: `Hello ${subject}` })
-//     // // more keys you can return:
-//     // headers: { "headerName": "headerValue", ... },
-//     // isBase64Encoded: true,
-//   } catch (err) {
-//     return { statusCode: 500, body: err.toString() };
-//   }
-// };
