@@ -70,3 +70,8 @@ We conducted user testing on networks of educators that already existed with our
     * Taking the postcode inputted into the searchbar and using that as the central point of our map.
     * Linking the markers on the map to the location of the results shown on the results page (so that each marker represents       a result and shows its location).
 * If you enter your postcode on the landing page, and go to the results page, you'll see your results. However, if you then refresh the results page, you get an error. This happens on the details page too. We've created an issue for it [here,](https://github.com/fac-17/Generation-Change/issues/92) which explains it a bit more in detail.
+
+### Screenshots:
+![](https://i.imgur.com/DgFjZqy.jpg)
+![](https://i.imgur.com/KG96C3B.jpg)
+![](https://i.imgur.com/oMfdMGv.jpg)

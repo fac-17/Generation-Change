@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Svg from "../Universal/Svg";
+import Loading from "../Universal/Loading";
 
 const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
   if (!data) {
-    return <h1 className="loading">...loading</h1>;
+    return <Loading />;
   }
 
   const project = sortedListings.map((project, i) => (
