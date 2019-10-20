@@ -7,6 +7,8 @@ import ResultsPage from "./components/ResultsPage";
 import StoriesPage from "./components/StoriesPage";
 import DetailsPage from "./components/DetailsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Loading from "./components/Universal/Loading.js";
+import notFound from "./components/Universal/404";
 
 function App() {
   const [data, setData] = useState(null);
@@ -18,12 +20,9 @@ function App() {
     getData().then(airtableData => setData(airtableData));
   }, []);
 
-  if (!data)
-    return (
-      <div>
-        <h2>...loading</h2>
-      </div>
-    );
+  if (!data) {
+    return <Loading />;
+  }
 
   return (
     <Router>
@@ -70,6 +69,7 @@ function App() {
         )}
         className="dark-bg-gradient"
       />
+      <Route path="*" component={notFound} />
     </Router>
   );
 }
