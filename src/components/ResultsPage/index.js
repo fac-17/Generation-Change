@@ -21,13 +21,12 @@ const ResultsPage = ({
 
   useEffect(() => {
     if (searchLongLat !== "") {
-      console.log(searchLongLat);
       window.sessionStorage.setItem("searchLat", searchLongLat.latitude);
       window.sessionStorage.setItem("searchLong", searchLongLat.longitude);
     }
   }, [searchLongLat]);
 
-  console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
+  // console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
   const storageLongLat = Object.fromEntries(
     new Map([
       ["latitude", Number(window.sessionStorage.getItem("searchLat"))],
@@ -35,7 +34,7 @@ const ResultsPage = ({
     ])
   );
 
-  console.log(storageLongLat, searchLongLat);
+  // console.log(storageLongLat, searchLongLat);
 
   const calcDistance = dataWithDistances(data, searchLongLat || storageLongLat);
   const sortedListings = listingsWithinXDistance(calcDistance);
@@ -59,7 +58,7 @@ const ResultsPage = ({
 
   useEffect(() => {
     projectMarkers.map(addMarker);
-  }, [searchLongLat]);
+  }, [addMarker, projectMarkers, searchLongLat]);
 
   return (
     <div>

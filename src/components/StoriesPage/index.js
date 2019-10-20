@@ -3,7 +3,6 @@ import Navbar from "../Universal/Navbar";
 import Searchbar from "../Universal/Searchbar";
 
 const StoriesPage = ({ data, setSearchLongLat }) => {
-  console.log(data[85].fields.charity_about);
   return (
     <>
       <div className="navbar-flexbox">
