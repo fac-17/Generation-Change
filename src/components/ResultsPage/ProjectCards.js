@@ -10,11 +10,13 @@ const ProjectCards = ({ setDetailsData, sortedListings, data }) => {
 
   const project = sortedListings.map((project, i) => (
     <li key={i} className="project-card">
-      <img
-        className="project-card__image"
-        src={project.fields.photo_1}
-        alt="story"
-      />
+      <div className="project-card__image-div">
+        <img
+          className="project-card__image"
+          src={project.fields.photo_1}
+          alt="story"
+        />
+      </div>
       <div className="project-card__inner-wrap">
         <p className="project-card__category">{project.fields.category}</p>
         <Link to={{ pathname: "/details" }}>

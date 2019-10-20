@@ -15,7 +15,9 @@ const ProjectSummary = ({ detailsData }) => {
         <h2 className="organisers__title">The Organisers</h2>
         <div className="organisers__text">
           <div className="organisers__socialmedia">
-            <h2 className="organisers__socialmedia--name">Hemsworth Park</h2>
+            <h2 className="organisers__socialmedia--name">
+              {detailsData.fields.charity_name}
+            </h2>
             <div className="organisers__socialmedia--logos">
               <a href={detailsData.fields.facebook_url}>
                 <Svg
