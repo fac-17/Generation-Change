@@ -18,8 +18,8 @@ const StoriesPage = ({ data, setSearchLongLat }) => {
           alt="story"
           className="story__img--page"
         />
-        <h1 className="title1">{data[85].fields.story_title}</h1>
         <p className="category--story">{data[85].fields.category}</p>
+        <h1 className="title1">{data[85].fields.story_title}</h1>
         <div className="wrapper">
           <h2>What happened: </h2>
           <p>{data[85].fields.story_what}</p>
