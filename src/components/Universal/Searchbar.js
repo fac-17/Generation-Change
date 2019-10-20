@@ -26,7 +26,6 @@ const Searchbar = ({ setSearchLongLat }) => {
           type="text"
           className="searchbar__input"
           placeholder="Enter postcode"
-          aria-label="enter postcode"
         />
 
         <button
