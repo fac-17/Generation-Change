@@ -21,6 +21,7 @@ const showResultsAsMarkers = data => {
         )
       );
     } else {
+      console.log({ acc });
       return acc;
     }
   }, []);
