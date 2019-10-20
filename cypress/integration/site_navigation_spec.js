@@ -1,3 +1,4 @@
+import cy from "cypress";
 describe("Site Navigation", function() {
   beforeEach(() => {
     cy.visit("http://localhost:8888");
