@@ -9,7 +9,7 @@ const Searchbar = ({ setSearchLongLat }) => {
     event.preventDefault();
     const searchPostcode = event.target.elements.postcode.value;
     const trimmedPostcode = searchPostcode.replace(/\s+/g, "");
-    console.log(trimmedPostcode);
+    // console.log(trimmedPostcode);
     if (searchPostcode.length < 5) return;
     convertPostcode(searchPostcode).then(coordinates => {
       setSearchLongLat(coordinates);

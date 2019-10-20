@@ -2,6 +2,7 @@ import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import SearchBar from "../components/Universal/Searchbar";
 import Navbar from "../components/Universal/Navbar";
+import Svg from "../components/Universal/Svg";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
 
@@ -31,7 +32,7 @@ describe.only("SearchBar behaves as expected", () => {
     fireEvent.change(input, { target: { value: fullPostcode } });
     fireEvent.click(submitButton);
     setTimeout(() => {
-      expect(history.location.pathname).toBe("/results");
+      expect(history.location.pathname).toBe("/results?postcode=EC25HY");
     }, 1000);
   });
 });
@@ -49,5 +50,11 @@ describe.only("NavBar behaves as expected", () => {
   test("Logo in Navbar takes you to home when clicked", () => {
     fireEvent.click(logo);
     expect(history.location.pathname).toBe("/");
+  });
+});
+
+describe.only("Svg coponent behaves as expected", () => {
+  test("Svg loads without and error", () => {
+    render(<Svg color="--white" height="20" width="20" icon="duration" />);
   });
 });
