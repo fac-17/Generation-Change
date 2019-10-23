@@ -16,13 +16,12 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
 
   // create map
   const mapRef = useRef(null);
-  // console.log(searchLongLat.latitude);
   useEffect(() => {
     mapRef.current = L.map("map", {
       center: [51.509865, -0.118092],
       zoom: 9,
       layers: [
-        L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
             '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         })
@@ -31,8 +30,6 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
   }, []);
 
   // retrieve data from localstorage
-
-  // console.log("localstoragekey", window.sessionStorage.getItem("searchLong"));
   const storageLongLat = Object.fromEntries(
     new Map([
       ["latitude", Number(window.sessionStorage.getItem("searchLat"))],
@@ -41,7 +38,6 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
   );
 
   useEffect(() => {
-    // console.log(storageLongLat);
     searchLongLat
       ? mapRef.current.setView(
           [searchLongLat.latitude, searchLongLat.longitude],
