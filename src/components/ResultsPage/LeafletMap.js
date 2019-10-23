@@ -3,7 +3,7 @@ import L from "leaflet";
 
 const LeafletMap = ({ searchLongLat, markersData }) => {
   // marker style
-  const redIcon = new L.Icon({
+  const redLocationPin = new L.Icon({
     iconUrl:
       "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
     shadowUrl:
@@ -60,11 +60,11 @@ const LeafletMap = ({ searchLongLat, markersData }) => {
     layerRef.current.clearLayers();
     markersData.pop();
     markersData.forEach(marker => {
-      L.marker(marker.latLng, { icon: redIcon })
+      L.marker(marker.latLng, { icon: redLocationPin })
         .addTo(layerRef.current)
         .bindPopup(marker.title);
     });
-  }, [markersData]);
+  }, [markersData, redLocationPin]);
 
   return <div id="map" />;
 };
